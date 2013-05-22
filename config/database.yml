@@ -1,21 +1,17 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: moro
-  username: root
-  password: "123456"
-  host: localhost
-test: 
-  adapter: mysql2
-  encoding: utf8 
-  database: moro 
-  host: localhost 
-  username: root 
-  password: "123456"
-production: 
-  adapter: mysql2
-  encoding: utf8
-  database: moro
-  username: root
-  password: "123456"
-  host: localhost
+  adapter: sqlite3
+  database: db/moro.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: sqlite3
+  database: db/moro.sqlite3
+  pool: 5
+  timeout: 5000

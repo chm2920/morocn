@@ -1,0 +1,39 @@
+
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">名称：</td>
+			<td class="data_ipt">
+				<%= f.text_field :title %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">英文名称：</td>
+			<td class="data_ipt">
+				<%= f.text_field :en_title %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">内容：</td>
+			<td class="data_ipt">
+				<%= kindeditor_tag :content, @intro.content, :width => 680, :height => 400 %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">英文内容：</td>
+			<td class="data_ipt">
+				<%= kindeditor_tag :en_content, @intro.en_content, :width => 680, :height => 400 %>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>

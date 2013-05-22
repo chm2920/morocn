@@ -1,0 +1,11 @@
+<%= javascript_include_tag "kindeditor" %>
+<%= form_for [:admin, @intro] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2">新增</th>
+		</tr>
+	</thead>
+	<%= render :partial => 'form', :locals => { :f => f } %>
+</table>
+<% end %>

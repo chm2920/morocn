@@ -1,0 +1,12 @@
+<%= javascript_include_tag "kindeditor" %>
+<%= form_for [:admin, @topic] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2">修改</th>
+		</tr>
+	</thead>
+	<%= render :partial => 'form', :locals => { :f => f } %>
+</table>
+<input type="hidden" name="page" value="<%= params[:page] %>" />
+<% end %>

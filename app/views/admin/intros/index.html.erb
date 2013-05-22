@@ -1,0 +1,34 @@
+<table class="stdtable edtable">
+	<thead>
+		<tr>
+			<th width="10%">编号</th>
+			<th>名称</th>
+			<th width="30%">英文名称</th>
+			<th width="30%">管理</th>
+		</tr>
+	</thead>
+	<tbody>
+	<%
+		if @intros.length>0
+			@intros.each do |intro|
+	%>
+		<tr>
+			<td><%= intro.id %></td>
+			<td><%= intro.title %></td>
+			<td><%= intro.en_title %></td>
+			<td>
+				<a href="/admin/intros/<%= intro.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => intro}, :confirm => "确定删除？", :method => "delete" %>
+			</td>
+		</tr>
+	<%
+			end
+		else
+	%>
+		<tr>
+			<td colspan="4" style="text-align:left;">&nbsp;还没有内容。</td>
+		</tr>
+	<%
+		end
+	%>
+	</tbody>
+</table>

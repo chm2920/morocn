@@ -125,6 +125,7 @@
 	})
 
 })(jQuery);
+
 $(function() {
   $('#banner_pic .banner_img').soChange({
     thumbObj: '#banner_pic .banner_num a'

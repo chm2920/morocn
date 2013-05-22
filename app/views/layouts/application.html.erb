@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>梦露电气 - MORO</title>
-<meta name="keywords" content="智能座便器,智能马桶盖,智能马桶,梦露智能座便器,梦露智能马桶盖,上海梦露,梦露电气" />
-<meta name="description" content="MORO梦露电气是一家专业致力于智能座便器产品研发、生产、销售于一体的高新技术集团型企业，率先于行业内首推十天免费试用、一年包换的七星级服务。" />
+<title><% if !@title.blank? %><%= @title %><% else %><%= @setting["site_name"] %><% end %> - MORO</title>
+<meta name="keywords" content="<%= @setting["site_keywords"] %>" />
+<meta name="description" content="<%= @setting["site_desc"] %>" />
 <%= stylesheet_link_tag    "style", :media => "all" %>
-<%= javascript_include_tag "jquery-1.4.4.min", "common", "jScrollbar.jquery", "jquery.soChange" %>
+<%= javascript_include_tag "jquery-1.4.4.min", "common" %>
 <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,8 +20,8 @@
           <div class="item"><a href="/about">公司简介</a></div>
           <div class="item"><a href="/culture">企业文化</a></div>
           <div class="item"><a href="/honor">企业荣誉</a></div>
-          <div class="item"><a href="/news/1/list">MORO资讯</a></div>
-          <div class="item"><a href="news.asp?c_id=2">社区公益</a></div>
+          <div class="item"><a href="/news_list/1">MORO资讯</a></div>
+          <div class="item"><a href="/news_list/2">社区公益</a></div>
         </div>
       </li>
       <li class="li_02" id="nav_list"><a href="/products">产品展示<em></em></a>
@@ -84,8 +84,8 @@
     <span class="fr"><em class="tel"></em>全国免费服务热线：400-820-0407</span>
   </div>
  <div class="copyright">
-   <span class="fl">版权所有 <span style=" font-family:Arial">&copy;</span> 2008-2012 梦露（中国）有限公司，保留所有权利。</span>
-   <span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备12033067号-1</a></span>
+   <span class="fl"><%= @setting["copyright"] %></span>
+   <span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank"><%= @setting["beian"] %></a></span>
  </div>
  <div class="foot_lj">
    <div class="foot_link fr">

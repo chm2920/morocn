@@ -1,0 +1,117 @@
+<div class="location"><a href="/">首页</a><a href="/about">关于梦露</a><a href="<%= @catalog.show_url %>"><%= @catalog.name %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %></div>
+<div class="clear"></div>
+<div class="content_box">
+  <div class="con_left" style="min-height:500px;">
+  <script type="text/javascript" src="/assets/sc.js"></script>
+  <% if !@topic.nil? %>
+    <div class="title">
+	  <h1><%= @topic.title %></h1>
+	  <div class="time">时间：<%= @topic.created_at.strftime("%Y-%m-%d") %></div>
+	  <div class="right_fd">
+        <script>share();</script>
+      </div>
+	</div>
+	<div class="ny_content mt10"><%= @topic.content.html_safe %></div>
+<% end %>
+  </div>
+  <div class="con_right news_right">
+  <!--div class="con_right news_right" 跟随滚动条滚动-->
+    <div class="news_list">
+	  <div class="title">最新资讯 </div>
+	  <div id="news_1"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
+	</div>
+    <div class="news_list">
+	  <div class="title">社区公益 </div>
+	  <div id="news_2"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
+	</div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(window).scroll(function(){
+	var top = $(window).scrollTop();
+	if(top > 105){
+		$(".news_right").addClass("news_fixed");
+	} else {
+		$(".news_right").removeClass("news_fixed");
+	}
+});
+
+function NewsList(items, uid){
+	this.items = items;
+	this.l = this.items.length;
+	this.per_page = 3;
+	this.page = 1;
+	
+	this.container = $(uid);
+	
+	this.init();
+}
+
+NewsList.prototype = {
+	init: function(){
+		this.container.html('<ul></ul>');
+		this.render();
+		if(this.l > this.per_page){
+			this.max_page = (this.l % 3 == 0 ? this.l / 3 : (parseInt(this.l / 3) + 1));
+			var arr = [];
+			arr.push('<div class="news_pages mt5">');
+			arr.push('<a href="javascript:void(0);" class="page-pre"><</a> ');
+			arr.push('<font>' + this.page + '/' + this.max_page + '</font>');
+			arr.push(' <a href="javascript:void(0);" class="page-next">></a>');
+			arr.push('</div>');
+			this.container.append(arr.join(''));
+			
+			var self = this;
+			this.container.find('div > a').click(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				if($(this).hasClass('page-pre')){
+					if(self.page == 1){
+						return;
+					} else {
+						self.page -= 1;
+					}
+				} else {
+					if(self.page == self.max_page){
+						return;
+					} else {
+						self.page += 1;
+					}
+				}
+				self.render();
+				self.container.find('div > font').html(self.page + '/' + self.max_page);
+			});
+		}
+	},
+	render: function(){
+		var arr = [];
+		for(var i = (this.page - 1) * this.per_page, j = 0; j < 3 && i < this.l; i ++, j ++){
+			var item = this.items[i];
+			arr.push('<li>');
+			arr.push('<a href="' + item.show_url + '">' + item.title + '</a>');
+			arr.push('<span>' + item.date + '</span>');
+			arr.push('</li>');
+		}
+		this.container.find('ul').html(arr.join(''));
+	}
+}
+
+$(function(){
+	function ajax_list(url, uid){
+		$.post(
+			url,
+			function(result) {
+				if(result && result.length){
+					new NewsList(result, uid);
+				} else {
+					$(uid).html('<ul><li>还没有内容。</li></ul>');
+				}
+			}
+		);
+	}
+	
+	ajax_list("/ajax_news_list/1", "#news_1");
+	ajax_list("/ajax_news_list/2", "#news_2");
+});
+</script>
