@@ -26,22 +26,15 @@
       </li>
       <li class="li_02" id="nav_list"><a href="/products">产品展示<em></em></a>
         <div class="subbox">
-          <div class="item"><a href="/products/1/list">智能马桶盖</a>
-            <dl>
-              <dt><a href="/products/1">ML-80</a></dt>
-              <dt><a href="products_show.asp?s_id=6">ML-86</a></dt>
-              <dt><a href="products_show.asp?s_id=4">ML-86A</a></dt>
-              <dt><a href="products_show.asp?s_id=3">ML-88</a></dt>
-              <dt><a href="products_show.asp?s_id=2">ML-88A</a></dt>
-              <dt><a href="products_show.asp?s_id=8">ML-100</a></dt>
-            </dl>
-          </div>
-          <div class="item"><a href="products.asp?c_id=2">智能一体机</a>
-            <dl>
-              <dt><a href="products_show.asp?s_id=9">ML-208</a></dt>
-              <dt><a href="products_show.asp?s_id=10">ML-228</a></dt>
-            </dl>
-          </div>
+			<% @product_catalogs.each do |catalog| %>
+			<div class="item"><a href="<%= catalog.show_url %>"><%= catalog.name %></a>
+				<dl>
+					<% catalog.products.each do |product| %>
+					<dt><a href="<%= product.show_url %>"><%= product.title %></a></dt>
+					<% end %>
+				</dl>
+			</div>
+			<% end %>
         </div>
       </li>
       <li class="li_02"><a href="/sale">全国市场一览</a>

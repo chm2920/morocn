@@ -1,4 +1,4 @@
-<div class="location"><a href="/" title="网站首页">首页</a><a href="/products" title="产品中心">产品中心</a><a href="products.asp?c_id=1" title="智能马桶盖">智能马桶盖</a><span>ML-80</span></div>
+<div class="location"><a href="/" title="网站首页">首页</a><a href="/products" title="产品中心">产品中心</a><a href="<%= @product_catalog.show_url %>" title="<%= @product_catalog.name %>"><%= @product_catalog.name %></a><span><%= @product.title %></span></div>
   <div class="clear"></div>
   <div class="content_box">
     <div class="con_left">
@@ -33,62 +33,19 @@
               <!--规格-->
               <div class="guige">
                 <ul>
-                  <li>
-                    <div class="label">型号：</div>
-                    <div class="cont">ML-80</div>
-                  </li>
-                  <li>
-                    <div class="label">电源：</div>
-                    <div class="cont">220V</div>
-                  </li>
-                  <li>
-                    <div class="label">水温：</div>
-                    <div class="cont">41℃</div>
-                  </li>
-                  <li>
-                    <div class="label">水温加热功率：</div>
-                    <div class="cont">1000W</div>
-                  </li>
-                  <li>
-                    <div class="label">暖风温度：</div>
-                    <div class="cont">35~65℃</div>
-                  </li>
-                  <li>
-                    <div class="label">暖风加热功率：</div>
-                    <div class="cont">300W</div>
-                  </li>
-                  <li>
-                    <div class="label">座圈加热功率：</div>
-                    <div class="cont">20W</div>
-                  </li>
-                  <li>
-                    <div class="label">水箱容积：</div>
-                    <div class="cont">0.8L</div>
-                  </li>
-                  <li>
-                    <div class="label">适用水压：</div>
-                    <div class="cont">0.08～0.70mpa</div>
-                  </li>
-                  <li>
-                    <div class="label">冲洗流量：</div>
-                    <div class="cont">0.7L/min</div>
-                  </li>
-                  <li>
-                    <div class="label">女性清洗水量：</div>
-                    <div class="cont">0.9L/min</div>
-                  </li>
-                  <li>
-                    <div class="label">排水方式：</div>
-                    <div class="cont">/</div>
-                  </li>
-                  <li>
-                    <div class="label">坑距：</div>
-                    <div class="cont">/</div>
-                  </li>
-                  <li>
-                    <div class="label">冲水方式：</div>
-                    <div class="cont">/</div>
-                  </li>
+                	<li>
+						<div class="label">型号：</div>
+						<div class="cont"><%= @product.title %></div>
+					</li>
+            	<% if !@product.specifications.blank? %>
+					<% @specifications = JSON.parse(@product.specifications) %>
+					<% @specifications.each do |k, v| %>
+					<li>
+						<div class="label"><%= k %>：</div>
+						<div class="cont"><%= v %></div>
+					</li>
+					<% end %>
+				<% end %>
                 </ul>
               </div>
             </div>
@@ -126,21 +83,16 @@
     </div>
 	<div class="clear"></div>
 	<div class="pro_cookie mt20">
-	  <h2><a href="?s_cookie=delall&s_id=1" class="fr">清空浏览列表</a>您浏览过的产品列表</h2>
+	  <h2><a href="/clear_cookie/<%= @product.id %>" class="fr">清空浏览列表</a>您浏览过的产品列表</h2>
 	  <div class="contact">
-	    <a href="shop.asp" class="buy"></a>
+	    <a href="/shop" class="buy"></a>
 		<a target="_blank" href="http://amos.alicdn.com/msg.aw?v=2&uid=%E4%B8%8A%E6%B5%B7%E6%96%8C%E6%B4%81%E5%95%86%E8%B4%B8&site=cntaobao&s=1&charset=utf-8" class="lx"></a>
 	  </div>
 	  <ul>
-	    <li><a href="products_show.asp?s_id=1" class="pic" title="ML-80"><img src="upload/products/5129121114154225_small.jpg" alt="ML-80"/></a></li>
-	    <li><a href="products_show.asp?s_id=6" class="pic" title="ML-86"><img src="upload/products/5391121204173211_small.jpg" alt="ML-86"/></a></li>
-	    <li class="last"><a href="products_show.asp?s_id=4" class="pic" title="ML-86A"><img src="upload/products/9525121114155743_small.jpg" alt="ML-86A"/></a></li>
-	    <li><a href="products_show.asp?s_id=3" class="pic" title="ML-88"><img src="upload/products/9839121114155733_small.jpg" alt="ML-88"/></a></li>
-	    <li><a href="products_show.asp?s_id=2" class="pic" title="ML-88A"><img src="upload/products/0504121114155719_small.jpg" alt="ML-88A"/></a></li>
-	    <li class="last"><a href="products_show.asp?s_id=8" class="pic" title="ML-100"><img src="upload/products/6392121204213425_small.jpg" alt="ML-100"/></a></li>
-	    <li><a href="products_show.asp?s_id=9" class="pic" title="ML-208"><img src="upload/products/4253121204213452_small.jpg" alt="ML-208"/></a></li>
-	    <li><a href="products_show.asp?s_id=10" class="pic" title="ML-228"><img src="upload/products/4389121204213507_small.jpg" alt="ML-228"/></a></li>
-
+	  	<% session[:products].each_with_index do |product_id, i| %>
+	  	<% product = Product.find(product_id) %>
+	    <li<% if (i+1) % 3 == 0 %> class="last"<% end%>><a href="<%= product.show_url %>" class="pic" title="<%= product.title %>"><img src="<%= product.cover %>" alt="<%= product.title %>"/></a></li>
+	    <% end %>
 	  </ul>
 	</div>
   </div>

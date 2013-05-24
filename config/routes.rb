@@ -18,6 +18,11 @@ Morocn::Application.routes.draw do
   match "news/:id" => "topics#show"
   match "ajax_news_list/:id" => "topics#news_list"
   
+  match "product_catalogs/:id" => "products#list"
+  match "products/:id" => "products#show"
+  match "products" => "products#list"
+  match "clear_cookie/:id" => "products#clear_cookie"
+  
   
   match "sale" => "sales#index"
   match "sales/(:id)" => "sales#show"
@@ -26,10 +31,6 @@ Morocn::Application.routes.draw do
   match "service" => "services#index"
   match "faq" => "services#faq"
   match "download" => "services#download"
-  
-  match "products/(:id)/list" => "products#list"
-  match "products/:id" => "products#show"
-  match "products" => "products#list"
   
   match "admin" => "account#login"
   get "account/main"
@@ -50,6 +51,15 @@ Morocn::Application.routes.draw do
     delete "topics/del"
     post "topics/repost"
     resources :topics
+    
+    resources :product_catalogs
+    
+    resources :products do
+      get :specifications
+      put :specifications
+      get :features
+      post :features
+    end
         
     get "db/index"
     

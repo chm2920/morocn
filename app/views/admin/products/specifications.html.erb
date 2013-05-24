@@ -1,0 +1,47 @@
+<%= form_for [:admin, @product], :url => {:action => :specifications} do |f| %>
+<%
+	if !@product.specifications.blank?
+		info = JSON.parse(@product.specifications)
+		#info = @product.specifications
+	else
+		info = {}
+	end
+%>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2"><% if !@result.nil? %><span style="float:right;font-size:12px;color:#FF0000;">保存成功。</span><% end %>规格参数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">型号：</td>
+			<td class="data_ipt">
+				<%= @product.title %>
+			</td>
+		</tr>
+		<% ["电源", "水温", "水温加热功率", "暖风温度", "暖风加热功率", "座圈加热功率", "水箱容积", "适用水压", "冲洗流量", "女性清洗水量", "排水方式", "坑距", "冲水方式"].each_with_index do |s, i|%>
+		<tr>
+			<td class="data_label"><%= s %>：</td>
+			<td class="data_ipt">
+				<input type="hidden" name="s[k][<%= i %>]" value="<%= s %>" />
+				<input type="text" name="s[v][<%= i %>]" value="<%= info[s] %>" />
+			</td>
+		</tr>
+		<% end %>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<input type="hidden" name="page" value="<%= params[:page] %>" />
+<% end %>

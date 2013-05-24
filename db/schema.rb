@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513003844) do
+ActiveRecord::Schema.define(:version => 20130524010256) do
 
   create_table "admins", :force => true do |t|
     t.string   "adminname"
@@ -23,21 +23,6 @@ ActiveRecord::Schema.define(:version => 20130513003844) do
 
   create_table "catalogs", :force => true do |t|
     t.string "name"
-  end
-
-  create_table "friendlinks", :force => true do |t|
-    t.string  "title"
-    t.string  "link"
-    t.integer "rank",  :default => 0
-  end
-
-  create_table "guestbooks", :force => true do |t|
-    t.string   "title"
-    t.string   "info"
-    t.string   "content"
-    t.string   "reply"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "intros", :force => true do |t|
@@ -54,6 +39,26 @@ ActiveRecord::Schema.define(:version => 20130513003844) do
     t.string   "file_type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "product_catalogs", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "product_imgs", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "addr"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "products", :force => true do |t|
+    t.integer  "product_catalog_id"
+    t.string   "title"
+    t.text     "specifications"
+    t.text     "features"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "run_logs", :force => true do |t|

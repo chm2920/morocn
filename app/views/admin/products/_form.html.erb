@@ -1,0 +1,40 @@
+
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">分类：</td>
+			<td class="data_ipt">
+				<select name="product[product_catalog_id]">
+				<%
+					@product_catalogs.each do |catalog|
+				%>
+					<option value="<%= catalog.id %>"<% if catalog.id == @product.product_catalog_id %> selected<% end %>><%= catalog.name %></option>
+				<% 
+					end 
+				%>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">名称：</td>
+			<td class="data_ipt">
+				<%= f.text_field :title, :style => "width:400px;" %>
+			</td>
+		</tr>
+		<!--tr>
+			<td class="data_label">规格参数：</td>
+			<td class="data_ipt">
+				<%#= f.text_area :specifications, :style => "width:400px;height:240px;" %>
+			</td>
+		</tr-->
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>

@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   def find_sys_setting
     @sys_setting = SysSetting.find_by_stype("setting")
     @setting = JSON.parse(@sys_setting.setting)
+    
+    @product_catalogs = ProductCatalog.all
   end
   
 end
