@@ -34,8 +34,8 @@
 			<td><% if product.product_catalog %><%= product.product_catalog.name %><% end %></td>
 			<td><%= product.created_at.strftime("%Y-%m-%d") %></td>
 			<td>
-				<a href="/admin/products/<%= product.id %>/imgs?page=<%= @page %>">图片</a>|<a href="/admin/products/<%= product.id %>/resources?page=<%= @page %>">资料</a>|
-				<a href="/admin/products/<%= product.id %>/specifications?page=<%= @page %>">规格参数</a>|<a href="/admin/products/<%= product.id %>/features?page=<%= @page %>">功能特点</a>|				
+				<a href="/admin/products/<%= product.id %>/product_imgs?page=<%= @page %>">图片</a>|<a href="/admin/products/<%= product.id %>/resources?page=<%= @page %>">资料</a>|
+				<a href="/admin/products/<%= product.id %>/specifications?page=<%= @page %>">规格参数</a>|<a href="/admin/products/<%= product.id %>/product_features?page=<%= @page %>">功能特点</a>|				
 				<a href="/admin/products/<%= product.id %>/edit?page=<%= @page %>">修改</a>|<%= link_to "删除", {:action => "destroy", :id => product, :page => @page}, :confirm => "确定删除？", :method => "delete" %>
 			</td>
 		</tr>

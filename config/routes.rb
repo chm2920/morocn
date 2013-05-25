@@ -43,22 +43,29 @@ Morocn::Application.routes.draw do
     
     resources :catalogs
     
-    get "topics/index"
-    post "topics/index"
-    get "topics/trashes"
-    post "topics/trashes"
     get "topics/clear"
     delete "topics/del"
     post "topics/repost"
-    resources :topics
+    resources :topics do
+      collection do
+        get :index
+        post :index
+        get :trashes
+        post :trashes
+      end
+    end
     
     resources :product_catalogs
     
     resources :products do
-      get :specifications
-      put :specifications
-      get :features
-      post :features
+      member do
+        get :specifications
+        put :specifications
+      end
+      
+      resources :product_imgs
+      
+      resources :product_features
     end
         
     get "db/index"
@@ -95,6 +102,8 @@ Morocn::Application.routes.draw do
     post "/upload" => "assets#create"
     get  "/filemanager" => "assets#list"
   end
+  
+  match "file_manager_json" => "imgs#list"
     
   root :to => 'start#index'
   

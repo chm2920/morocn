@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @product_catalog = @product.product_catalog
+    @product_features = @product.product_features
     
     if session[:products].nil?
       session[:products] = []

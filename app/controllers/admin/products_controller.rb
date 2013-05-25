@@ -9,7 +9,7 @@ class Admin::ProductsController < Admin::Backend
     else
       @page = 1
     end
-    @products = Product.paginate :page => @page, :per_page => 20, :order => "id desc"
+    @products = Product.paginate :page => @page, :per_page => 20, :order => "id asc"
   end
 
   def new
@@ -44,7 +44,7 @@ class Admin::ProductsController < Admin::Backend
   end
   
   def specifications
-    @product = Product.find(params[:product_id])
+    @product = Product.find(params[:id])
     case request.method
     when "POST"
       hsh = {}

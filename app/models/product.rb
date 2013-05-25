@@ -4,7 +4,9 @@ class Product < ActiveRecord::Base
   
   belongs_to :product_catalog
   
-  has_many :product_pics
+  has_many :product_imgs
+  
+  has_many :product_features
   
   
   def cover

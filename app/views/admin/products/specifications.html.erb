@@ -2,7 +2,6 @@
 <%
 	if !@product.specifications.blank?
 		info = JSON.parse(@product.specifications)
-		#info = @product.specifications
 	else
 		info = {}
 	end
