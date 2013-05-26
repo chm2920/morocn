@@ -1,5 +1,5 @@
 require "find"
-class ImgsController < ApplicationController
+class AssetsController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
@@ -13,7 +13,7 @@ class ImgsController < ApplicationController
     when "product_feature"
       uploader_model = "ProductFeatureUploader"
     else
-      uploader_model = "ImgUploader"
+      uploader_model = "AssetUploader"
     end
     unless @imgFile.nil?
       begin

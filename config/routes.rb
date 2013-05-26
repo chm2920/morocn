@@ -66,6 +66,8 @@ Morocn::Application.routes.draw do
       resources :product_imgs
       
       resources :product_features
+      
+      resources :product_files
     end
         
     get "db/index"
@@ -103,8 +105,8 @@ Morocn::Application.routes.draw do
     get  "/filemanager" => "assets#list"
   end
   
-  match "upload_img" => "imgs#create"
-  match "file_manager_json" => "imgs#list"
+  match "upload_asset" => "assets#create"
+  match "file_manager_json" => "assets#list"
     
   root :to => 'start#index'
   

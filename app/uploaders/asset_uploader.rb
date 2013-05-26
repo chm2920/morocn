@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ImgUploader < CarrierWave::Uploader::Base
+class AssetUploader < CarrierWave::Uploader::Base
   
   storage :file
   # storage :fog

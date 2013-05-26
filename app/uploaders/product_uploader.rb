@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProductUploader < ImgUploader
+class ProductUploader < AssetUploader
   
   include CarrierWave::MiniMagick
 

@@ -29,7 +29,6 @@ class Admin::ProductFeaturesController < Admin::Backend
   def update
     @product = Product.find(params[:product_id])
     @product_feature = ProductFeature.find(params[:id])
-    @product_feature.product = @product
     @product_feature.update_attributes(params[:product_feature])
     redirect_to [:admin, @product, :product_features]
   end

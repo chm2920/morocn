@@ -8,6 +8,8 @@ class Product < ActiveRecord::Base
   
   has_many :product_features
   
+  has_many :product_files
+  
   
   def show_url
     "/products/#{self.title}"
