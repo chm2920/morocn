@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
     @product_catalog = @product.product_catalog
     @product_features = @product.product_features
     @product_imgs = @product.product_imgs
+    @product_files = ProductFile.all(:conditions => "product_id = #{@product.id} and data_type = 'doc'")
     
     @title = @product.title + " " + @product_catalog.name
     

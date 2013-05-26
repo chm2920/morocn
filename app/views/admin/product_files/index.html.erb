@@ -12,7 +12,7 @@
 		<tr>
 			<th width="5%">ID</th>
 			<th width="15%">类型</th>
-			<th width="15%">标题</th>
+			<th width="25%">名称</th>
 			<th>地址</th>
 			<th width="20%">管理</th>
 		</tr>
@@ -23,8 +23,15 @@
 			@product_files.each_with_index do |product_file, i|
 	%>
 		<tr>
-			<td><%= i + 1 %></td>
-			<td><img src="<%= product_file.data_type %>" /></td>
+			<td><%= product_file.id %></td>
+			<td><%=
+				case product_file.data_type
+				when "drawing"
+					"产品图纸"
+				when "doc"
+					"说明书"
+				end
+			%></td>
 			<td><%= product_file.title %></td>
 			<td><%= product_file.data_url %></td>
 			<td>				

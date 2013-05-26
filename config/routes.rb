@@ -23,6 +23,8 @@ Morocn::Application.routes.draw do
   match "products" => "products#list"
   match "clear_cookie/:id" => "products#clear_cookie"
   
+  match "download/(:id)" => "services#download"
+  
   
   match "sale" => "sales#index"
   match "sales/(:id)" => "sales#show"
@@ -30,7 +32,6 @@ Morocn::Application.routes.draw do
   
   match "service" => "services#index"
   match "faq" => "services#faq"
-  match "download" => "services#download"
   
   match "admin" => "account#login"
   get "account/main"

@@ -82,7 +82,13 @@
 					</div>
 					<div class="clear"></div>
 				</div>
-				<div class="down tab" style="z-index:-1;"></div>
+				<div class="down tab" style="z-index:-1;">
+					<% if @product_files.length > 0 %>
+					<% @product_files.each do |f| %>
+						<a href="<%= f.data_url %>" target="_blank" class="download"><%= f.title %></a>
+					<% end %>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>

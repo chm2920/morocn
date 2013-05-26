@@ -12,6 +12,8 @@ class AssetsController < ApplicationController
       uploader_model = "ProductUploader"
     when "product_feature"
       uploader_model = "ProductFeatureUploader"
+    when "product_file"
+      uploader_model = "ProductFileUploader"
     else
       uploader_model = "AssetUploader"
     end

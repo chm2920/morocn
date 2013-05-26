@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   
   has_many :product_features
   
-  has_many :product_files
+  has_many :product_files, :order => "id desc"
   
   
   def show_url
