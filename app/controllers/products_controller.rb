@@ -1,11 +1,16 @@
+#encoding: utf-8
 class ProductsController < ApplicationController
   
   def list
     if !params[:id].nil?
       @product_catalog = ProductCatalog.find(params[:id])
       @products = @product_catalog.products
+      
+      @title = @product_catalog.name
     else
       @products = Product.all
+      
+      @title = "产品展示"
     end
   end
   
@@ -18,6 +23,8 @@ class ProductsController < ApplicationController
     @product_catalog = @product.product_catalog
     @product_features = @product.product_features
     @product_imgs = @product.product_imgs
+    
+    @title = @product.title + " " + @product_catalog.name
     
     if session[:products].nil?
       session[:products] = []
