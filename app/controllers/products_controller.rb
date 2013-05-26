@@ -10,9 +10,14 @@ class ProductsController < ApplicationController
   end
   
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find_by_title(params[:title])
+    if @product.nil?
+      redirect_to "/products"
+      return
+    end
     @product_catalog = @product.product_catalog
     @product_features = @product.product_features
+    @product_imgs = @product.product_imgs
     
     if session[:products].nil?
       session[:products] = []

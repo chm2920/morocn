@@ -5,18 +5,21 @@
 <div class="content_box">
 	<div class="con_left">
 		<div class="pro_pic">
+			<% if @product_imgs.length > 0%>
 			<div id="banner_pic">
-				<a href="javascript:;" class="banner_img" title="ML80-侧面图" style="background:url(upload/productszu/51291211141542251_big.jpg) no-repeat center top;"></a>
-				<a href="javascript:;" class="banner_img" title="ML-80打开图" style="background:url(upload/productszu/51291211141542252_big.jpg) no-repeat center top;"></a>
-				<a href="javascript:;" class="banner_img" title="ML-80正面图" style="background:url(upload/productszu/51291211141542253_big.jpg) no-repeat center top;"></a>
-				<a href="javascript:;" class="banner_img" title="ML-80细节图" style="background:url(upload/productszu/51291211141542254_big.jpg) no-repeat center top;"></a>
+				<% @product_imgs.each do |img| %>
+				<a href="javascript:;" class="banner_img" title="<%= img.title %>" style="background:url(<%= img.addr %>) no-repeat center top;"></a>
+				<% end %>
 				<div class="banner_num">
-					<a href="javascript:;"><img src="upload/productszu/51291211141542251_small.jpg" /></a>
-					<a href="javascript:;"><img src="upload/productszu/51291211141542252_small.jpg" /></a>
-					<a href="javascript:;"><img src="upload/productszu/51291211141542253_small.jpg" /></a>
-					<a href="javascript:;"><img src="upload/productszu/51291211141542254_small.jpg" /></a>
+					<% @product_imgs.each do |img| %>
+					<a href="javascript:;"><img src="<%= img.addr %>" /></a>
+					<% end %>
 				</div>
 			</div>
+			<script type="text/javascript" src="/assets/jquery.soChange.js"></script>
+			<% else %>
+			<div style="margin:240px 0 0;text-align:center;">暂无图片。</div>
+			<% end %>
 		</div>
 	</div>
 	<div class="con_right">
@@ -100,7 +103,6 @@
 		</ul>
 	</div>
 </div>
-<script type="text/javascript" src="/assets/jquery.soChange.js"></script>
 <script type="text/javascript" src="/assets/jScrollbar.jquery.js"></script>
 <script type="text/javascript">
 $(function(){

@@ -2,13 +2,12 @@
 	<div class="list-opts">
 		<div class="nav-links">
 			<a href="/admin/products/<%= @product.id %>/product_imgs"><%= @product.title %> 全部图片</a>
-			<a href="/admin/products/<%= @product.id %>/product_imgs/batch_new">批量上传图片</a>
 			<a href="/admin/products/<%= @product.id %>/product_imgs/new">添加图片</a>
 		</div>
 	</div>
 </div>
 <div class="main">
-<table class="stdtable edtable">
+<table class="stdtable edtable product_imgs_tb">
 	<thead>
 		<tr>
 			<th style="text-align:left;"><%= @product.title %> 全部图片</th>
@@ -19,10 +18,21 @@
 			<td>				
 			<%
 				if @product_imgs.length>0
+			%>
+			<ul class="product_imgs">
+			<%
 					@product_imgs.each do |product_img|
 			%>
+				<li>
+					<img src="<%= product_img.addr.to_s %>" alt="<%= product_img.title %>" />
+					<p><%= product_img.title %></p>
+					<p><a href="/admin/products/<%= @product.id %>/product_imgs/<%= product_img.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => product_img}, :confirm => "确定删除？", :method => "delete" %></p>
+				</li>
 			<%
 					end
+			%>
+			</ul>
+			<%
 				else
 			%>
 			还没有内容。

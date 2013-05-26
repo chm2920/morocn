@@ -3,6 +3,33 @@ class ImgsController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
+  def create
+    @imgFile, @dir = params[:imgFile], params[:dir]
+    case params[:model_type]
+    when "product_img"
+      uploader_model = "ProductImgUploader"
+    when "product"
+      uploader_model = "ProductUploader"
+    when "product_feature"
+      uploader_model = "ProductFeatureUploader"
+    else
+      uploader_model = "ImgUploader"
+    end
+    unless @imgFile.nil?
+      begin
+        uploader = uploader_model.constantize.new
+        uploader.store!(@imgFile)
+        render :text => ({:error => 0, :url => uploader.url}.to_json)
+      rescue CarrierWave::UploadError => e
+        show_error(e.message)
+      rescue Exception => e
+        show_error(e.to_s)
+      end
+    else
+      show_error("No File Selected!")
+    end
+  end
+  
   def list
     upload_store_dir = "upload"
     
@@ -87,6 +114,12 @@ class ImgsController < ApplicationController
     @result[:total_count] = @file_list.count
     @result[:file_list] = @file_list
     render :text => @result.to_json
+  end  
+  
+ private
+ 
+  def show_error(msg)
+    render :text => ({:error => 1, :message => msg}.to_json)
   end
   
 end

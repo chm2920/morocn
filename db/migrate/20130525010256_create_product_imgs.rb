@@ -4,8 +4,6 @@ class CreateProductImgs < ActiveRecord::Migration
       t.integer :product_id
       t.string :title
       t.string :addr
-
-      t.timestamps
     end
   end
 end

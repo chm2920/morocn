@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   
-  attr_accessible :product_catalog_id, :title, :specifications, :features
+  attr_accessible :product_catalog_id, :title, :specifications, :cover, :buy_url
   
   belongs_to :product_catalog
   
@@ -9,12 +9,8 @@ class Product < ActiveRecord::Base
   has_many :product_features
   
   
-  def cover
-    "http://www.morocn.com/upload/products/5129121114154225_big.jpg"
-  end
-  
   def show_url
-    "/products/#{self.id}"
+    "/products/#{self.title}"
   end
   
 end

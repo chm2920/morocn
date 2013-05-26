@@ -19,7 +19,7 @@ Morocn::Application.routes.draw do
   match "ajax_news_list/:id" => "topics#news_list"
   
   match "product_catalogs/:id" => "products#list"
-  match "products/:id" => "products#show"
+  match "products/:title" => "products#show"
   match "products" => "products#list"
   match "clear_cookie/:id" => "products#clear_cookie"
   
@@ -103,6 +103,7 @@ Morocn::Application.routes.draw do
     get  "/filemanager" => "assets#list"
   end
   
+  match "upload_img" => "imgs#create"
   match "file_manager_json" => "imgs#list"
     
   root :to => 'start#index'

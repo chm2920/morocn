@@ -93,3 +93,9 @@ td.data_sbt input:hover, .btnSubmit:hover{background:#485B79;border:1px solid #3
 .topics_catalogs{position:absolute;top:31px;left:0;padding:5px 0;background:#EEE;border:1px solid #CCC;}
 .topics_catalogs li{padding:4px 0 4px 10px;width:109px;line-height:22px;text-align:left;}
 
+.product_imgs_tb tbody tr:hover td{background:#FFF;}
+.product_imgs{}
+.product_imgs li{float:left;display:inline;margin:10px;}
+.product_imgs li img{padding:8px;width:200px;height:200px;border:1px solid #EEE;}
+.product_imgs li p{line-height:22px;text-align:center;}
+
