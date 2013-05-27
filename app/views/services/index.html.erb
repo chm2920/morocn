@@ -1,4 +1,3 @@
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/jquery.cityselect.js"></script>
 <script type="text/javascript">
@@ -6,29 +5,31 @@ $(function(){
 	$("#city_1").citySelect({
 		nodata:"none",
 		required:false
-	}); 
+	});
 	$("#city_2").citySelect({
 		prov:"北京",
 		nodata:"none"
 	});
 	
 	$("#city_3").citySelect({
-    	prov:"湖南", 
-    	city:"长沙"
+		prov:"湖南",
+		city:"长沙"
 	});
 	$("#city_4").citySelect({
-    	prov:"上海", 
-    	city:"徐汇区",
+		prov:"上海",
+		city:"徐汇区",
 		dist:"none",
 		nodata:"none"
-	}); 
+	});
 	
 	$("#city_5").citySelect({
-		url:{"citylist":[
+		url:{
+			"citylist":[
 				{"p":"前端技术","c":[{"n":"HTML"},{"n":"CSS","a":[{"s":"CSS2.0"},{"s":"CSS3.0"}]},{"n":"JAVASCIPT"}]},
 				{"p":"编程语言","c":[{"n":"C"},{"n":"C++"},{"n":"Objective-C"},{"n":"PHP"},{"n":"JAVA"}]},
 				{"p":"数据库","c":[{"n":"Mysql"},{"n":"SqlServer"},{"n":"Oracle"},{"n":"DB2"}]},
-			]},
+			]
+		},
 		prov:"",
 		city:"",
 		dist:"",
@@ -38,45 +39,49 @@ $(function(){
 </script>
 </head>
 <script language="javascript">
-function ckfrm(){
-  var eds_content=document.form1.eds_content;
-  if (eds_content.value==""){
-    alert("填写故障内容描述！");
-    eds_content.focus();
-    return false;
-  }
-  return true;
-}
+	function ckfrm() {
+		var eds_content = document.form1.eds_content;
+		if(eds_content.value == "") {
+			alert("填写故障内容描述！");
+			eds_content.focus();
+			return false;
+		}
+		return true;
+	}
 </script>
-  <div class="location"><a href="/">首页</a><a href="/service">服务支持</a><span>故障报修</span></div>
-  <div class="clear"></div>
-  <div class="content_box service">
-    <div class="ser_action">
-	  <h2>故障保修单</h2>
-	  <div class="ser_con">
-<form name="form1" method="post" action="service.asp" onSubmit="return ckfrm();">
-<input type="hidden" name="action" value="ok" class="input"/>
-	    <ul>
-		  <li>
-		    <b>选择您的所在地</b><br />
-			<div id="city_4">
-				<select class="prov" name="eds_prov"></select> 
-				<select class="city" name="eds_city" disabled="disabled"></select>
-				<select class="dist" name="eds_dist" disabled="disabled"></select>
-			</div>
-		  </li>
-		  <li>
-		    <b>填写故障内容描述<span>“请务必留下您的联系方式”</span></b><br />
-			<textarea name="eds_content" rows="10" style="width:99%;"></textarea>
-		  </li>
-		  <li>
-		    <button type="submit">确认提交</button>
-		  </li>
-		  <li>
-		    <div class="ser_tel">或者拨打全国统一售后电话<br />400-820-0407</div>
-		  </li>
-		</ul>
-  </form>
-	  </div>
+<div class="location">
+	<a href="/">首页</a><a href="/service">服务支持</a><span>故障报修</span>
+</div>
+<div class="clear"></div>
+<div class="content_box service">
+	<div class="ser_action">
+		<h2>故障保修单</h2>
+		<div class="ser_con">
+			<form name="form1" method="post" action="/service" onSubmit="return ckfrm();">
+				<input type="hidden" name="action" value="ok" class="input"/>
+				<ul>
+					<li>
+						<b>选择您的所在地</b>
+						<br />
+						<div id="city_4">
+							<select class="prov" name="eds_prov"></select>
+							<select class="city" name="eds_city" disabled="disabled"></select>
+							<select class="dist" name="eds_dist" disabled="disabled"></select>
+						</div>
+					</li>
+					<li>
+						<b>填写故障内容描述<span>“请务必留下您的联系方式”</span></b>
+						<br />
+						<textarea name="eds_content" rows="10" style="width:99%;"></textarea>
+					</li>
+					<li>
+						<button type="submit">确认提交</button>
+					</li>
+					<li>
+						<div class="ser_tel">或者拨打全国统一售后电话<br />400-820-0407</div>
+					</li>
+				</ul>
+			</form>
+		</div>
 	</div>
-  </div>
+</div>

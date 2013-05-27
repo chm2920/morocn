@@ -12,15 +12,8 @@ class Admin::GuestbooksController < Admin::Backend
     @guestbooks = Guestbook.paginate :page => @page, :per_page => 20, :order => "id desc"
   end
 
-  def edit
+  def show
     @guestbook = Guestbook.find(params[:id])
-  end
-
-  def update
-    @guestbook = Guestbook.find(params[:id])
-    @guestbook.reply = params[:reply]
-    @guestbook.save
-    redirect_to [:admin, :guestbooks], :page => params[:page]
   end
 
   def destroy

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526093929) do
+ActiveRecord::Schema.define(:version => 20130527085406) do
 
   create_table "admins", :force => true do |t|
     t.string   "adminname"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(:version => 20130526093929) do
 
   create_table "catalogs", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "faqs", :force => true do |t|
+    t.string "title"
+    t.text   "text"
+  end
+
+  create_table "guestbooks", :force => true do |t|
+    t.string   "area"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "intros", :force => true do |t|
@@ -84,6 +96,12 @@ ActiveRecord::Schema.define(:version => 20130526093929) do
     t.string   "log_exception"
     t.string   "log_remote_ip"
     t.datetime "created_at"
+  end
+
+  create_table "sales", :force => true do |t|
+    t.integer "city_id"
+    t.string  "city"
+    t.text    "info"
   end
 
   create_table "sys_settings", :force => true do |t|

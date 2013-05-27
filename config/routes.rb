@@ -24,11 +24,9 @@ Morocn::Application.routes.draw do
   match "clear_cookie/:id" => "products#clear_cookie"
   
   match "download/(:id)" => "services#download"
-  
-  
+   
   match "sale" => "sales#index"
-  match "sales/(:id)" => "sales#show"
-  
+  match "sale_info/(:id)" => "sales#show"  
   
   match "service" => "services#index"
   match "faq" => "services#faq"
@@ -86,12 +84,19 @@ Morocn::Application.routes.draw do
     
     get "sys/settings"
     post "sys/settings"
+    
+    resources :sales
         
     post "friendlinks/batch_update"
     resources :friendlinks
     
-    post "guestbooks/index"
-    resources :guestbooks
+    resources :guestbooks do
+      collection do
+        post :index
+      end
+    end
+    
+    resources :faqs
       
     get "run_logs/index"
     post "run_logs/index"

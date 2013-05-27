@@ -1,4 +1,11 @@
-
+<%= javascript_include_tag "kindeditor" %>
+<%= form_for [:admin, @topic] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2"><%= t %></th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
 			<td colspan="2" class="blank"></td>
@@ -56,3 +63,6 @@
 			<td colspan="2" class="blank"></td>
 		</tr>
 	</tbody>
+</table>
+<input type="hidden" name="page" value="<%= params[:page] %>" />
+<% end %>

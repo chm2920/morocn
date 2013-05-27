@@ -16,9 +16,8 @@
 		<tr>
 			<th width="5%">选择</th>
 			<th width="5%">ID</th>
-			<th>标题</th>
-			<th width="20%">信息</th>
-			<th width="20%">内容</th>
+			<th width="20%">地区</th>
+			<th>内容</th>
 			<th width="15%">日期</th>
 			<th width="15%">管理</th>
 		</tr>
@@ -27,17 +26,15 @@
 	<%
 		if @guestbooks.length>0
 			@guestbooks.each do |guestbook|
-				info = JSON.parse(guestbook.info)
 	%>
 		<tr>
 			<td><%= check_box_tag 'guestbook_ids[]', guestbook.id, false, :class => 'checker' %></td>
 			<td><%= guestbook.id %></td>
-			<td style="text-align:left;"><%= guestbook.title %></a></td>
-			<td style="text-align:left;"><b><%= info["name"] %></b><br /><%= info["contact"] %></td>
-			<td style="text-align:left;"><%= guestbook.content %></td>
+			<td style="text-align:left;"><%= guestbook.area %></a></td>
+			<td style="text-align:left;"><%= guestbook.text %></td>
 			<td><%= guestbook.created_at.strftime("%Y-%m-%d %H:%M") %></td>
 			<td>
-				<a href="/admin/guestbooks/<%= guestbook.id %>/edit?page=<%= @page %>"><% if !guestbook.reply.blank? %> <b>已回复</b><% else %>回复<% end %></a>|<%= link_to "删除", {:action => "destroy", :id => guestbook, :page => @page}, :confirm => "确定删除？", :method => "delete" %>
+				<%= link_to "删除", {:action => "destroy", :id => guestbook, :page => @page}, :confirm => "确定删除？", :method => "delete" %>
 			</td>
 		</tr>
 	<%
@@ -45,7 +42,7 @@
 		else
 	%>
 		<tr>
-			<td colspan="7" style="text-align:left;">&nbsp;还没有内容。</td>
+			<td colspan="6" style="text-align:left;">&nbsp;还没有内容。</td>
 		</tr>
 	<%
 		end

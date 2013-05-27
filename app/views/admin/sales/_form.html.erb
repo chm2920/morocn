@@ -1,0 +1,36 @@
+<%= form_for [:admin, @sale] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2"><%= t %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">城市：</td>
+			<td class="data_ipt">
+				<%= @sale.city %>
+				<input type="hidden" name="sale[city]" value="<%= @sale.city %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">内容：</td>
+			<td class="data_ipt">
+				<%= f.text_area :info %>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
