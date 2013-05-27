@@ -34,10 +34,12 @@ input, option, select, textarea, button {font-size: 12px;}
 #PageBody{}
 .box{border:1px solid #b0c7fd;border-top:0;}
 .section-l{float:left;display:inline;margin-left:4px;width:325px;}
-.section-r{float:right;display:inline;margin-right:4px;width:644px;}
+.section-r{float:right;display:inline;margin-right:4px;width:647px;}
 
 .section-a{margin-top:4px;}
-.section-at{padding:0 0 0 24px;height:28px;line-height:28px;background:url(../images/sub_a_bg.png) no-repeat;font-size:14px;font-weight:bold;color:#FFF;}
+.section-at-a, .section-at-b{padding:0 0 0 24px;height:27px;line-height:27px;font-size:14px;font-weight:bold;color:#FFF;}
+.section-at-a{background:url(../images/sub_al_bg.png) no-repeat;}
+.section-at-b{background:url(../images/sub_ar_bg.png) no-repeat;}
 .section-a-con{height:285px;}
 .section-al-con{padding:18px 26px 0 26px;}
 .section-al-con p{line-height:20px;}
@@ -57,8 +59,8 @@ a.imagechangenews_fnode:active,a.imagechangenews_fnode:hover{text-decoration:non
 
 .section-b{margin-top:8px;}
 .section-bt-a, .section-bt-b{padding:0 0 0 36px;height:30px;line-height:30px;font-size:14px;font-weight:bold;color:#FFF;}
-.section-bt-a{background:url(../images/sub_b_bg.png) no-repeat;}
-.section-bt-b{background:url(../images/sub_b_bg.png) no-repeat;}
+.section-bt-a{background:url(../images/sub_bl_bg.png) no-repeat;}
+.section-bt-b{background:url(../images/sub_br_bg.png) no-repeat;}
 .section-bl-con{height:232px;}
 .section-bl-con ul{padding:10px;}
 .section-bl-con ul li{line-height:21px;}
