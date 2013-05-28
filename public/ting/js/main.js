@@ -6,9 +6,11 @@ $(function(){
 	});
 	$('.search-select li').click(function(e){
 		e.stopPropagation();
-		var p = $(this).parent();
+		var p = $(this).parent()
+			, v = $(this).text();
 		p.hide();
-		p.siblings('b').text('- ' + $(this).text() + ' -');
+		p.siblings('b').text('- ' + v + ' -');
+		p.parent().parent().find('input').val(v);
 	});
 	$(document).click(function(){
 		$('.search-select ul').hide();
