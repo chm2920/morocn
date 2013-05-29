@@ -1,3 +1,13 @@
+<%= javascript_include_tag "kindeditor" %>
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/friendlinks">管理列表</a>
+			<a href="/admin/friendlinks/new">添加链接</a>
+		</div>
+	</div>
+</div>
+<div class="main">
 <%= form_for [:admin, @friendlink] do |f| %>
 <table class="newtable">
 	<thead>
@@ -16,7 +26,15 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="data_label">地址：</td>
+			<td class="data_label">图片地址：</td>
+			<td>
+				<%= f.text_field :img_url, :class => "new_ipt" %>
+				<span class="ke-button-common ke-button-outer"><input type="button" class="ke-button-common ke-button" name="viewServer" id="viewServer" value="图片空间"></span>
+				<span class="ke-button-common ke-button-outer"><input type="button" class="ke-button-common ke-button" name="upload" id="upload" value="本地上传"></span>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">链接地址：</td>
 			<td class="data_ipt">
 				<%= f.text_field :link %>
 			</td>
@@ -33,3 +51,49 @@
 	</tbody>
 </table>
 <% end %>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+$(function(){	
+	var editor = new KindEditor.EditorClass();
+	editor.fileManagerJson = "/file_manager_json";
+	editor.uploadJson = "/upload_asset";
+	editor.extraFileUploadParams = {
+		'model_type' : 'friendlink'
+	};
+	KindEditor.loadStyle(editor.themesPath + 'default/default.css');
+	KindEditor.loadScript(editor.langPath + editor.langType + '.js');
+	
+	$('#viewServer').click(function(){
+		editor.loadPlugin('filemanager', function() {
+			editor.plugin.filemanagerDialog({
+				viewType : 'VIEW',
+				dirName : 'client',
+				clickFn : function(url, title) {
+					if (editor.dialogs.length > 0) {
+						$('#friendlink_img_url').val(url);
+						editor.hideDialog();
+					}
+				}
+			});
+		});
+	});
+	
+	$('#upload').click(function(){
+		editor.loadPlugin('image', function() {
+			editor.plugin.imageDialog({
+				showRemote: false,
+				clickFn : function(url, title, width, height, border, align) {
+					$('#friendlink_img_url').val(url);
+					setTimeout(function() {
+						editor.hideDialog().focus();
+					}, 0);
+				}
+			});
+		});
+	});
+		
+});
+//]]>
+</script>

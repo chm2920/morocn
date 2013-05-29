@@ -1,0 +1,62 @@
+<%= form_tag :action => "index_ads" do %>	
+<table class="setTable">
+	<thead>
+		<tr>
+			<th colspan="2">首页图片广告</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">网站名称：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][site_name]" value="<%= @setting["site_name"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">站点默认关键字：</td>
+			<td class="data_ipt">
+				<textarea name="sys_setting[setting][site_keywords]"><%= @setting["site_keywords"] %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">站点描述：</td>
+			<td class="data_ipt">
+				<textarea name="sys_setting[setting][site_desc]"><%= @setting["site_desc"] %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">版权：</td>
+			<td class="data_ipt">
+				<textarea name="sys_setting[setting][copyright]"><%= @setting["copyright"] %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">备案号：</td>
+			<td class="data_ipt">
+				<input type="text" name="sys_setting[setting][beian]" value="<%= @setting["beian"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="确定" />
+			</td>
+		</tr>
+		<% if !@result.nil? %>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">result：</td>
+			<td class="data_result">保存成功。</td>
+		</tr>
+		<% end %>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>

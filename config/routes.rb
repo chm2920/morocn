@@ -85,10 +85,19 @@ Morocn::Application.routes.draw do
     get "sys/settings"
     post "sys/settings"
     
+    get "sys/flashpics"
+    post "sys/flashpics"
+    
+    get "sys/index_ads"
+    post "sys/index_ads"
+    
     resources :sales
         
-    post "friendlinks/batch_update"
-    resources :friendlinks
+    resources :friendlinks do
+      collection do
+        post :batch_update
+      end
+    end
     
     resources :guestbooks do
       collection do

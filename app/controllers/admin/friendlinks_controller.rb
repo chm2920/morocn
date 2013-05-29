@@ -22,10 +22,6 @@ class Admin::FriendlinksController < Admin::Backend
   def new
     @friendlink = Friendlink.new
   end
-
-  def edit
-    @friendlink = Friendlink.find(params[:id])
-  end
   
   def create
     @friendlink = Friendlink.new(params[:friendlink])
@@ -36,12 +32,6 @@ class Admin::FriendlinksController < Admin::Backend
     else
       render :action => "new"
     end
-  end
-
-  def update
-    @friendlink = Friendlink.find(params[:id])
-    @friendlink.update_attributes(params[:friendlink])
-    redirect_to :action => :index
   end
 
   def destroy
