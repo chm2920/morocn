@@ -85,7 +85,9 @@
  <a href="http://www.cxsled.com/" target="_blank">LED路灯</a>
    </div>
    <div class="foot_client fl">
- <a href="http://" target="_blank"><img src="/upload/client/3175121204203602_large.jpg" /></a><a href="http://" target="_blank"><img src="/upload/client/2049121204184435_large.jpg" /></a><a href="http://" target="_blank"><img src="/upload/client/9509121114160127_large.jpg" /></a><a href="http://" target="_blank"><img src="/upload/client/3485121114160108_large.jpg" /></a><a href="http://" target="_blank"><img src="/upload/client/6559121114160006_large.jpg" /></a>
+<% @friendlinks.each do |f| %>
+	<a href="<%= f.link %>" target="_blank" title="<%= f.title %>"><img src="<%= f.img_url %>" /></a>
+<% end %>
     </div>
 </div>
 </div>

@@ -16,6 +16,10 @@ class AssetsController < ApplicationController
       uploader_model = "ProductFileUploader"
     when "friendlink"
       uploader_model = "FriendlinkUploader"
+    when "flashpic"
+      uploader_model = "FlashpicUploader"
+    when "index_ad"
+      uploader_model = "IndexAdUploader"
     else
       uploader_model = "AssetUploader"
     end
