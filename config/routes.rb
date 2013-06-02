@@ -1,6 +1,7 @@
 Morocn::Application.routes.draw do
   
-  match "ch" => "start#ch"
+  match 'zh' => 'start#ch', :id => "zh"
+  match "en" => "start#ch", :id => "en"
   match "about" => "about#about"
   match "culture" => "about#culture"
   match "honor" => "about#honor"
@@ -124,7 +125,6 @@ Morocn::Application.routes.draw do
   match "upload_asset" => "assets#create"
   match "file_manager_json" => "assets#list"
       
-  #match '/:locale' => 'start#index'
   root :to => 'start#index'
   
   match "*path" => "application#render_not_found"

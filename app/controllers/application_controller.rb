@@ -6,13 +6,7 @@ class ApplicationController < ActionController::Base
   def set_locale
     if !params[:locale].blank?
       session[:locale] = params[:locale]
-    puts "----------"
-    puts params[:locale]
-    puts "----------"
     end
-    puts "----------"
-    puts session[:locale]
-    puts "----------"
     I18n.locale = session[:locale] || I18n.default_locale
     rescue
     I18n.locale = session[:locale] = I18n.default_locale

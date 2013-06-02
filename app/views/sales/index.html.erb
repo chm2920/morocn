@@ -84,6 +84,11 @@
 <script type="text/javascript">
 var roomid = '';
 $(function(){
+	$.ajaxSetup({   
+		beforeSend: function(xhr) {   
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));   
+		}   
+	});  
 	$('area').hover(function(){
 		var areaId = $(this).attr('areaID');
 		// console.log(areaId);
