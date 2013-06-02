@@ -7,4 +7,8 @@ class StartController < ApplicationController
     @index_ads = JSON.parse(@sys_setting.setting)
   end
   
+  def ch
+    session[:local] = params[:local]
+  end
+  
 end

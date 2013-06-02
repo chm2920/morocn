@@ -1,5 +1,52 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  base:
+    about: "About Monroe"
+    intro: "Company Brief Introduction"
+    culture: "Enterprice Culture"
+    honor: "Enterprice Honour"
+    news_list1: "MORO Information"
+    news_list2: "Community Socially Useful Activity"
+    products: "Product Exhibit"
+
+    sale: "Chinese Market Distribution"
+    shoppingcenter: "Shopping Center In China"
+    online: "Buy Goods online"
+    
+    join: "Merchants join"
+    join_doc: "招商政策"
+    join_process: "招商流程"
+    
+    service: "Service Support"
+    faults: "Fault Handling"
+    faqs: "Common Fault"
+    downloads: "Downlaod Information"
+    
+    contact: "联系我们"
+    careers: "人才招聘"
+    declaration: "隐私声明"
+  location:
+    index: "Index"
+    about: "About Monroe"
+    intro: "Company Brief Introduction"
+    culture: "Enterprice Culture"
+    honor: "Enterprice Honour"
+    news_list1: "MORO Information"
+    news_list2: "Community Socially Useful Activity"
+    products: "Product Exhibit"
+
+    sale: "Chinese Market Distribution"
+    shoppingcenter: "Shopping Center In China"
+    online: "Buy Goods online"
+    
+    join: "Merchants join"
+    join_doc: "招商政策"
+    join_process: "招商流程"
+    
+    service: "Service Support"
+    faults: "Fault Handling"
+    faqs: "Common Fault"
+    downloads: "Downlaod Information"
+    
+    contact: "联系我们"
+    careers: "人才招聘"
+    declaration: "隐私声明"

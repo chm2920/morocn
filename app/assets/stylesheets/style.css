@@ -37,8 +37,8 @@ select:focus,input.input:focus,textarea:focus,px_avatar:focus{color:#5093D5;bord
 /*头部*/
 #header{width:100%;margin:0 auto;text-align:right;}
 /*导航*/
-.navbox{width:100%;height:45px;margin:0 auto;position:relative;z-index:999;}
-#navlist{width:100%;height:30px;position:absolute;top:12px;left:0;}
+.navbox{width:100%;height:57px;margin:0 auto;position:relative;z-index:999;}
+#navlist{height:30px;position:absolute;top:24px;right:0;}
 #navlist li{float:left;position:relative;}
 #navlist li a{float:left;height:30px; line-height:30px;text-align:center; font-size:15px; color:#333;background-image:url(/assets/nav_bg.png);background-repeat:no-repeat; padding:0 23px; position:relative; font-family:"Microsoft YaHei","微软雅黑";}
 #navlist li a:hover{ color:#F1592A;}
@@ -57,8 +57,10 @@ select:focus,input.input:focus,textarea:focus,px_avatar:focus{color:#5093D5;bord
 #navlist li .subbox .item dl dt{float:left}
 #navlist li .subbox .item dl a{background:url(/assets/ico_04.png) no-repeat left center;}
 #navlist li .subbox .item dl a:hover{background:url(/assets/ico_05.png) no-repeat left center;color:#F1592A;}
-.top_logo{width:253px;height:35px;position:absolute;top:5px;right:0;background-image:url(/assets/language.png);background-repeat:no-repeat;}
+.top_logo{width:253px;height:35px;position:absolute;top:5px;left:0;background-image:url(/assets/language.png);background-repeat:no-repeat;}
 .top_logo a{ width:253px; height:35px; display:block;}
+.lang{position:absolute;top:-5px;right:10px;}
+.lang a{margin:0 10px;}
 /*切换*/
 .index_pic{width:100%;height:400px;position:relative; margin-top:10px;}
 .myfocus{width:100%;height:400px;margin:0 auto;}

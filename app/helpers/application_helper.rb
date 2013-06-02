@@ -5,15 +5,19 @@ module ApplicationHelper
     loc = ""
     case cat
     when "about"
-      loc = %Q(<a href="/about" title=\"关于梦露\">关于梦露</a>)
+      loc = %Q(<a href="/about" title="#{_t "location.about"}">#{_t "location.about"}</a>)
     when "sale"
-      loc = %Q(<a href="/sale">全国市场一览</a>)
+      loc = %Q(<a href="/sale">#{_t 'location.sale'}</a>)
     when "join"
-      loc = %Q("<a href="/join">招商加盟</a>")
+      loc = %Q(<a href="/join">#{_t 'location.join'}</a>)
     when "contact"
       loc = ""
     end
     loc.html_safe
+  end
+  
+  def _t(key, *args)
+    I18n.t(key, *args)
   end
   
 end

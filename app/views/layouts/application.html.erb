@@ -1,95 +1,115 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><% if !@title.blank? %><%= @title %><% else %><%= @setting["site_name"] %><% end %> - MORO</title>
-<meta name="keywords" content="<%= @setting["site_keywords"] %>" />
-<meta name="description" content="<%= @setting["site_desc"] %>" />
-<%= stylesheet_link_tag    "style", :media => "all" %>
-<%= javascript_include_tag "jquery-1.4.4.min", "common" %>
-<%= csrf_meta_tags %>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><% if !@title.blank? %><%= @title %><% else %><%= @setting["site_name"] %><% end %> - MORO</title>
+	<meta name="keywords" content="<%= @setting["site_keywords"] %>" />
+	<meta name="description" content="<%= @setting["site_desc"] %>" />
+	<%= stylesheet_link_tag    "style", :media => "all" %>
+	<%= javascript_include_tag "jquery-1.4.4.min", "common" %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 <div class="con_layout">
-<div class="navbox">
-  <div id="navlist">
-    <ul>
-      <li class="li_01"><a href="/about"></a></li>
-      <li class="li_02"><a href="/about">关于梦露</a>
-        <div class="subbox">
-          <div class="item"><a href="/about">公司简介</a></div>
-          <div class="item"><a href="/culture">企业文化</a></div>
-          <div class="item"><a href="/honor">企业荣誉</a></div>
-          <div class="item"><a href="/news_list/1">MORO资讯</a></div>
-          <div class="item"><a href="/news_list/2">社区公益</a></div>
-        </div>
-      </li>
-      <li class="li_02" id="nav_list"><a href="/products">产品展示<em></em></a>
-        <div class="subbox">
-			<% @product_catalogs.each do |catalog| %>
-			<div class="item"><a href="<%= catalog.show_url %>"><%= catalog.name %></a>
-				<dl>
-					<% catalog.products.each do |product| %>
-					<dt><a href="<%= product.show_url %>"><%= product.title %></a></dt>
-					<% end %>
-				</dl>
+	<div class="navbox">
+		<div class="top_logo">
+			<a href="/"></a>
+		</div>
+		<div class="lang">
+			<a href="?locale=zh">中文</a>|<a href="?locale=en">English</a>
+		</div>
+		<div id="navlist">
+			<ul>
+				<li class="li_01"><a href="/about"></a></li>
+				<li class="li_02">
+					<a href="/about"><%= _t 'base.about' %></a>
+					<div class="subbox">
+						<div class="item"><a href="/about"><%= _t 'base.intro' %></a></div>
+						<div class="item"><a href="/culture"><%= _t 'base.culture' %></a>	</div>
+						<div class="item"><a href="/honor"><%= _t 'base.honor' %></a></div>
+						<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+						<div class="item"><a href="/news_list/3">MORO Information</a></div>
+						<div class="item"><a href="/news_list/4">Community Socially Useful Activity</a></div>
+						<% else %>
+						<div class="item"><a href="/news_list/1"><%= _t 'base.news_list1' %></a></div>
+						<div class="item"><a href="/news_list/2"><%= _t 'base.news_list2' %></a></div>
+						<% end %>
+					</div>
+				</li>
+				<li class="li_02" id="nav_list">
+					<a href="/products"><%= _t 'base.products' %><em></em></a>
+					<div class="subbox">
+						<% @product_catalogs.each do |catalog| %>
+						<div class="item">
+							<a href="<%= catalog.show_url %>"><%= catalog.name %></a>
+							<dl>
+								<% catalog.products.each do |product| %>
+								<dt>
+									<a href="<%= product.show_url %>"><%= product.title %></a>
+								</dt>
+								<% end %>
+							</dl>
+						</div>
+						<% end %>
+					</div>
+				</li>
+				<li class="li_02">
+					<a href="/sale"><%= _t 'base.sale' %></a>
+					<div class="subbox">
+						<div class="item"><a href="/sale"><%= _t 'base.shoppingcenter' %></a></div>
+						<div class="item"><a href="/shop"><%= _t 'base.online' %></a></div>
+					</div>
+				</li>
+				<li class="li_02">
+					<a href="/join"><%= _t 'base.join' %></a>
+					<div class="subbox">
+						<div class="item"><a href="/join"><%= _t 'base.join_doc' %></a></div>
+						<div class="item"><a href="/process"><%= _t 'base.join_process' %></a></div>
+					</div>
+				</li>
+				<li class="li_03">
+					<a href="/service"><%= _t 'base.service' %></a>
+					<div class="subbox last">
+						<div class="item"><a href="/service"><%= _t 'base.faults' %></a></div>
+						<div class="item"><a href="/faq"><%= _t 'base.faqs' %></a></div>
+						<div class="item"><a href="/download"><%= _t 'base.downloads' %></a></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<%= yield %>
+	<div class="clear"></div>
+	<div class="footer_box">
+		<div class="foot_links">
+			<ul class="fl">
+				<li><a href="/contact"><%= _t 'base.contact' %></a></li>
+				<li><a href="/careers"><%= _t 'base.careers' %></a></li>
+				<li><a href="/declaration"><%= _t 'base.declaration' %></a></li>
+			</ul>
+			<div class="weibo">
+				<iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=2973801860&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 62px; height: 22px;" width="200"></iframe>
 			</div>
-			<% end %>
-        </div>
-      </li>
-      <li class="li_02"><a href="/sale">全国市场一览</a>
-        <div class="subbox">
-          <div class="item"><a href="/sale">全国实体店</a></div>
-          <div class="item"><a href="/shop">网上商城</a></div>
-        </div>
-      </li>
-      <li class="li_02"><a href="/join">招商加盟</a>
-        <div class="subbox">
-          <div class="item"><a href="/join">招商政策</a></div>
-          <div class="item"><a href="/process">招商流程</a></div>
-        </div>
-      </li>
-      <li class="li_03"><a href="/service">服务支持</a>
-        <div class="subbox last">
-          <div class="item"><a href="/service">故障报修</a></div>
-          <div class="item"><a href="/faq">常见问题</a></div>
-          <div class="item"><a href="/download">资料下载</a></div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="top_logo"><a href="/"></a></div>
-</div>
-<div class="clear"></div>
-
-<%= yield %>
-
-<div class="clear"></div>
-<div class="footer_box">
-  <div class="foot_links">
-    <ul class="fl">
-      <li><a href="/contact">联系我们</a></li>
-      <li><a href="/careers">人才招聘</a></li>
-      <li><a href="/declaration">隐私声明</a></li>
-    </ul>
-	<div class="weibo"><iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=2973801860&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 62px; height: 22px;" width="200"></iframe></div>
-	<div class="mail"><a href="mailto:moro_sh@morocn.com">官方邮箱</a></div>
-    <span class="fr"><em class="tel"></em>全国免费服务热线：400-820-0407</span>
-  </div>
- <div class="copyright">
-   <span class="fl"><%= @setting["copyright"] %></span>
-   <span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank"><%= @setting["beian"] %></a></span>
- </div>
- <div class="foot_lj">
-   <div class="foot_link fr">
- <a href="http://www.cxsled.com/" target="_blank">LED路灯</a>
-   </div>
-   <div class="foot_client fl">
-<% @friendlinks.each do |f| %>
-	<a href="<%= f.link %>" target="_blank" title="<%= f.title %>"><img src="<%= f.img_url %>" /></a>
-<% end %>
-    </div>
-</div>
-</div>
+			<div class="mail">
+				<a href="mailto:moro_sh@morocn.com">官方邮箱</a>
+			</div>
+			<span class="fr"><em class="tel"></em>全国免费服务热线：400-820-0407</span>
+		</div>
+		<div class="copyright">
+			<span class="fl"><%= @setting["copyright"] %></span>
+			<span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank"><%= @setting["beian"] %></a></span>
+		</div>
+		<div class="foot_lj">
+			<div class="foot_link fr">
+				<a href="http://www.cxsled.com/" target="_blank">LED路灯</a>
+			</div>
+			<div class="foot_client fl">
+				<% @friendlinks.each do |f| %>
+				<a href="<%= f.link %>" target="_blank" title="<%= f.title %>"><img src="<%= f.img_url %>" /></a>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -1,7 +1,22 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :find_sys_setting
+  before_filter :set_locale, :find_sys_setting
+  
+  def set_locale
+    if !params[:locale].blank?
+      session[:locale] = params[:locale]
+    puts "----------"
+    puts params[:locale]
+    puts "----------"
+    end
+    puts "----------"
+    puts session[:locale]
+    puts "----------"
+    I18n.locale = session[:locale] || I18n.default_locale
+    rescue
+    I18n.locale = session[:locale] = I18n.default_locale
+  end
   
   def find_sys_setting
     @sys_setting = SysSetting.find_by_stype("setting")
@@ -9,6 +24,10 @@ class ApplicationController < ActionController::Base
     
     @product_catalogs = ProductCatalog.all
     @friendlinks = Friendlink.find(:all, :order => "rank asc")
+  end
+  
+  def _t(key, *args)
+    I18n.t(key, *args)
   end
   
 end

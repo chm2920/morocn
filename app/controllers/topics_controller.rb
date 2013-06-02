@@ -1,8 +1,14 @@
 class TopicsController < ApplicationController
   
+  skip_before_filter :set_locale, :only => :news_list
+  
   def list
     @catalog = Catalog.find(params[:id])
     @topic = @catalog.topics.first
+    if @topic.nil?
+      redirect_to "/"
+      return
+    end
     @topic.hits = @topic.hits + 1
     @topic.save
     @title = @topic.title + '-' + @catalog.name
@@ -11,6 +17,10 @@ class TopicsController < ApplicationController
   
   def show
     @topic = Topic.find(params[:id])
+    if @topic.nil?
+      redirect_to :action => "list"
+      return
+    end
     @topic.hits = @topic.hits + 1
     @topic.save
     @catalog = @topic.catalog

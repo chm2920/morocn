@@ -1,7 +1,13 @@
-<div class="location"><a href="/" title="网站首页">首页</a><%= location(@cat) %><span><%= @intro.title %></span></div>
+<div class="location">
+	<a href="/" title="<%= _t "location.index" %>"><%= _t "location.index" %></a><%= location(@cat) %><span><% if !session[:locale].blank? && session[:locale] != 'zh' %><%= @intro.en_title %><% else %><%= @intro.title %><% end %></span>
+</div>
 <div class="clear"></div>
-  <div class="content_box faq">
-    <div class="ser_action">
-	  <%= @intro.content.html_safe %>
+<div class="content_box faq">
+	<div class="ser_action">
+		<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+		<%= @intro.en_content.html_safe %>
+		<% else %>
+		<%= @intro.content.html_safe %>
+		<% end %>
 	</div>
-  </div>
+</div>

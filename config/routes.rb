@@ -1,5 +1,6 @@
 Morocn::Application.routes.draw do
   
+  match "ch" => "start#ch"
   match "about" => "about#about"
   match "culture" => "about#culture"
   match "honor" => "about#honor"
@@ -29,7 +30,7 @@ Morocn::Application.routes.draw do
   match "sale_info/(:id)" => "sales#show"  
   
   match "service" => "services#index"
-  match "faq" => "services#faq"
+  match "faq" => "services#faq"  
   
   match "admin" => "account#login"
   get "account/main"
@@ -122,7 +123,8 @@ Morocn::Application.routes.draw do
   
   match "upload_asset" => "assets#create"
   match "file_manager_json" => "assets#list"
-    
+      
+  #match '/:locale' => 'start#index'
   root :to => 'start#index'
   
   match "*path" => "application#render_not_found"
