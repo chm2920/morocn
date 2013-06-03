@@ -1,25 +1,27 @@
 <div id="index_pic">
-<div id="banner_pic">
-	<% 1.upto 4 do |i| %>
+	<div id="banner_pic">
+		<% 1.upto 4 do |i| %>
 		<a href="<%= @flashpics["link_url"][i.to_s] %>" target="_blank" class="banner_img" style="background:url(<%= @flashpics["img_url"][i.to_s] %>) no-repeat center top;"></a>
-	<% end %>
-  <div class="banner_num"><a href="javascript:;"></a><a href="javascript:;"></a><a href="javascript:;"></a><a href="javascript:;"></a></div>
-</div>
+		<% end %>
+		<div class="banner_num">
+			<a href="javascript:;"></a><a href="javascript:;"></a><a href="javascript:;"></a><a href="javascript:;"></a>
+		</div>
+	</div>
 </div>
 <div class="clear"></div>
 <div class="block_box">
-<% 1.upto 3 do |i| -%>
-<span><a href="<%= @index_ads["link_url"][i.to_s] %>" title="<%= @index_ads["title"][i.to_s] %>" target="_blank"><img src="<%= @index_ads["img_url"][i.to_s] %>" alt="<%= @index_ads["title"][i.to_s] %>"/></a></span>
-<% end -%>
+	<% 1.upto 3 do |i| -%>
+	<span><a href="<%= @index_ads["link_url"][i.to_s] %>" title="<%= @index_ads["title"][i.to_s] %>" target="_blank"><img src="<%= @index_ads["img_url"][i.to_s] %>" alt="<%= @index_ads["title"][i.to_s] %>"/></a></span>
+	<% end -%>
 </div>
 
 <%= javascript_include_tag "jquery.soChange" %>
 <script type="text/javascript">
-$(function(){	
-	$(".block_box a").hover(function() {
-		$(this).stop().fadeTo("fast", 0.5);
-	},function() {
-		$(this).stop().fadeTo("fast", 1);
+	$(function() {
+		$(".block_box a").hover(function() {
+			$(this).stop().fadeTo("fast", 0.5);
+		}, function() {
+			$(this).stop().fadeTo("fast", 1);
+		});
 	});
-});
 </script>
