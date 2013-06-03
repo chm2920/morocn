@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     
     @product_catalogs = ProductCatalog.all
     @friendlinks = Friendlink.find(:all, :order => "rank asc")
+    @kfs = Kf.all
   end
   
   def _t(key, *args)

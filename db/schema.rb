@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529071939) do
+ActiveRecord::Schema.define(:version => 20130603173847) do
 
   create_table "admins", :force => true do |t|
     t.string   "adminname"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(:version => 20130529071939) do
     t.text   "content"
     t.string "en_title"
     t.text   "en_content"
+  end
+
+  create_table "kfs", :force => true do |t|
+    t.string "stype"
+    t.string "title"
+    t.string "account"
   end
 
   create_table "kindeditor_assets", :force => true do |t|

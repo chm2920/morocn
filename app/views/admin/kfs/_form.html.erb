@@ -1,0 +1,54 @@
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/kfs">FAQs</a>
+			<a href="/admin/kfs/new">添加 FAQ</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+<%= form_for [:admin, @kf] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2"><%= t %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">类型：</td>
+			<td class="data_ipt">
+				<select name="kf[stype]">
+					<option value="qq"<% if "qq" == @kf.stype %> selected<% end %>>QQ</option>
+					<option value="msn"<% if "msn" == @kf.stype %> selected<% end %>>MSN</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">标题：</td>
+			<td class="data_ipt">
+				<%= f.text_field :title %>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">帐号：</td>
+			<td class="data_ipt">
+				<%= f.text_field :account %>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
+</div>

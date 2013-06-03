@@ -14,26 +14,19 @@
 	<div class="kf-p-t"><span id="kf_p_cls"></span></div>
 	<div class="kf-p-m">
 		<ul>
+			<% @kfs.each do |kf| %>
 			<li>
-				<a target="_blank" class="ec_qq" href="http://wpa.qq.com/msgrd?v=3&uin=53192877&site=qq&menu=yes">
-					<img border="0" src="http://wpa.qq.com/pa?p=2:53192877:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
-					<b>宁波业务咨询一宁波业务咨询一</b></a>
-			</li>
-			<li>
-				<a href="msnim:chat?contact=wangsdong@aspprogram.cn" tareget="_blank">
+				<% if kf.stype == "qq" %>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<%= kf.account %>&site=qq&menu=yes">
+					<img border="0" src="http://wpa.qq.com/pa?p=2:<%= kf.account %>:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+					<b><%= kf.title %></b></a>
+				<% else %>
+				<a href="msnim:chat?contact=<%= kf.account %>" tareget="_blank">
 					<img border="0" src="/assets/cslist/msn.png" alt="点击这里给我发消息" title="点击这里给我发消息"/>
-					宁波业务咨询一</a>
+					<%= kf.title %></a>
+				<% end %>
 			</li>
-			<li>
-				<a target="_blank" class="ec_qq" href="http://wpa.qq.com/msgrd?v=3&uin=53192877&site=qq&menu=yes">
-					<img border="0" src="http://wpa.qq.com/pa?p=2:53192877:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
-					宁波业务咨询一</a>
-			</li>
-			<li>
-				<a target="_blank" class="ec_qq" href="http://wpa.qq.com/msgrd?v=3&uin=53192877&site=qq&menu=yes">
-					<img border="0" src="http://wpa.qq.com/pa?p=2:53192877:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
-					宁波业务咨询一</a>
-			</li>
+			<% end %>
 		</ul>
 		<div class="kf-p-logo">
 			<a href="#"><img src="/assets/cslist/logo.jpg" /></a>

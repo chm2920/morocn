@@ -11,6 +11,7 @@ class Admin::SysController < Admin::Backend
       if @sys_setting.nil?
         @sys_setting = SysSetting.new
         @sys_setting.stype = "setting"
+        @sys_setting.setting = "{}"
         @sys_setting.save
       end
     end
@@ -28,6 +29,7 @@ class Admin::SysController < Admin::Backend
       if @sys_setting.nil?
         @sys_setting = SysSetting.new
         @sys_setting.stype = "flashpics"
+        @sys_setting.setting = "{}"
         @sys_setting.save
       end
     end
@@ -45,6 +47,7 @@ class Admin::SysController < Admin::Backend
       if @sys_setting.nil?
         @sys_setting = SysSetting.new
         @sys_setting.stype = "index_ads"
+        @sys_setting.setting = "{}"
         @sys_setting.save
       end
     end

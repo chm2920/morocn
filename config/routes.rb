@@ -108,6 +108,8 @@ Morocn::Application.routes.draw do
     end
     
     resources :faqs
+    
+    resources :kfs
       
     get "run_logs/index"
     post "run_logs/index"
