@@ -22,7 +22,7 @@
 	%>
 		<tr>
 			<td><%= entry[:filename] %></td>
-			<td><%= number_to_human_size(entry[:filesize]) %></td>
+			<td><%= number_to_human_size(entry[:filesize], :locale => "en") %></td>
 			<td><%= link_to "还原", {:action => "restore", :f => entry[:filename]}, :confirm => "确定还原？", :method => "post" %>|<%= link_to "删除", {:action => "destroy", :f => entry[:filename]}, :confirm => "确定删除？", :method => "delete" %></td>
 		</tr>
 	<%

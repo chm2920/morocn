@@ -293,7 +293,7 @@ div.ser_tel{background:#dedede url(/assets/tel2.png) no-repeat 10px center; padd
 
 .clear{clear:both;height:0}
 
-#kf_panel{width:143px;}
+#kf_panel{position:fixed;z-index:999;width:143px;cursor:default;display:none;}
 .kf-p-t{position:relative;height:69px;background:url(/assets/cslist/cslist_top_bg.png) no-repeat 0 top;cursor:default;}
 .kf-p-t span{position:absolute;top:9px;right:7px;display:block;width:8px;height:8px;background:url(/assets/cslist/cslist_top_shut.gif) no-repeat 0 0;cursor:pointer;}
 .kf-p-m{background:url(/assets/cslist/cslist_mid_bg.png) repeat-y 0 0;}
@@ -302,7 +302,10 @@ div.ser_tel{background:#dedede url(/assets/tel2.png) no-repeat 10px center; padd
 .kf-p-m ul li a{display:block;margin:0 auto;padding:4px 3px 2px;width:124px;height:21px;cursor:pointer;border-top:1px solid #9fcefa;border-bottom:1px solid #9fcefa;background:#9fcefa;}
 .kf-p-m ul li a:hover{border-top:1px solid #8fbae2;border-bottom:1px solid #8fbae2;background:#d5e8fa;}
 .kf-p-m ul li a b{display:block;width:82px;height:21px;line-height:21px;white-space:nowrap;overflow:hidden;font-weight:normal;}
-.kf-p-m ul li img{float:right;display:inline;}
+.kf-p-m ul li img{float:right;display:inline;width:21px;height:21px;}
+.kf-p-logo{padding:4px 0 0;}
+.kf-p-logo img{display:block;margin-left:5px;}
+.kf-p-logo p{width:140px;text-align:center;font-size:10px;}
 .kf-p-b{height:17px;background:url(/assets/cslist/cslist_btm_none.png) no-repeat 0 bottom;}
 
 
