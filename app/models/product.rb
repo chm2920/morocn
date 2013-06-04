@@ -15,4 +15,8 @@ class Product < ActiveRecord::Base
     "/products/#{self.title}"
   end
   
+  def order_url
+    "/order/#{self.title}"
+  end
+  
 end

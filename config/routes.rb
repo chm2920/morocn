@@ -23,6 +23,8 @@ Morocn::Application.routes.draw do
   match "product_catalogs/:id" => "products#list"
   match "products/:title" => "products#show"
   match "products" => "products#list"
+  match "order/:title" => "products#order"
+  match "order_rst" => "products#order_rst"
   match "clear_cookie/:id" => "products#clear_cookie"
   
   match "download/(:id)" => "services#download"
@@ -70,6 +72,12 @@ Morocn::Application.routes.draw do
       
       resources :product_files
     end
+    
+    resources :product_orders do
+      collection do
+        post :index
+      end
+    end
         
     get "db/index"
     
@@ -93,7 +101,11 @@ Morocn::Application.routes.draw do
     get "sys/index_ads"
     post "sys/index_ads"
     
-    resources :sales
+    resources :sales do
+      member do
+        post :clear
+      end
+    end
         
     resources :friendlinks do
       collection do

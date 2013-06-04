@@ -17,7 +17,7 @@
 			<td><%= sale.city %></td>
 			<td><% if !sale.info.blank? %><b>已开通</b><% else %>未开通<% end %></td>
 			<td>
-				<a href="/admin/sales/<%= sale.id %>/edit">编辑信息</a>
+				<a href="/admin/sales/<%= sale.id %>/edit">编辑信息</a>|<%= link_to "清空信息", {:action => "clear", :id => sale}, :confirm => "确定清空？", :method => "post" %>
 			</td>
 		</tr>
 	<%

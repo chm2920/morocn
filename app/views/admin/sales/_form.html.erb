@@ -13,13 +13,118 @@
 			<td class="data_label">城市：</td>
 			<td class="data_ipt">
 				<%= @sale.city %>
-				<input type="hidden" name="sale[city]" value="<%= @sale.city %>" />
 			</td>
 		</tr>
 		<tr>
-			<td class="data_label">内容：</td>
+			<td class="data-leg">旗舰店：</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="data_label">地址：</td>
 			<td class="data_ipt">
-				<%= f.text_area :info %>
+				<input type="text" name="sale[a][addr]" value="<%= @info["a"]["addr"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">电话：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[a][phone]" value="<%= @info["a"]["phone"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">QQ：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[a][qq]" value="<%= @info["a"]["qq"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">MSN：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[a][msn]" value="<%= @info["a"]["msn"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data-leg">经销商：</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="data_label">地址：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[b][addr]" value="<%= @info["b"]["addr"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">电话：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[b][phone]" value="<%= @info["b"]["phone"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">QQ：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[b][qq]" value="<%= @info["b"]["qq"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">MSN：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[b][msn]" value="<%= @info["b"]["msn"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data-leg">分销商：</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="data_label">地址：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[c][addr]" value="<%= @info["c"]["addr"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">电话：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[c][phone]" value="<%= @info["c"]["phone"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">QQ：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[c][qq]" value="<%= @info["c"]["qq"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">MSN：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[c][msn]" value="<%= @info["c"]["msn"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data-leg">大卖场：</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="data_label">地址：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[d][addr]" value="<%= @info["d"]["addr"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">电话：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[d][phone]" value="<%= @info["d"]["phone"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">QQ：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[d][qq]" value="<%= @info["d"]["qq"] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">MSN：</td>
+			<td class="data_ipt">
+				<input type="text" name="sale[d][msn]" value="<%= @info["d"]["msn"] %>" />
 			</td>
 		</tr>
 		<tr>

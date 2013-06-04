@@ -148,6 +148,18 @@ a.download:hover{ background-position:left bottom;}
 #banner_pic .banner_num .now{ border:1px solid #5C293A;}
 .banner_1{ width:658px; overflow:hidden;}
 
+.product-order{position:absolute;left:20px;bottom:-7px;z-index:1001;}
+.order{}
+.order p{padding:0 0 20px 0;line-height:22px;text-align:center;}
+.order table{margin:0 auto;width:70%;border:1px solid #CCC;border-collapse:collapse;border-spacing:0;}
+.order td{padding:8px 10px;height:24px;line-height:24px;border:1px solid #CCC;}
+.order td.order-label{width:20%;text-align:right;}
+.order td .order-input, .order td .order-input2{padding:2px 4px;width:290px;height:20px;line-height:20px;border:1px solid #CCC;font-size:12px;}
+.order td .order-input2{width:360px;}
+.order-note{padding:2px 4px;width:360px;height:120px;line-height:20px;border:1px solid #CCC;font-size:12px;}
+.order-submit{text-align:center;}
+.order-submit input{padding:4px 20px;line-height:20px;}
+
 #index_pic{width:980px;height:400px;position:relative; margin-top:10px;}
 #index_pic #banner_pic{width:100%;height:400px;position:relative;z-index:400;overflow:hidden;}
 #index_pic #banner_pic .banner_img{width:100%;height:400px;left:0;position:absolute;display:none;}
@@ -202,6 +214,7 @@ th:100%; background-repeat:repeat-y; }
 
 
 .sale_right{ width:250px;height:580px;border-left:1px solid #ddd; padding:20px 10px 10px 0;}
+/*
 .sale_list{ width:235px; clear:both;}
 .sale_list li{ width:235px;line-height:16px; position:relative; float:left;}
 .sale_list li:first-child{ padding-top:0;}
@@ -218,6 +231,16 @@ th:100%; background-repeat:repeat-y; }
 .sale_list li div.hover p{ padding-top:5px;}
 .sale_list li div.hover a.map{display:inline-block; height:25px; line-height:25px; background:url(/assets/map.jpg) no-repeat left center; text-indent:30px;}
 .sale_list li div.hover a.pic{display:inline-block; height:25px; line-height:25px; background:url(/assets/pic.gif) no-repeat left center; text-indent:20px; float:right;}
+*/
+.sale-list{margin:0 0 0 20px;width:220px;}
+.sale-list-t{}
+.sale-list ul{}
+.sale-list ul li{padding:4px 0;}
+.sale-list ul li b{line-height:28px;font-size:14px;font-weight:bold;}
+.sale-list ul li table{width:100%;border:0;border-collapse:collapse;border-spacing:0;}
+.sale-list ul li td{line-height:22px;vertical-align: top;}
+.sale-list ul li td.sale-label{width:65px;}
+.sale-list ul li td a{display:block;}
 
 .map_pic{ width:652px; height:480px; background:url(/assets/map/map.gif) no-repeat; top:80px; left:30px;position:relative; z-index:1;}
 .map_pic h2{width:100%; height:24px; position:absolute; left:0; top:-60px; z-index:30; display:block;font-family:"Microsoft YaHei","微软雅黑"; font-weight:400; color:#333; font-size:18px;}

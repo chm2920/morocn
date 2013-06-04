@@ -30,6 +30,7 @@ body::-webkit-scrollbar-thumb:active{background: rgba(0,0,0,0.6);}
 .stdtable th{background:#F8F8F8;}
 .stdtable td .checker{width:18px;height:18px;}
 .stdtable tbody tr:hover td{background:#E8EAEB;}
+.stdtable tbody tr td{line-height:22px;}
 .stdtable tbody tr td a{margin:0 10px;}
 .stdtable tbody tr td b{font-weight:normal;color:#FF0000;}
 
@@ -37,6 +38,7 @@ body::-webkit-scrollbar-thumb:active{background: rgba(0,0,0,0.6);}
 .newtable td{padding:6px 20px;}
 .newtable td.blank{padding:0;height:20px;}
 .newtable td.data_label{width:15%;text-align:right;color:#666;}
+.newtable td.data-leg{width:15%;text-align:center;font-weight:bold;color:#666;}
 .newtable td.data_check input{margin:0 4px -2px;}
 .newtable td.data_ipt{text-align:left;}
 .newtable td.data_ipt input, .new_ipt{padding:4px 6px;width:400px;height:20px;line-height:20px;border:1px solid #CCC;border-radius:2px;font-size:12px;}

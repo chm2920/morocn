@@ -37,6 +37,25 @@ class ProductsController < ApplicationController
     end    
   end
   
+  def order
+    @product = Product.find_by_title(params[:title])
+    if @product.nil?
+      redirect_to "/products"
+      return
+    end
+    
+    @title = @product.title + " 在线订购"
+  end
+  
+  def order_rst
+    @product_order = ProductOrder.new
+    @product_order.items = params[:product_order][:items].to_json
+    @product_order.info = params[:product_order][:info].to_json
+    @product_order.save
+    
+    @title = "在线订购成功"
+  end
+  
   def clear_cookie
     session[:products] = nil
     @product = Product.find(params[:id])

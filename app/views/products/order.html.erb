@@ -1,0 +1,70 @@
+<div class="location">
+	<a href="/">首页</a><span>产品订购</span>
+</div>
+<div class="clear"></div>
+<div class="content_box order">
+	<p>·感谢您浏览“梦露电气”网站，如果您对我们的产品很满意想订购的话，可以填写以下订货单进行在线订购，谢谢！</p>
+	<%= form_tag "/order_rst" do %>
+	<table>
+		<tr>
+			<td class="order-label">产品型号：</td>
+			<td><input type="text" name="product_order[items][model]" class="order-input" value="<%= @product.title %>" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">定购数量：</td>
+			<td><input type="text" name="product_order[items][num]" class="order-input" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">姓名：</td>
+			<td><input type="text" name="product_order[info][name]" class="order-input" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">称呼：</td>
+			<td>
+				<input type="radio" name="product_order[info][role]" id="role-male" value="male" checked="checked" /><label for="role-male">&nbsp;先生</label>
+				&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="product_order[info][role]" id="role-female" value="female" /><label for="role-female">&nbsp;女士</label>
+			</td>
+		</tr>
+		<tr>
+			<td class="order-label">职位：</td>
+			<td><input type="text" name="product_order[info][position]" class="order-input" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">电话：</td>
+			<td><input type="text" name="product_order[info][phone]" class="order-input" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">传真：</td>
+			<td><input type="text" name="product_order[info][fax]" class="order-input" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">公司名称：</td>
+			<td><input type="text" name="product_order[info][company]" class="order-input2" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">电子邮箱：</td>
+			<td><input type="text" name="product_order[info][email]" class="order-input2" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">公司网址：</td>
+			<td><input type="text" name="product_order[info][www]" class="order-input2" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">联系地址：</td>
+			<td><input type="text" name="product_order[info][addr]" class="order-input2" /></td>
+		</tr>
+		<tr>
+			<td class="order-label">附言：</td>
+			<td>
+				<textarea name="product_order[info][note]" class="order-note"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="order-submit">
+				<input type="submit" name="submit" value="提 交" />
+			</td>
+		</tr>
+	</table>
+	<% end %>
+</div>

@@ -1,7 +1,7 @@
 <%= form_tag({:action => "index"}, {:id => "vbform"}) do %>	
 <div class="nav">
 	<div class="list-opts clearfix">
-		<%= will_paginate @guestbooks %>
+		<%= will_paginate @product_orders %>
 		<div class="nav-links">
 			<input type="button" name="selectAll" id="selectAll" value="全选">
 			<input type="button" name="selectOther" id="selectOther" value="反选">
@@ -16,25 +16,39 @@
 		<tr>
 			<th width="5%">选择</th>
 			<th width="5%">ID</th>
-			<th width="20%">地区</th>
-			<th>内容</th>
+			<th width="20%">产品信息</th>
+			<th width="20%">联系人信息</th>
+			<th>附言</th>
 			<th width="15%">日期</th>
 			<th width="15%">管理</th>
 		</tr>
 	</thead>
 	<tbody>
 	<%
-		if @guestbooks.length>0
-			@guestbooks.each do |guestbook|
+		if @product_orders.length>0
+			@product_orders.each do |product_order|
+				items = JSON.parse(product_order.items)
+				info = JSON.parse(product_order.info)
 	%>
 		<tr>
-			<td><%= check_box_tag 'guestbook_ids[]', guestbook.id, false, :class => 'checker' %></td>
-			<td><%= guestbook.id %></td>
-			<td><%= guestbook.area %></td>
-			<td style="text-align:left;"><%= guestbook.text %></td>
-			<td><%= guestbook.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+			<td><%= check_box_tag 'product_order_ids[]', product_order.id, false, :class => 'checker' %></td>
+			<td><%= product_order.id %></td>
+			<td style="text-align:left;">产品型号：<%= items["model"] %><br />定购数量：<%= items["num"] %></td>
+			<td style="text-align:left;">
+				姓名：<%= info["name"] %><br />
+				称呼：<% if info["role"] == "male" %>先生<% else %>女士<% end %><br />
+				职位：<%= info["position"] %><br />
+				电话：<%= info["phone"] %><br />
+				传真：<%= info["fax"] %><br />
+				公司名称：<%= info["company"] %><br />
+				电子邮箱：<%= info["email"] %><br />
+				公司网址：<%= info["www"] %><br />
+				联系地址：<%= info["addr"] %>
+			</td>
+			<td style="text-align:left;"><%= info["note"] %></td>
+			<td><%= product_order.created_at.strftime("%Y-%m-%d %H:%M") %></td>
 			<td>
-				<%= link_to "删除", {:action => "destroy", :id => guestbook, :page => @page}, :confirm => "确定删除？", :method => "delete" %>
+				<%= link_to "删除", {:action => "destroy", :id => product_order, :page => @page}, :confirm => "确定删除？", :method => "delete" %>
 			</td>
 		</tr>
 	<%
@@ -42,7 +56,7 @@
 		else
 	%>
 		<tr>
-			<td colspan="6" style="text-align:left;">&nbsp;还没有内容。</td>
+			<td colspan="7" style="text-align:left;">&nbsp;还没有内容。</td>
 		</tr>
 	<%
 		end

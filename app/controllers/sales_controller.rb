@@ -9,9 +9,9 @@ class SalesController < ApplicationController
   def show
     @sale = Sale.find_by_city_id(params[:id])
     if @sale
-      render :text => @sale.info
+      render :json => @sale
     else
-     render :text => "error"
+      render :json => "{'data': 'error'}"
     end
   end
   
