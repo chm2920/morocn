@@ -32,6 +32,7 @@ zh:
     index: "首页"
     about: "关于梦露"
     products: "产品展示"
+    products_list: "产品列表"
 
     sale: "全国市场一览"
     shoppingcenter: "全国实体店"
@@ -50,6 +51,12 @@ zh:
     contact: "联系我们"
     careers: "人才招聘"
     declaration: "隐私声明"
+  product:
+    model: "型号"
+    params: "规格参数"
+    features: "功能特点"
+    data: "说明书下载"
+    no_pics: "暂无图片。"
     
   will_paginate:
     previous_label: "上一页"

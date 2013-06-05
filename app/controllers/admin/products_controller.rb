@@ -45,6 +45,8 @@ class Admin::ProductsController < Admin::Backend
   
   def specifications
     @product = Product.find(params[:id])
+    @product_catalog = @product.product_catalog
+    @product_params = @product_catalog.product_params
     case request.method
     when "POST"
       hsh = {}

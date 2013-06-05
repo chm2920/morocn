@@ -1,0 +1,44 @@
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/product_catalogs/<%= @product_catalog.id %>/product_params"><%= @product_catalog.name %> 全部参数</a>
+			<a href="/admin/product_catalogs/<%= @product_catalog.id %>/product_params/new">添加参数</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+<table class="stdtable">
+	<thead>
+		<tr>
+			<th width="10%">编号</th>
+			<th width="20%">标示</th>
+			<th>名称</th>
+			<th width="30%">管理</th>
+		</tr>
+	</thead>
+	<tbody>
+	<%
+		if @product_params.length>0
+			@product_params.each do |product_param|
+	%>
+		<tr>
+			<td><%= product_param.id %></td>
+			<td><%= product_param.mark %></td>
+			<td><%= product_param.title.gsub("$$$", "&nbsp;_&nbsp;").html_safe %></td>
+			<td>
+				<a href="/admin/product_catalogs/<%= @product_catalog.id %>/product_params/<%= product_param.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => product_param}, :confirm => "确定删除？", :method => "delete" %>
+			</td>
+		</tr>
+	<%
+			end
+		else
+	%>
+		<tr>
+			<td colspan="4" style="text-align:left;">&nbsp;还没有内容。</td>
+		</tr>
+	<%
+		end
+	%>
+	</tbody>
+</table>
+</div>

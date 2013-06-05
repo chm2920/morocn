@@ -21,9 +21,9 @@
 	%>
 		<tr>
 			<td><%= product_catalog.id %></td>
-			<td><%= product_catalog.name %></td>
+			<td><%= product_catalog.name.gsub("$$$", "&nbsp;_&nbsp;").html_safe %></td>
 			<td>
-				<a href="/admin/product_catalogs/<%= product_catalog.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => product_catalog}, :confirm => "确定删除？", :method => "delete" %>
+				<a href="/admin/product_catalogs/<%= product_catalog.id %>/product_params">参数管理</a>|<a href="/admin/product_catalogs/<%= product_catalog.id %>/edit">修改</a>|<%= link_to "删除", {:action => "destroy", :id => product_catalog}, :confirm => "确定删除？", :method => "delete" %>
 			</td>
 		</tr>
 	<%

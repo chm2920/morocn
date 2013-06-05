@@ -17,7 +17,7 @@
 				<%
 					@product_catalogs.each do |catalog|
 				%>
-					<option value="<%= catalog.id %>"<% if catalog.id == @product.product_catalog_id %> selected<% end %>><%= catalog.name %></option>
+					<option value="<%= catalog.id %>"<% if catalog.id == @product.product_catalog_id %> selected<% end %>><%= catalog.show_name("zh") %></option>
 				<% 
 					end 
 				%>

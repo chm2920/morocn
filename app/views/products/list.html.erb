@@ -1,17 +1,16 @@
-<div class="location"><a href="/" title="网站首页">首页</a><a href="/products" title="产品中心">产品中心</a><% if @product_catalog %><a href="<%= @product_catalog.show_url %>" title="<%= @product_catalog.name %>"><%= @product_catalog.name %></a><% end %><span>产品列表</span></div>
+<div class="location">
+	<a href="/"><%= _t "location.index" %></a><a href="/products"><%= _t "location.products" %></a><% if @product_catalog %><a href="<%= @product_catalog.show_url %>"><%= @product_catalog.show_name(session[:locale]) %></a><% end %><span><%= _t "location.products_list" %></span>
+</div>
 <div class="clear"></div>
 <div class="content_box">
-  <div class="pro_list">
-    <ul>
-    <% @products.each_with_index do |product, i| %>
-    	<li<% if i % 2 != 0 %> class="last"<% end %>>
-		    <a href="<%= product.show_url %>" class="pic"><img src="<%= product.cover %>" alt="<%= product.title %>"/></a>
-			<a href="<%= product.show_url %>" class="text"><b><%= product.title %></b> <%= product.product_catalog.name %></a>
-		</li>
-	<% end %>
-	  <!--li class="more">
-	    <a href="javascript:;" class="pic"><img src="images/qidai.jpg" /></a>
-	  </li-->
-	</ul>
-  </div>
+	<div class="pro_list">
+		<ul>
+			<% @products.each_with_index do |product, i| %>
+			<li<% if i % 2 != 0 %> class="last"<% end %>>
+				<a href="<%= product.show_url %>" class="pic"><img src="<%= product.cover %>" alt="<%= product.title %>"/></a>
+				<a href="<%= product.show_url %>" class="text"><b><%= product.title %></b> <%= product.product_catalog.show_name(session[:locale]) %></a>
+			</li>
+			<% end %>
+		</ul>
+	</div>
 </div>

@@ -9,6 +9,10 @@
 </div>
 <div class="main">
 <%= form_for [:admin, @product, @product_feature], :html => {:multipart => true} do |f| %>
+<% 
+	arrA = @product_feature.title.split("$$$")
+	arrB = @product_feature.info.split("$$$") 
+%>
 <table class="newtable">
 	<thead>
 		<tr>
@@ -22,7 +26,13 @@
 		<tr>
 			<td class="data_label">名称：</td>
 			<td class="data_ipt">
-				<%= f.text_field :title, :style => "width:400px;" %>
+				<input type="text" name="title[zh]" value="<%= arrA[0] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">英文：</td>
+			<td class="data_ipt">
+				<input type="text" name="title[en]" value="<%= arrA[1] %>" />
 			</td>
 		</tr>
 		<tr>
@@ -36,7 +46,13 @@
 		<tr>
 			<td class="data_label">内容：</td>
 			<td class="data_ipt">
-				<%= f.text_area :info, :style => "width:400px;height:120px;" %>
+				<textarea name="info[zh]" style="width:400px;height:120px;"><%= arrB[0] %></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">英文：</td>
+			<td class="data_ipt">
+				<textarea name="info[en]" style="width:400px;height:120px;"><%= arrB[1] %></textarea>
 			</td>
 		</tr>
 		<tr>

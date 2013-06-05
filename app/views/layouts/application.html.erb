@@ -66,10 +66,11 @@
 					<div class="subbox">
 						<% @product_catalogs.each do |catalog| %>
 						<div class="item">
-							<a href="<%= catalog.show_url %>"><%= catalog.name %></a>
+							<a href="<%= catalog.show_url %>"><%= catalog.show_name(session[:locale]) %></a>
 							<dl>
 								<% catalog.products.each do |product| %>
-								<dt>
+								
+								<dt>									
 									<a href="<%= product.show_url %>"><%= product.title %></a>
 								</dt>
 								<% end %>

@@ -30,7 +30,7 @@
 			<div class="down_title">
 				<% @product_catalogs.each do |catalog| %>
 				<dl>
-					<dt><%= catalog.name %>：</dt>
+					<dt><%= catalog.show_name(session[:locale]) %>：</dt>
 					<dd>
 						<% catalog.products.each do |product| %>
 						<a href="/download/<%= product.id %>"<% if product.id == @product.id %> class="curr"<% end %>><%= product.title %></a>

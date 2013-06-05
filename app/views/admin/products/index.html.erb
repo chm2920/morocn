@@ -31,7 +31,7 @@
 			<td><%= check_box_tag 'product_ids[]', product.id, false, :class => 'checker' %></td>
 			<td><%= product.id %></td>
 			<td style="text-align:left;"><a href="<%= product.show_url %>" target="_blank"><%= product.title %></a></td>
-			<td><% if product.product_catalog %><%= product.product_catalog.name %><% end %></td>
+			<td><% if product.product_catalog %><%= product.product_catalog.show_name("zh") %><% end %></td>
 			<td><%= product.created_at.strftime("%Y-%m-%d") %></td>
 			<td>
 				<a href="/admin/products/<%= product.id %>/product_imgs?page=<%= @page %>">图片</a>|<a href="/admin/products/<%= product.id %>/product_files?page=<%= @page %>">资料</a>|

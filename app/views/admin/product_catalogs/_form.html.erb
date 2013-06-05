@@ -1,4 +1,5 @@
 <%= form_for [:admin, @product_catalog] do |f| %>
+<% arr = @product_catalog.name.split("$$$") %>
 <table class="newtable">
 	<thead>
 		<tr>
@@ -12,7 +13,13 @@
 		<tr>
 			<td class="data_label">分类名称：</td>
 			<td class="data_ipt">
-				<%= f.text_field :name %>
+				<input type="text" name="name[zh]" value="<%= arr[0] %>" />
+			</td>
+		</tr>
+		<tr>
+			<td class="data_label">英文：</td>
+			<td class="data_ipt">
+				<input type="text" name="name[en]" value="<%= arr[1] if arr[1] %>" />
 			</td>
 		</tr>
 		<tr>

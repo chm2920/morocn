@@ -1,5 +1,5 @@
 <div class="location">
-	<a href="/" title="网站首页">首页</a><a href="/products" title="产品中心">产品中心</a><a href="<%= @product_catalog.show_url %>" title="<%= @product_catalog.name %>"><%= @product_catalog.name %></a><span><%= @product.title %></span>
+	<a href="/"><%= _t "location.index" %></a><a href="/products"><%= _t "location.products" %></a><a href="<%= @product_catalog.show_url %>"><%= @product_catalog.show_name(session[:locale]) %></a><span><%= @product.title %></span>
 </div>
 <div class="clear"></div>
 <div class="content_box">
@@ -19,7 +19,7 @@
 			</div>
 			<script type="text/javascript" src="/assets/jquery.soChange.js"></script>
 			<% else %>
-			<div style="margin:240px 0 0;text-align:center;">暂无图片。</div>
+			<div style="margin:240px 0 0;text-align:center;"><%= _t "product.no_pics" %></div>
 			<% end %>
 		</div>
 	</div>
@@ -27,9 +27,9 @@
 		<div class="pro_show">
 			<div class="title">
 				<ul>
-					<li class="curr">规格参数</li>
-					<li>功能特点</li>
-					<li>说明书下载</li>
+					<li class="curr"><%= _t "product.params" %></li>
+					<li><%= _t "product.features" %></li>
+					<li><%= _t "product.data" %></li>
 				</ul>
 			</div>
 			<div class="pro_content">
@@ -40,7 +40,7 @@
 							<ul>
 								<li>
 									<div class="label">
-										型号：
+										<%= _t "product.model" %>：
 									</div>
 									<div class="cont">
 										<%= @product.title %>
@@ -48,13 +48,18 @@
 								</li>
 								<% if !@product.specifications.blank? %>
 								<% @specifications = JSON.parse(@product.specifications) %>
-								<% @specifications.each do |k, v| %>
+								<% @product_params.each do |param| %>
+								<% arr = param.title.split("$$$") %>
 								<li>
 									<div class="label">
-										<%= k %>：
+										<% if session[:locale] && session[:locale] != 'en' %>
+										<%= arr[0] %>：
+										<% else %>
+										<%= arr[1] if arr[1] %>：
+										<% end %>
 									</div>
 									<div class="cont">
-										<%= v %>
+										<%= @specifications[param.mark] %>
 									</div>
 								</li>
 								<% end %>
@@ -74,7 +79,7 @@
 									<div class="pic"><img src="<%= feature.img_url %>" />
 									</div>
 									<div>
-										<%= feature.title %>：<%= feature.info %>
+										<%= feature.show_title(session[:locale]) %>：<%= feature.show_info(session[:locale]) %>
 									</div>
 								</li>
 								<% end %>

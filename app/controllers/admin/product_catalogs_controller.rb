@@ -14,6 +14,7 @@ class Admin::ProductCatalogsController < Admin::Backend
   
   def create
     @product_catalog = ProductCatalog.new(params[:product_catalog])
+    @product_catalog.name = params[:name][:zh] + "$$$" + params[:name][:en]
     if @product_catalog.save
       redirect_to [:admin, :product_catalogs]
     else
@@ -23,7 +24,8 @@ class Admin::ProductCatalogsController < Admin::Backend
 
   def update
     @product_catalog = ProductCatalog.find(params[:id])
-    @product_catalog.update_attributes(params[:product_catalog])
+    @product_catalog.name = params[:name][:zh] + "$$$" + params[:name][:en]
+    @product_catalog.save
     redirect_to [:admin, :product_catalogs]
   end
 

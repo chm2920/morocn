@@ -31,7 +31,8 @@ en:
   location:
     index: "Index"
     about: "About Monroe"
-    products: "Product Exhibit"
+    products: "Products"
+    products_list: "List"
 
     sale: "Chinese Market Distribution"
     shoppingcenter: "Shopping Center In China"
@@ -48,3 +49,14 @@ en:
     contact: "联系我们"
     careers: "人才招聘"
     declaration: "隐私声明"
+  product:
+    model: "Model"
+    params: "规格参数"
+    features: "功能特点"
+    data: "说明书下载"
+    no_pics: "No pictures yet."
+    
+  will_paginate:
+    previous_label: "Previous"
+    next_label: "Next"
+

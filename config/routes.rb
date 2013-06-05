@@ -57,7 +57,9 @@ Morocn::Application.routes.draw do
       end
     end
     
-    resources :product_catalogs
+    resources :product_catalogs do
+      resources :product_params
+    end
     
     resources :products do
       member do

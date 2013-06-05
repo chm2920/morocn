@@ -1,0 +1,45 @@
+<div class="nav">
+	<div class="list-opts">
+		<div class="nav-links">
+			<a href="/admin/product_catalogs/<%= @product_catalog.id %>/product_params"><%= @product_catalog.name %> 全部参数</a>
+			<a href="/admin/product_catalogs/<%= @product_catalog.id %>/product_params/new">添加参数</a>
+		</div>
+	</div>
+</div>
+<div class="main">
+<%= form_for [:admin, @product_catalog, @product_param] do |f| %>
+<table class="newtable">
+	<thead>
+		<tr>
+			<th colspan="2"><%= @product_catalog.name %> <%= t %>参数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+		<tr>
+			<td class="data_label">标示：</td>
+			<td class="data_ipt"><%= f.text_field :mark %></td>
+		</tr>
+		<tr>
+			<td class="data_label">中文：</td>
+			<td class="data_ipt"><input type="text" name="title[zh]" value="<%= @param_title[0] %>" /></td>
+		</tr>
+		<tr>
+			<td class="data_label">英文：</td>
+			<td class="data_ipt"><input type="text" name="title[en]" value="<%= @param_title[1] %>" /></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td class="data_sbt">
+				<input type="submit" name="submit" value="提交" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="blank"></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
+</div>

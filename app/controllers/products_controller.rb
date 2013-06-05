@@ -6,11 +6,11 @@ class ProductsController < ApplicationController
       @product_catalog = ProductCatalog.find(params[:id])
       @products = @product_catalog.products
       
-      @title = @product_catalog.name
+      @title = @product_catalog.show_name(session[:locale])
     else
       @products = Product.all
       
-      @title = "产品展示"
+      @title = _t "location.products"
     end
   end
   
@@ -21,11 +21,12 @@ class ProductsController < ApplicationController
       return
     end
     @product_catalog = @product.product_catalog
-    @product_features = @product.product_features
+    @product_params = @product_catalog.product_params
+    @product_features = @product.product_features 
     @product_imgs = @product.product_imgs
     @product_files = ProductFile.all(:conditions => "product_id = #{@product.id} and data_type = 'doc'")
     
-    @title = @product.title + " " + @product_catalog.name
+    @title = @product.title + " " + @product_catalog.show_name(session[:locale])
     
     if session[:products].nil?
       session[:products] = []

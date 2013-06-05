@@ -49,7 +49,7 @@ class ServicesController < ApplicationController
     @product_drawings = ProductFile.find(:all, :conditions => "product_id = #{@product.id} and data_type = 'drawing'")
     @product_docs = ProductFile.find(:all, :conditions => "product_id = #{@product.id} and data_type = 'doc'")
     
-    @title = @product.title + " " + @product_catalog.name
+    @title = @product.title + " " + @product_catalog.show_name(session[:locale])
   end
   
 end
