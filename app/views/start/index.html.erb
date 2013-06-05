@@ -1,10 +1,17 @@
+<% l = @flashpics["img_url"].length %>
 <div id="index_pic">
 	<div id="banner_pic">
-		<% 1.upto 4 do |i| %>
+		<% 1.upto l do |i| %>
+		<% if @flashpics["img_url"][i.to_s] != "" %>
 		<a href="<%= @flashpics["link_url"][i.to_s] %>" target="_blank" class="banner_img" style="background:url(<%= @flashpics["img_url"][i.to_s] %>) no-repeat center top;"></a>
 		<% end %>
+		<% end %>
 		<div class="banner_num">
-			<a href="javascript:;"></a><a href="javascript:;"></a><a href="javascript:;"></a><a href="javascript:;"></a>
+			<% 1.upto l do |i| %>
+			<% if @flashpics["img_url"][i.to_s] != "" %>
+			<a href="javascript:;"></a>
+			<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>

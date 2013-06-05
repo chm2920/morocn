@@ -115,7 +115,7 @@ $(function(){
 			}
 		);
 	}
-	<% if session[:locale] && session[:locale] != "en" %>
+	<% if !session[:locale].blank? && session[:locale] != "en" %>
 	ajax_list("/ajax_news_list/1", "#news_1");
 	ajax_list("/ajax_news_list/2", "#news_2");
 	<% else %>
