@@ -10,42 +10,40 @@ en:
 
     sale: "Sales Market"
     shoppingcenter: "Shopping Center In China"
-    online: "Buy Goods online"
+    shop: "Buy Goods online"
     
-    join: "Join us"
-    join_doc: "招商政策"
-    join_process: "招商流程"
+    join: "Investment"
+    join_doc: "Global Investment"
+    join_process: "Investment Process"
     
     service: "Service Support"
     faults: "Fault Handling"
     faqs: "Common Fault"
-    downloads: "Downlaod Information"
+    downloads: "Data Download"
     
     contact: "联系我们"
     careers: "人才招聘"
-    declaration: "隐私声明"
+    declaration: "隐私声明"    
+    quality: "七星质保"
+    
+    date: "Date"
+    no_news: "No news yet."
   location:
     index: "Index"
     about: "About Monroe"
-    intro: "Company Brief Introduction"
-    culture: "Enterprice Culture"
-    honor: "Enterprice Honour"
-    news_list1: "MORO Information"
-    news_list2: "Community Socially Useful Activity"
     products: "Product Exhibit"
 
     sale: "Chinese Market Distribution"
     shoppingcenter: "Shopping Center In China"
     online: "Buy Goods online"
     
-    join: "Merchants join"
-    join_doc: "招商政策"
-    join_process: "招商流程"
+    join: "Investment"
     
     service: "Service Support"
     faults: "Fault Handling"
     faqs: "Common Fault"
-    downloads: "Downlaod Information"
+    faults_list: "Common faults"
+    downloads: "Data Download"
     
     contact: "联系我们"
     careers: "人才招聘"

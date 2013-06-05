@@ -30,11 +30,13 @@ class Admin::TopicsController < Admin::Backend
 
   def new
     @catalogs = Catalog.all
+    @page = 1
     @topic = Topic.new
   end
 
   def edit
     @catalogs = Catalog.all
+    @page = params[:page]
     @topic = Topic.find(params[:id])
   end
   

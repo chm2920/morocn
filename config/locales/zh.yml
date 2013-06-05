@@ -10,10 +10,10 @@ zh:
 
     sale: "全国市场一览"
     shoppingcenter: "全国实体店"
-    online: "网上商城"
+    shop: "网上商城"
     
     join: "招商加盟"
-    join_doc: "招商政策"
+    join_doc: "全球招商"
     join_process: "招商流程"
     
     service: "服务支持"
@@ -23,15 +23,14 @@ zh:
     
     contact: "联系我们"
     careers: "人才招聘"
-    declaration: "隐私声明"
+    declaration: "隐私声明"    
+    quality: "七星质保"
+    
+    date: "时间"
+    no_news: "还没有内容。"
   location:
     index: "首页"
     about: "关于梦露"
-    intro: "公司简介"
-    culture: "企业文化"
-    honor: "企业荣誉"
-    news_list1: "MORO资讯"
-    news_list2: "社区公益"
     products: "产品展示"
 
     sale: "全国市场一览"
@@ -45,8 +44,13 @@ zh:
     service: "服务支持"
     faults: "故障报修"
     faqs: "常见问题"
+    faults_list: "问题列表"
     downloads: "资料下载"
     
     contact: "联系我们"
     careers: "人才招聘"
     declaration: "隐私声明"
+    
+  will_paginate:
+    previous_label: "上一页"
+    next_label: "下一页"

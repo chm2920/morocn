@@ -11,7 +11,8 @@ class TopicsController < ApplicationController
     end
     @topic.hits = @topic.hits + 1
     @topic.save
-    @title = @topic.title + '-' + @catalog.name
+    
+    @title = @topic.title + ' - ' + @catalog.name
     render :show
   end
   
@@ -24,7 +25,7 @@ class TopicsController < ApplicationController
     @topic.hits = @topic.hits + 1
     @topic.save
     @catalog = @topic.catalog
-    @title = @topic.title + '-' + @catalog.name
+    @title = @topic.title + ' - ' + @catalog.name
   end
   
   def news_list

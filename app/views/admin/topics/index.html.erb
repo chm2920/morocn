@@ -1,4 +1,4 @@
-<%= form_tag({:action => "index"}, {:id => "vbform"}) do %>	
+<%= form_tag({:action => "index"}, {:id => "vbform", :method => "get"}) do %>	
 <div class="nav">
 	<div class="list-opts clearfix">
 		<%= will_paginate @topics %>

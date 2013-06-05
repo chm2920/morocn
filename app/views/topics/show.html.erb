@@ -1,4 +1,4 @@
-<div class="location"><a href="/">首页</a><a href="/about">关于梦露</a><a href="<%= @catalog.show_url %>"><%= @catalog.name %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %></div>
+<div class="location"><a href="/"><%= _t "location.index" %></a><a href="/about"><%= _t "location.about" %></a><a href="<%= @catalog.show_url %>"><%= @catalog.name %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %></div>
 <div class="clear"></div>
 <div class="content_box">
   <div class="con_left" style="min-height:500px;">
@@ -6,7 +6,7 @@
   <% if !@topic.nil? %>
     <div class="title">
 	  <h1><%= @topic.title %></h1>
-	  <div class="time">时间：<%= @topic.created_at.strftime("%Y-%m-%d") %></div>
+	  <div class="time"><%= _t "base.date" %>：<%= @topic.created_at.strftime("%Y-%m-%d") %></div>
 	  <div class="right_fd">
         <script>share();</script>
       </div>
@@ -17,11 +17,11 @@
   <div class="con_right news_right">
   <!--div class="con_right news_right" 跟随滚动条滚动-->
     <div class="news_list">
-	  <div class="title">最新资讯 </div>
+	  <div class="title"><%= _t "base.news_list1" %></div>
 	  <div id="news_1"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
 	</div>
     <div class="news_list">
-	  <div class="title">社区公益 </div>
+	  <div class="title"><%= _t "base.news_list2" %></div>
 	  <div id="news_2"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
 	</div>
   </div>
@@ -110,13 +110,17 @@ $(function(){
 				if(result && result.length){
 					new NewsList(result, uid);
 				} else {
-					$(uid).html('<ul><li>还没有内容。</li></ul>');
+					$(uid).html('<ul><li><%= _t "base.no_news" %></li></ul>');
 				}
 			}
 		);
 	}
-	
+	<% if session[:locale] && session[:locale] != "en" %>
 	ajax_list("/ajax_news_list/1", "#news_1");
 	ajax_list("/ajax_news_list/2", "#news_2");
+	<% else %>
+	ajax_list("/ajax_news_list/3", "#news_1");
+	ajax_list("/ajax_news_list/4", "#news_2");
+	<% end %>
 });
 </script>

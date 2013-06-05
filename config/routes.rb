@@ -49,12 +49,11 @@ Morocn::Application.routes.draw do
     get "topics/clear"
     delete "topics/del"
     post "topics/repost"
+    get "topics/trashes"
+    post "topics/trashes"
     resources :topics do
       collection do
         get :index
-        post :index
-        get :trashes
-        post :trashes
       end
     end
     

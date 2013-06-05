@@ -1,11 +1,11 @@
 <div class="location">
-	<a href="/" title="网站首页">首页</a><a href="/service" title="服务支持">服务支持</a><a href="/faq" title="常见问题">常见问题</a><% if !@keyword.blank? %>搜索 “<b style="color:red;"><%= @keyword %></b>” 结果<% else %><span>问题列表</span><% end %>
+	<a href="/"><%= _t "location.index" %></a><a href="/service"><%= _t "location.service" %></a><a href="/faq"><%= _t "location.faqs" %></a><% if !@keyword.blank? %>搜索 “<b style="color:red;"><%= @keyword %></b>” 结果<% else %><span><%= _t "location.faults_list" %></span><% end %>
 </div>
 <div class="clear"></div>
 <div class="content_box faq">
 	<div class="ser_action">
 		<div class="faq_title">
-			<h1>常见问题</h1>
+			<h1><%= _t "location.faqs" %></h1>
 			<a target="_blank" href="http://amos.alicdn.com/msg.aw?v=2&uid=%E4%B8%8A%E6%B5%B7%E6%96%8C%E6%B4%81%E5%95%86%E8%B4%B8&site=cntaobao&s=1&charset=utf-8" class="wangwang"></a>
 			<div class="so">
 				<%= form_tag "/faq" do %>
