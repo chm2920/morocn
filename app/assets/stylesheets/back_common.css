@@ -31,7 +31,7 @@ body{background:#FEFEFE;}
 .frame-top{position:relative;height:90px;background:url(/assets/admin/top-bg.jpg) repeat-x;}
 
 .nO{height:50px;}
-.nO-r{float:right;display:inline;padding:28px 40px 0 0;height:22px;line-height:22px;}
+.nO-r{float:right;display:inline;padding:28px 40px 0 0;height:22px;line-height:22px;color:#FFF;}
 .nO-r span{font-weight:bold;}
 .nO h1{margin:0 0 0 20px;}
 .nO h1 a{display:block;padding:16px 20px 0px;width:160px;font-size:18px;color:#FFF;}
