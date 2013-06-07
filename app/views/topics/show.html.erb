@@ -115,12 +115,12 @@ $(function(){
 			}
 		);
 	}
-	<% if !session[:locale].blank? && session[:locale] != "en" %>
-	ajax_list("/ajax_news_list/1", "#news_1");
-	ajax_list("/ajax_news_list/2", "#news_2");
-	<% else %>
+	<% if !session[:locale].blank? && session[:locale] != "zh" %>
 	ajax_list("/ajax_news_list/3", "#news_1");
 	ajax_list("/ajax_news_list/4", "#news_2");
+	<% else %>
+	ajax_list("/ajax_news_list/1", "#news_1");
+	ajax_list("/ajax_news_list/2", "#news_2");
 	<% end %>
 });
 </script>

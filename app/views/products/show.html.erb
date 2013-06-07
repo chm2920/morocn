@@ -52,10 +52,10 @@
 								<% arr = param.title.split("$$$") %>
 								<li>
 									<div class="label">
-										<% if session[:locale] && session[:locale] != 'en' %>
-										<%= arr[0] %>：
+										<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+										<%= arr[1] %>：
 										<% else %>
-										<%= arr[1] if arr[1] %>：
+										<%= arr[0] %>：
 										<% end %>
 									</div>
 									<div class="cont">
