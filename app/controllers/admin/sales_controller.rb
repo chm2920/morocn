@@ -8,7 +8,7 @@ class Admin::SalesController < Admin::Backend
     @sale = Sale.find(params[:id])
     @info = JSON.parse(@sale.info)
   rescue
-    @info = {"a" => "", "b" => "", "c" => "", "d" => ""}
+    @info = {}
   end
   
   def update

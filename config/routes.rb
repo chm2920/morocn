@@ -4,17 +4,20 @@ Morocn::Application.routes.draw do
   match "en" => "start#ch", :id => "en"
   match "about" => "about#about"
   match "culture" => "about#culture"
-  match "honor" => "about#honor"
+  match "credibility" => "about#credibility"
   
-  match "shop" => "about#shop"
+  match "qualification" => "about#qualification"
+  match "quality" => "about#quality"
   
-  match "join" => "about#join"
-  match "process" => "about#join_process"
+  match "national" => "about#national"
+  
+  match "investment" => "about#investment"
+  match "process" => "about#investment_process"
   
   match "contact" => "about#contact"
   match "careers" => "about#careers"
   match "declaration" => "about#declaration"
-  match "quality" => "about#quality"
+  match "quality_ad" => "about#quality_ad"
   
   match "news_list/:id" => "topics#list"
   match "news/:id" => "topics#show"

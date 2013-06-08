@@ -1,30 +1,37 @@
 en:
   base:
     about: "About Monroe"
-    intro: "Company Brief Introduction"
+    intro: "Company Introduction"
     culture: "Enterprice Culture"
-    honor: "Enterprice Honour"
-    news_list1: "MORO Information"
-    news_list2: "Community Socially Useful Activity"
+    credibility: "Credibility of Enterprise"
+    news: "Business consulting"
+    
+    management: "Management System"
+    qualification: "Qualification of Enterprise"
+    quality: "Quality Control"
     products: "Products"
 
-    sale: "Sales Market"
-    shoppingcenter: "Shopping Center In China"
-    shop: "Buy Goods online"
+    sale: "Global Market"
+    mall: "Market"
+    sale_civil: "China Branch"
+    sale_national: "International"
+    sale_network: "Network Mall"
+    sale_sh: "China Shanghai Taobao shop"
+    sale_yc: "China Yinchuan Taobao shop"
     
-    join: "Investment"
-    join_doc: "Global Investment"
-    join_process: "Investment Process"
+    investment: "International Investment"
+    global_investment: "Global Investment"
+    investment_process: "Investment Process"
     
-    service: "Service Support"
-    faults: "Fault Handling"
-    faqs: "Common Fault"
+    service: "Technical Service"
+    faults: "Fault Repair"
+    faqs: "Common Problem"
     downloads: "Data Download"
     
     contact: "联系我们"
     careers: "人才招聘"
     declaration: "隐私声明"    
-    quality: "七星质保"
+    quality_ad: "七星质保"
     
     date: "Date"
     no_news: "No news yet."
@@ -33,17 +40,17 @@ en:
     about: "About Monroe"
     products: "Products"
     products_list: "List"
+    
+    management: "Management System"
 
-    sale: "Chinese Market Distribution"
-    shoppingcenter: "Shopping Center In China"
-    online: "Buy Goods online"
+    sale: "Global Market"
     
-    join: "Investment"
+    investment: "Investment"
     
-    service: "Service Support"
-    faults: "Fault Handling"
-    faqs: "Common Fault"
-    faults_list: "Common faults"
+    service: "Technical Service"
+    faults: "Fault Repair"
+    faqs: "Common Problem"
+    faults_list: "Common Problems"
     downloads: "Data Download"
     
     contact: "联系我们"

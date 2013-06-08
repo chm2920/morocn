@@ -6,10 +6,12 @@ module ApplicationHelper
     case cat
     when "about"
       loc = %Q(<a href="/about" title="#{_t "location.about"}">#{_t "location.about"}</a>)
+    when "management"
+      loc = %Q(<a href="/qualification">#{_t 'location.management'}</a>)
     when "sale"
       loc = %Q(<a href="/sale">#{_t 'location.sale'}</a>)
-    when "join"
-      loc = %Q(<a href="/join">#{_t 'location.join'}</a>)
+    when "investment"
+      loc = %Q(<a href="/investment">#{_t 'location.investment'}</a>)
     when "contact"
       loc = ""
     end

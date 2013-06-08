@@ -14,24 +14,28 @@
 	<div class="kf-p-t"><span id="kf_p_cls"></span></div>
 	<div class="kf-p-m">
 		<ul>
+		<% if !session[:locale].blank? && session[:locale] != "zh" %>
 			<% @kfs.each do |kf| %>
+				<% if kf.stype != "qq" %>
 			<li>
-				<% if kf.stype == "qq" %>
-				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<%= kf.account %>&site=qq&menu=yes">
-					<img border="0" src="http://wpa.qq.com/pa?p=2:<%= kf.account %>:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
-					<b><%= kf.title %></b></a>
-				<% else %>
 				<a href="msnim:chat?contact=<%= kf.account %>" tareget="_blank">
 					<img border="0" src="/assets/cslist/msn.png" alt="点击这里给我发消息" title="点击这里给我发消息"/>
 					<%= kf.title %></a>
-				<% end %>
 			</li>
+				<% end %>
 			<% end %>
+		<% else %>
+			<% @kfs.each do |kf| %>
+				<% if kf.stype == "qq" %>
+			<li>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<%= kf.account %>&site=qq&menu=yes">
+					<img border="0" src="http://wpa.qq.com/pa?p=2:<%= kf.account %>:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>
+					<b><%= kf.title %></b></a>
+			</li>
+				<% end %>
+			<% end %>
+		<% end %>
 		</ul>
-		<div class="kf-p-logo">
-			<a href="#"><img src="/assets/cslist/logo.jpg" /></a>
-			<p>打造中国移动电源第一品牌</p>
-		</div>
 	</div>
 	<div class="kf-p-b"></div>
 </div>
@@ -51,14 +55,19 @@
 					<div class="subbox">
 						<div class="item"><a href="/about"><%= _t 'base.intro' %></a></div>
 						<div class="item"><a href="/culture"><%= _t 'base.culture' %></a>	</div>
-						<div class="item"><a href="/honor"><%= _t 'base.honor' %></a></div>
+						<div class="item"><a href="/credibility"><%= _t 'base.credibility' %></a></div>
 						<% if !session[:locale].blank? && session[:locale] != 'zh' %>
 						<div class="item"><a href="/news_list/3">MORO Information</a></div>
-						<div class="item"><a href="/news_list/4">Community Socially Useful Activity</a></div>
 						<% else %>
-						<div class="item"><a href="/news_list/1"><%= _t 'base.news_list1' %></a></div>
-						<div class="item"><a href="/news_list/2"><%= _t 'base.news_list2' %></a></div>
+						<div class="item"><a href="/news_list/1"><%= _t 'base.news' %></a></div>
 						<% end %>
+					</div>
+				</li>
+				<li class="li_02">
+					<a href="/qualification"><%= _t 'base.management' %></a>
+					<div class="subbox">
+						<div class="item"><a href="/qualification"><%= _t 'base.qualification' %></a></div>
+						<div class="item"><a href="/quality"><%= _t 'base.quality' %></a></div>
 					</div>
 				</li>
 				<li class="li_02" id="nav_list">
@@ -69,7 +78,6 @@
 							<a href="<%= catalog.show_url %>"><%= catalog.show_name(session[:locale]) %></a>
 							<dl>
 								<% catalog.products.each do |product| %>
-								
 								<dt>									
 									<a href="<%= product.show_url %>"><%= product.title %></a>
 								</dt>
@@ -82,15 +90,35 @@
 				<li class="li_02">
 					<a href="/sale"><%= _t 'base.sale' %></a>
 					<div class="subbox">
-						<div class="item"><a href="/sale"><%= _t 'base.shoppingcenter' %></a></div>
-						<div class="item"><a href="/shop"><%= _t 'base.shop' %></a></div>
+						<div class="item">
+							<a href="/sale"><%= _t 'base.mall' %></a>
+							<dl>
+								<dt>									
+									<a href="/sale"><%= _t 'base.sale_civil' %></a>
+								</dt>
+								<dt>									
+									<a href="/national"><%= _t 'base.sale_national' %></a>
+								</dt>
+							</dl>
+						</div>
+						<div class="item">
+							<a href="javascript:void(0);"><%= _t 'base.sale_network' %></a>
+							<dl>
+								<dt>									
+									<a href="#"><%= _t 'base.sale_sh' %></a>
+								</dt>
+								<dt>									
+									<a href="#"><%= _t 'base.sale_yc' %></a>
+								</dt>
+							</dl>
+						</div>
 					</div>
 				</li>
 				<li class="li_02">
-					<a href="/join"><%= _t 'base.join' %></a>
+					<a href="/investment"><%= _t 'base.investment' %></a>
 					<div class="subbox">
-						<div class="item"><a href="/join"><%= _t 'base.join_doc' %></a></div>
-						<div class="item"><a href="/process"><%= _t 'base.join_process' %></a></div>
+						<div class="item"><a href="/investment"><%= _t 'base.global_investment' %></a></div>
+						<div class="item"><a href="/process"><%= _t 'base.investment_process' %></a></div>
 					</div>
 				</li>
 				<li class="li_03">
@@ -125,16 +153,6 @@
 		<div class="copyright">
 			<span class="fl"><%= @setting["copyright"] %></span>
 			<span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank"><%= @setting["beian"] %></a></span>
-		</div>
-		<div class="foot_lj">
-			<div class="foot_link fr">
-				<a href="http://www.cxsled.com/" target="_blank">LED路灯</a>
-			</div>
-			<div class="foot_client fl">
-				<% @friendlinks.each do |f| %>
-				<a href="<%= f.link %>" target="_blank" title="<%= f.title %>"><img src="<%= f.img_url %>" /></a>
-				<% end %>
-			</div>
 		</div>
 	</div>
 </div>

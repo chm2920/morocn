@@ -14,31 +14,45 @@ class AboutController < ApplicationController
     render "about"
   end
   
-  def honor
+  def credibility
     @intro = Intro.find(3)
     @cat = "about"
-    @title = _t "base.honor"
+    @title = _t "base.credibility"
     render "about"
   end
   
-  def shop
+  def qualification
+    @intro = Intro.find(11)
+    @cat = "management"
+    @title = _t "base.qualification"
+    render "about"
+  end
+  
+  def quality
+    @intro = Intro.find(12)
+    @cat = "management"
+    @title = _t "base.quality"
+    render "about"
+  end
+  
+  def national
     @intro = Intro.find(4)
     @cat = "sale"
-    @title = _t "base.shop"
+    @title = _t "base.sale_national"
     render "about"
   end
   
-  def join
+  def investment
     @intro = Intro.find(5)
-    @cat = "join"
-    @title = _t "base.join"
+    @cat = "investment"
+    @title = _t "base.global_investment"
     render "about"
   end
   
-  def join_process
+  def investment_process
     @intro = Intro.find(6)
-    @cat = "join"
-    @title = _t "base.join_process"
+    @cat = "investment"
+    @title = _t "base.investment_process"
     render "about"
   end
   
@@ -63,10 +77,10 @@ class AboutController < ApplicationController
     render "about"
   end
   
-  def quality
+  def quality_ad
     @intro = Intro.find(10)
     @cat = "contact"
-    @title = _t "base.quality"
+    @title = _t "base.quality_ad"
     render "about"
   end
   

@@ -1,22 +1,29 @@
 zh:
   base:
     about: "关于梦露"
-    intro: "公司简介"
+    intro: "企业简介"
     culture: "企业文化"
-    honor: "企业荣誉"
-    news_list1: "MORO资讯"
-    news_list2: "社区公益"
-    products: "产品展示"
+    credibility: "企业信誉"
+    news: "企业资讯"
+    
+    management: "管理体系"
+    qualification: "企业资质"
+    quality: "质量控制"
+    products: "产品展示"    
 
-    sale: "全国市场一览"
-    shoppingcenter: "全国实体店"
-    shop: "网上商城"
+    sale: "销售网络"
+    mall: "市场销售"
+    sale_civil: "国内市场"
+    sale_national: "国际市场"
+    sale_network: "网上商城"
+    sale_sh: "中国区上海淘宝店"
+    sale_yc: "中国区银川淘宝店"
     
-    join: "招商加盟"
-    join_doc: "全球招商"
-    join_process: "招商流程"
+    investment: "国际招商"
+    global_investment: "全球招商"
+    investment_process: "招商流程"
     
-    service: "服务支持"
+    service: "技术服务"
     faults: "故障报修"
     faqs: "常见问题"
     downloads: "资料下载"
@@ -24,7 +31,7 @@ zh:
     contact: "联系我们"
     careers: "人才招聘"
     declaration: "隐私声明"    
-    quality: "七星质保"
+    quality_ad: "七星质保"
     
     date: "时间"
     no_news: "还没有内容。"
@@ -33,16 +40,14 @@ zh:
     about: "关于梦露"
     products: "产品展示"
     products_list: "产品列表"
+    
+    management: "管理体系"
 
-    sale: "全国市场一览"
-    shoppingcenter: "全国实体店"
-    online: "网上商城"
+    sale: "销售网络"
     
-    join: "招商加盟"
-    join_doc: "招商政策"
-    join_process: "招商流程"
+    investment: "国际招商"
     
-    service: "服务支持"
+    service: "技术服务"
     faults: "故障报修"
     faqs: "常见问题"
     faults_list: "问题列表"

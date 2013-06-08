@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
     @setting = JSON.parse(@sys_setting.setting)
     
     @product_catalogs = ProductCatalog.all
-    @friendlinks = Friendlink.find(:all, :order => "rank asc")
     @kfs = Kf.all
   end
   
