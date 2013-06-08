@@ -112,44 +112,38 @@ $(function(){
 				if(result && result.info){
 					var arr = []
 						, prov = result.city
-						, info = (new Function("return " + result.info))()
-						, tarr = ['旗舰店', '经销商', '分销商', '大卖场']
-						, i = 0;
+						, info = (new Function("return " + result.info))();
 					
 					arr.push('<div class="sale-list">');
-					arr.push('	<div class="sale-list-t">' + prov + '销售网络</div>');
-					arr.push('	<ul>');
+					arr.push('	<div class="sale-list-t">' + info.name + '</div>');
 					
-					for(var t in info){
-						arr.push('		<li>');
-						arr.push('			<b>' + prov + tarr[i] + '</b>');
-						arr.push('			<table>');
-						arr.push('				<tr>');
-						arr.push('					<td class="sale-label">地&nbsp;&nbsp;&nbsp;&nbsp;址：</td>');
-						arr.push('					<td>' + info[t].addr + '</td>');
-						arr.push('				</tr>');
-						arr.push('				<tr>');
-						arr.push('					<td class="sale-label">电&nbsp;&nbsp;&nbsp;&nbsp;话：</td>');
-						arr.push('					<td>' + info[t].phone + '</td>');
-						arr.push('				</tr>');
-						arr.push('				<tr>');
-						arr.push('					<td class="sale-label">在线客服：</td>');
-						arr.push('					<td>');
-						if(info[t].qq){
-							arr.push('<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=' + info[t].qq + '&amp;site=qq&amp;menu=yes">');
-							arr.push('<img border="0" src="http://wpa.qq.com/pa?p=2:' + info[t].qq + ':51" alt="点击这里给我发消息" title="点击这里给我发消息">');
+					arr.push('		<table>');
+					arr.push('			<tr>');
+					arr.push('				<td class="sale-label">地&nbsp;&nbsp;&nbsp;&nbsp;址：</td>');
+					arr.push('				<td>' + info.addr + '</td>');
+					arr.push('			</tr>');
+					arr.push('			<tr>');
+					arr.push('				<td class="sale-label">电&nbsp;&nbsp;&nbsp;&nbsp;话：</td>');
+					arr.push('				<td>' + info.tel + '</td>');
+					arr.push('			</tr>');
+					arr.push('			<tr>');
+					arr.push('				<td class="sale-label">在线客服：</td>');
+					arr.push('				<td>');
+					if(info.qq){
+						var qqs = info.qq.split('###');
+						for(var j = 0, l = qqs.length; j < l; j ++){
+							arr.push('<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=' + qqs[j] + '&amp;site=qq&amp;menu=yes">');
+							arr.push('<img border="0" src="http://wpa.qq.com/pa?p=2:' + qqs[j] + ':51" alt="点击这里给我发消息" title="点击这里给我发消息">');
 							arr.push('</a>');
 						}
-						if(info[t].msn){
-							arr.push('<a href="msnim:chat?contact=' + info[t].msn + '"><img border="0" src="/assets/msn_ico.png" alt="点击这里给我发消息" title="点击这里给我发消息"></a>');
-						}
-						arr.push('					</td>');
-						arr.push('				</tr>');
-						arr.push('			</table>');
-						arr.push('		</li>');
-						i ++;
 					}
-					arr.push('	</ul>');
+					if(info.msn){
+						arr.push('<a href="msnim:chat?contact=' + info.msn + '"><img border="0" src="/assets/msn_ico.png" alt="点击这里给我发消息" title="点击这里给我发消息"></a>');
+					}
+					arr.push('				</td>');
+					arr.push('			</tr>');
+					arr.push('		</table>');
+					arr.push('	</div>');
 					arr.push('</div>');
 					$('#sale_right').html(arr.join(''));
 				} else {
