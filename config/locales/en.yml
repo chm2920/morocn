@@ -42,7 +42,8 @@ en:
     products_list: "List"
     
     management: "Management System"
-    sale: "Global Market"    
+    sale: "Global Market"
+    sale_civil: "China Branch"
     investment: "Investment"
     
     service: "Technical Service"
