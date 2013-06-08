@@ -4,7 +4,7 @@ en:
     intro: "Company Introduction"
     culture: "Enterprice Culture"
     credibility: "Credibility of Enterprise"
-    news: "Business consulting"
+    news: "News"
     
     management: "Management System"
     qualification: "Qualification of Enterprise"
@@ -37,14 +37,12 @@ en:
     no_news: "No news yet."
   location:
     index: "Index"
-    about: "About Monroe"
+    about: "About Us"
     products: "Products"
     products_list: "List"
     
     management: "Management System"
-
-    sale: "Global Market"
-    
+    sale: "Global Market"    
     investment: "Investment"
     
     service: "Technical Service"

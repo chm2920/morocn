@@ -57,7 +57,7 @@
 						<div class="item"><a href="/culture"><%= _t 'base.culture' %></a>	</div>
 						<div class="item"><a href="/credibility"><%= _t 'base.credibility' %></a></div>
 						<% if !session[:locale].blank? && session[:locale] != 'zh' %>
-						<div class="item"><a href="/news_list/3">MORO Information</a></div>
+						<div class="item"><a href="/news_list/3">News</a></div>
 						<% else %>
 						<div class="item"><a href="/news_list/1"><%= _t 'base.news' %></a></div>
 						<% end %>

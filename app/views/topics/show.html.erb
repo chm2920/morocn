@@ -1,30 +1,32 @@
-<div class="location"><a href="/"><%= _t "location.index" %></a><a href="/about"><%= _t "location.about" %></a><a href="<%= @catalog.show_url %>"><%= @catalog.name %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %></div>
+<div class="location">
+	<a href="/"><%= _t "location.index" %></a><a href="/about"><%= _t "location.about" %></a><a href="<%= @catalog.show_url %>"><%= @catalog.name %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %>
+</div>
 <div class="clear"></div>
 <div class="content_box">
-  <div class="con_left" style="min-height:500px;">
-  <script type="text/javascript" src="/assets/sc.js"></script>
-  <% if !@topic.nil? %>
-    <div class="title">
-	  <h1><%= @topic.title %></h1>
-	  <div class="time"><%= _t "base.date" %>：<%= @topic.created_at.strftime("%Y-%m-%d") %></div>
-	  <div class="right_fd">
-        <script>share();</script>
-      </div>
+	<div class="con_left" style="min-height:500px;">
+		<script type="text/javascript" src="/assets/sc.js"></script>
+		<% if !@topic.nil? %>
+		<div class="title">
+			<h1><%= @topic.title %></h1>
+			<div class="time">
+				<%= _t "base.date" %>：<%= @topic.created_at.strftime("%Y-%m-%d") %>
+			</div>
+			<div class="right_fd">
+				<script>share();</script>
+			</div>
+		</div>
+		<div class="ny_content mt10">
+			<%= @topic.content.html_safe %>
+		</div>
+		<% end %>
 	</div>
-	<div class="ny_content mt10"><%= @topic.content.html_safe %></div>
-<% end %>
-  </div>
-  <div class="con_right news_right">
-  <!--div class="con_right news_right" 跟随滚动条滚动-->
-    <div class="news_list">
-	  <div class="title"><%= _t "base.news_list1" %></div>
-	  <div id="news_1"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
+	<div class="con_right news_right">
+		<!--div class="con_right news_right" 跟随滚动条滚动-->
+		<div class="news_list">
+			<div class="title"><%= _t "base.news" %></div>
+			<div id="news_1"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
+		</div>
 	</div>
-    <div class="news_list">
-	  <div class="title"><%= _t "base.news_list2" %></div>
-	  <div id="news_2"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
-	</div>
-  </div>
 </div>
 
 <script type="text/javascript">
@@ -40,7 +42,7 @@ $(window).scroll(function(){
 function NewsList(items, uid){
 	this.items = items;
 	this.l = this.items.length;
-	this.per_page = 3;
+	this.per_page = 6;
 	this.page = 1;
 	
 	this.container = $(uid);
@@ -53,7 +55,7 @@ NewsList.prototype = {
 		this.container.html('<ul></ul>');
 		this.render();
 		if(this.l > this.per_page){
-			this.max_page = (this.l % 3 == 0 ? this.l / 3 : (parseInt(this.l / 3) + 1));
+			this.max_page = (this.l % 6 == 0 ? this.l / 6 : (parseInt(this.l / 6) + 1));
 			var arr = [];
 			arr.push('<div class="news_pages mt5">');
 			arr.push('<a href="javascript:void(0);" class="page-pre"><</a> ');
@@ -86,7 +88,7 @@ NewsList.prototype = {
 	},
 	render: function(){
 		var arr = [];
-		for(var i = (this.page - 1) * this.per_page, j = 0; j < 3 && i < this.l; i ++, j ++){
+		for(var i = (this.page - 1) * this.per_page, j = 0; j < 6 && i < this.l; i ++, j ++){
 			var item = this.items[i];
 			arr.push('<li>');
 			arr.push('<a href="' + item.show_url + '">' + item.title + '</a>');
@@ -117,10 +119,8 @@ $(function(){
 	}
 	<% if !session[:locale].blank? && session[:locale] != "zh" %>
 	ajax_list("/ajax_news_list/3", "#news_1");
-	ajax_list("/ajax_news_list/4", "#news_2");
 	<% else %>
 	ajax_list("/ajax_news_list/1", "#news_1");
-	ajax_list("/ajax_news_list/2", "#news_2");
 	<% end %>
 });
 </script>
