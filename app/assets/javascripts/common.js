@@ -57,3 +57,7 @@ $(function() {
 		$('#kf_panel').hide();
 	});
 });
+
+if (top.location !== location) { 
+	top.location.href = location.href;
+}
