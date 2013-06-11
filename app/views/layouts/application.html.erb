@@ -48,10 +48,16 @@
 			<a href="/zh">中文</a>|<a href="/en">English</a>
 		</div>
 		<div id="navlist">
-			<ul>
-				<li class="li_01"><a href="/about"></a></li>
-				<li class="li_02">
-					<a href="/about"><%= _t 'base.about' %></a>
+			<table class="nav-tb">
+				<tr>
+				<td class="nav-td">
+					<table>
+						<tr>
+							<td class="nav-l"></td>
+							<td class="nav-m"><a href="/about"><%= _t 'base.about' %></a></td>
+							<td class="nav-r"></td>
+						</tr>
+					</table>
 					<div class="subbox">
 						<div class="item"><a href="/about"><%= _t 'base.intro' %></a></div>
 						<div class="item"><a href="/culture"><%= _t 'base.culture' %></a>	</div>
@@ -62,16 +68,28 @@
 						<div class="item"><a href="/news_list/1"><%= _t 'base.news' %></a></div>
 						<% end %>
 					</div>
-				</li>
-				<li class="li_02">
-					<a href="/qualification"><%= _t 'base.management' %></a>
+				</td>
+				<td class="nav-td">
+					<table>
+						<tr>
+							<td class="nav-l"></td>
+							<td class="nav-m"><a href="/qualification"><%= _t 'base.management' %></a></td>
+							<td class="nav-r"></td>
+						</tr>
+					</table>
 					<div class="subbox">
 						<div class="item"><a href="/qualification"><%= _t 'base.qualification' %></a></div>
 						<div class="item"><a href="/quality"><%= _t 'base.quality' %></a></div>
 					</div>
-				</li>
-				<li class="li_02" id="nav_list">
-					<a href="/products"><%= _t 'base.products' %><em></em></a>
+				</td>
+				<td class="nav-td">
+					<table>
+						<tr>
+							<td class="nav-l"></td>
+							<td class="nav-m"><a href="/products"><%= _t 'base.products' %></a></td>
+							<td class="nav-r"></td>
+						</tr>
+					</table>
 					<div class="subbox">
 						<% @product_catalogs.each do |catalog| %>
 						<div class="item">
@@ -86,9 +104,15 @@
 						</div>
 						<% end %>
 					</div>
-				</li>
-				<li class="li_02">
-					<a href="/sale"><%= _t 'base.sale' %></a>
+				</td>
+				<td class="nav-td">
+					<table>
+						<tr>
+							<td class="nav-l"></td>
+							<td class="nav-m"><a href="/sale"><%= _t 'base.sale' %></a></td>
+							<td class="nav-r"></td>
+						</tr>
+					</table>
 					<div class="subbox">
 						<div class="item">
 							<a href="/sale"><%= _t 'base.mall' %></a>
@@ -113,23 +137,36 @@
 							</dl>
 						</div>
 					</div>
-				</li>
-				<li class="li_02">
-					<a href="/investment"><%= _t 'base.investment' %></a>
+				</td>
+				<td class="nav-td">
+					<table>
+						<tr>
+							<td class="nav-l"></td>
+							<td class="nav-m"><a href="/investment"><%= _t 'base.investment' %></a></td>
+							<td class="nav-r"></td>
+						</tr>
+					</table>
 					<div class="subbox">
 						<div class="item"><a href="/investment"><%= _t 'base.global_investment' %></a></div>
 						<div class="item"><a href="/process"><%= _t 'base.investment_process' %></a></div>
 					</div>
-				</li>
-				<li class="li_03">
-					<a href="/service"><%= _t 'base.service' %></a>
+				</td>
+				<td class="nav-td">
+					<table>
+						<tr>
+							<td class="nav-l"></td>
+							<td class="nav-m"><a href="/service"><%= _t 'base.service' %></a></td>
+							<td class="nav-r"></td>
+						</tr>
+					</table>
 					<div class="subbox last">
 						<div class="item"><a href="/service"><%= _t 'base.faults' %></a></div>
 						<div class="item"><a href="/faq"><%= _t 'base.faqs' %></a></div>
 						<div class="item"><a href="/download"><%= _t 'base.downloads' %></a></div>
 					</div>
-				</li>
-			</ul>
+				</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 	<div class="clear"></div>

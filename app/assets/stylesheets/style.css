@@ -34,32 +34,40 @@ select:focus,input.input:focus,textarea:focus,px_avatar:focus{color:#5093D5;bord
 .border_bottom{ border-top:1px solid #ddd !important;}
 .clear{height:0;overflow:hidden;clear:both;}
 .con_layout{ width:980px; margin:0 auto; padding:20px 7px 0 8px;background:#fff;}
+
+.clearfix:after {content:"."; display:block; height:0; clear:both; visibility:hidden; }
+* html>body .clearfix { display:inline-block; width:100%; }
+* html .clearfix { height:1%; /* End hide from IE-mac */ } 
+/* ie7 hack*/ 
+*+html .clearfix { min-height:1%; } 
+.clearfix{zoom:1;}
 /*头部*/
 #header{width:100%;margin:0 auto;text-align:right;}
 /*导航*/
-.navbox{width:100%;height:57px;margin:0 auto;position:relative;z-index:999;}
-#navlist{height:30px;position:absolute;top:24px;right:0;}
-#navlist li{float:left;position:relative;}
-#navlist li a{float:left;height:30px; line-height:30px;text-align:center; font-size:15px; color:#333;background-image:url(/assets/nav_bg.png);background-repeat:no-repeat; padding:0 23px; position:relative; font-family:"Microsoft YaHei","微软雅黑";}
-#navlist li a:hover{ color:#F1592A;}
-#navlist li a em{ position:absolute; right:4px; top:22px; width:4px; height:4px; display:block; background:url(/assets/nav_bg.png) no-repeat right top;}
-#navlist li.li_01 a{text-indent:-999em; padding:0; }
-#navlist li.li_01 a{width:2px;background-position:0 0;}
-#navlist li.li_02 a{background-position:right -30px;}
-#navlist li.li_03 a{background-position:right -60px; padding-right:31px;}
-#navlist li.li_03 a em{ right:15px;}
-#navlist li .subbox{display:none; width:100%;padding:10px 0;background:#ddd;position:absolute;top:30px;left:-2px;z-index:888;}
-#navlist li .subbox.last{ width:103px;}
-#navlist li .subbox .item{float:left;padding:0 15px 0 10px;}
-#navlist li .subbox .item a{width:auto;height:24px;line-height:24px;text-indent:12px;float:left;background:url(/assets/ico_02.png) no-repeat left center;color:#5C293A;white-space:nowrap; font-size:12px; padding:0;}
-#navlist li .subbox .item a:hover{background:url(/assets/ico_03.png) no-repeat left center;color:#F1592A;}
-#navlist li .subbox .item dl{padding:10px; padding-right:15px;display:none;background:#ddd;position:absolute;top:0;left:0;z-index:999;}
-#navlist li .subbox .item dl dt{float:left}
-#navlist li .subbox .item dl a{background:url(/assets/ico_04.png) no-repeat left center;}
-#navlist li .subbox .item dl a:hover{background:url(/assets/ico_05.png) no-repeat left center;color:#F1592A;}
+.navbox{width:100%;height:88px;margin:0 auto;position:relative;z-index:999;}
+#navlist{position:absolute;top:52px;left:0;width:100%;height:36px;}
+#navlist .nav-tb{margin:0 auto;border:0;border-collapse:collapse;border-spacing:0;}
+#navlist .nav-tb .nav-td{position:relative;z-index:0;}
+#navlist .nav-tb table{border:0;border-spacing:0;border-collapse:collapse;}
+#navlist .nav-tb td{height:36px;line-height:36px;}
+#navlist .nav-tb td a{padding:0 20px;font-size:14px;color:#333;}
+#navlist .nav-tb td.nav-l{width:9px;}
+#navlist .nav-tb td.nav-r{width:8px;}
+#navlist .nav-tb table.hover{background:url(/assets/nav_m_bg.jpg) repeat-x;}
+#navlist .nav-tb table.hover a{color:#FFF;}
+#navlist .nav-tb table.hover td.nav-l{background:url(/assets/nav_l_bg.jpg) no-repeat;}
+#navlist .nav-tb table.hover td.nav-r{background:url(/assets/nav_r_bg.jpg) no-repeat;}
+#navlist .nav-tb .subbox{display:none;position:absolute;top:36px;left:-2px;z-index:888;width:auto;padding:0;}
+#navlist .nav-tb .subbox .item{padding:0 15px 0 32px;background:url(/assets/sub_li2.jpg) no-repeat;}
+#navlist .nav-tb .subbox .item a{display:block;padding:0;width:100%;height:24px;line-height:24px;font-size:12px;color:#5C293A;white-space:nowrap;}
+#navlist .nav-tb .subbox .item a:hover{color:#F1592A;}
+#navlist .nav-tb .subbox .item_hover{background:url(/assets/sub_li_hover2.jpg) no-repeat;}
+#navlist .nav-tb .subbox .item dl{display:none;position:absolute;top:0;left:0;z-index:999;}
+#navlist .nav-tb .subbox .item dl dt{padding:0 15px 0 32px;background:url(/assets/sub_li2.jpg) no-repeat left center;}
+#navlist .nav-tb .subbox .item .dt_hover{background:url(/assets/sub_li_hover2.jpg) no-repeat left center;}
 .top_logo{width:253px;height:35px;position:absolute;top:5px;left:0;background-image:url(/assets/language.png);background-repeat:no-repeat;}
 .top_logo a{ width:253px; height:35px; display:block;}
-.lang{position:absolute;top:-5px;right:10px;}
+.lang{position:absolute;top:10px;right:10px;}
 .lang a{margin:0 10px;}
 /*切换*/
 .index_pic{width:100%;height:400px;position:relative; margin-top:10px;}

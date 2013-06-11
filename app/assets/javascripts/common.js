@@ -1,27 +1,40 @@
-$(function() {	
-	$('#navlist li').hover(function() {
+$(function() {
+	$('.nav-td').hover(function() {
+		var w = $(this).width(),
+			tb = $(this).find('.subbox'),
+			iw = tb.width();
+		
+		if(iw < w){
+			tb.css('width', w + 'px');
+		} else {
+			tb.css('width', iw + 'px');
+		}
+		$(this).find('table').addClass('hover');
 		$(this).find('div.subbox').show();
 	},
 	function() {
+		$(this).find('table').removeClass('hover');
 		$(this).find('div.subbox').hide();
 	});
 	
 	$('.subbox .item').hover(function() {
-		var iNum = $('#nav_list .subbox div').length;
-		var dNum = $(this).find('dt').length;
-		var hNum = dNum;
-		if(iNum>dNum){
-			hNum = iNum;
-		}
-		$('#nav_list .subbox').css('height',hNum*24+'px');
+		$(this).addClass('item_hover');
 		$(this).find('dl').css({
-			'height': hNum*24+'px',
-			'left': $(this).width()+20+'px'
+			'left': $(this).parent().width() + 'px'
 		});
 		$(this).find('dl').show();
 	},
 	function() {
+		$(this).removeClass('item_hover');
 		$(this).find('dl').hide();
+	});
+	
+	$('.subbox dt').hover(function() {
+		$(this).attr('width', $(this).width() + 'px');
+		$(this).addClass('dt_hover');
+	},
+	function() {
+		$(this).removeClass('dt_hover');
 	});
 	
 	
