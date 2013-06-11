@@ -105,6 +105,12 @@ Morocn::Application.routes.draw do
     get "sys/index_ads"
     post "sys/index_ads"
     
+    get "sys/en_flashpics"
+    post "sys/en_flashpics"
+    
+    get "sys/en_index_ads"
+    post "sys/en_index_ads"
+    
     resources :sales do
       member do
         post :clear
