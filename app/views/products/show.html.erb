@@ -102,8 +102,8 @@
 	<div class="pro_cookie mt20">
 		<h2><a href="/clear_cookie/<%= @product.id %>" class="fr">清空浏览列表</a>您浏览过的产品列表</h2>
 		<div class="contact">
-			<a href="/shop" class="buy"></a>
-			<a target="_blank" href="http://amos.alicdn.com/msg.aw?v=2&uid=%E4%B8%8A%E6%B5%B7%E6%96%8C%E6%B4%81%E5%95%86%E8%B4%B8&site=cntaobao&s=1&charset=utf-8" class="lx"></a>
+			<a href="<%= @product.order_url %>" class="buy"></a>
+			<a href="/contact" class="lx"></a>
 		</div>
 		<ul>
 			<% session[:products].each_with_index do |product_id, i| %>
