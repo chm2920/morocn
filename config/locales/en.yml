@@ -29,15 +29,18 @@ en:
     faqs: "Common Problem"
     downloads: "Data Download"
     
-    contact: "联系我们"
-    careers: "人才招聘"
-    declaration: "隐私声明"    
+    contact: "Contact Us"
+    careers: "Careers"
+    declaration: "Privacy Statement"    
     quality_ad: "七星质保"
     
     date: "Date"
     no_news: "No news yet."
+    mail: "Email"
+    copyright: "Copyright &copy; 2008-2013 Moro(China) Ltd. All rights reserved."
+    hotline: "Free Service Hotline: "
   location:
-    index: "Index"
+    index: "Home"
     about: "About Us"
     products: "Products"
     products_list: "List"
@@ -53,9 +56,9 @@ en:
     faults_list: "Common Problems"
     downloads: "Data Download"
     
-    contact: "联系我们"
-    careers: "人才招聘"
-    declaration: "隐私声明"
+    contact: "Contact Us"
+    careers: "Careers"
+    declaration: "Privacy Statement"
   product:
     model: "Model"
     params: "规格参数"

@@ -50,6 +50,8 @@
 		<div id="navlist">
 			<table class="nav-tb">
 				<tr>
+				<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+				<% else %>
 				<td class="nav-td">
 					<table>
 						<tr>
@@ -59,6 +61,7 @@
 						</tr>
 					</table>
 				</td>
+				<% end %>
 				<td class="nav-td">
 					<table>
 						<tr>
@@ -192,13 +195,13 @@
 				<iframe allowtransparency="" border="0" frameborder="0" height="22" marginheight="0" marginwidth="0" scrolling="no" src="http://widget.weibo.com/relationship/followbutton.php?width=200&amp;height=22&amp;uid=2973801860&amp;style=5&amp;btn=red&amp;dpc=1" style="width: 62px; height: 22px;" width="200"></iframe>
 			</div>
 			<div class="mail">
-				<a href="mailto:moro_sh@morocn.com">官方邮箱</a>
+				<a href="mailto:moro_sh@morocn.com"><%= _t 'base.mail' %></a>
 			</div>
-			<span class="fr"><em class="tel"></em>全国免费服务热线：400-820-0407</span>
+			<span class="fr"><em class="tel"></em><%= _t 'base.hotline' %>400-820-0407</span>
 		</div>
 		<div class="copyright">
-			<span class="fl"><%= @setting["copyright"] %></span>
-			<span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank"><%= @setting["beian"] %></a></span>
+			<span class="fl"><%= (_t 'base.copyright').html_safe %></span>
+			<span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备12033067号-1</a></span>
 		</div>
 	</div>
 </div>

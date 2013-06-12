@@ -12,7 +12,7 @@ zh:
     quality: "质量控制"
     products: "产品展示"    
 
-    sale: "销售网络"
+    sale: "营销网络"
     mall: "市场销售"
     sale_civil: "国内市场"
     sale_national: "国际市场"
@@ -36,6 +36,9 @@ zh:
     
     date: "时间"
     no_news: "还没有内容。"
+    mail: "官方邮箱"
+    copyright: "版权所有 &copy; 2008-2013 梦露（中国）有限公司，保留所有权利。"
+    hotline: "全国免费服务热线："
   location:
     index: "首页"
     about: "关于梦露"
@@ -43,7 +46,7 @@ zh:
     products_list: "产品列表"
     
     management: "管理体系"
-    sale: "销售网络"    
+    sale: "营销网络"    
     sale_civil: "国内市场"
     investment: "国际招商"
     
