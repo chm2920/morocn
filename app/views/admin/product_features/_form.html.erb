@@ -10,8 +10,16 @@
 <div class="main">
 <%= form_for [:admin, @product, @product_feature], :html => {:multipart => true} do |f| %>
 <% 
-	arrA = @product_feature.title.split("$$$")
-	arrB = @product_feature.info.split("$$$") 
+	if @product_feature.title
+		arrA = @product_feature.title.split("$$$")
+	else
+		arrA = []
+	end
+	if @product_feature.info
+		arrB = @product_feature.info.split("$$$")
+	else
+		arrB = []
+	end 
 %>
 <table class="newtable">
 	<thead>
