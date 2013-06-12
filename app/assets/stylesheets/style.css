@@ -143,7 +143,7 @@ select:focus,input.input:focus,textarea:focus,px_avatar:focus{color:#5093D5;bord
 .gongneng li div{float:left; width:220px;}
 .gongneng li div.pic{ width:50px;}
 .gongneng li div.text{ width:100%; float:none;}
-.gongneng li img{margin:3px 5px 0 0; width:40px;}
+.gongneng li img{margin:3px 5px 0 0; height:40px;}
 
 .down{}
 a.download{ width:132px; height:26px; line-height:26px;display:block; background:url(/assets/ico_download.png) no-repeat left top; text-indent:26px; color:#fff;margin:10px 0;}
