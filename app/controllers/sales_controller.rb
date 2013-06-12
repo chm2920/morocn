@@ -2,7 +2,6 @@
 class SalesController < ApplicationController
   
   def index
-    @cities = Sale.find(:all, :conditions => "info != ''").map{|s|s.city}
     @title = _t "location.sale_civil"
   end
   
