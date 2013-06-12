@@ -57,8 +57,8 @@ class AssetUploader < CarrierWave::Uploader::Base
     end
   end
   
-  def extension_white_list
-    %w(jpg jpeg png gif tiff)
-  end
+  # def extension_white_list
+    # %w(jpg jpeg png gif tiff)
+  # end
 
 end
