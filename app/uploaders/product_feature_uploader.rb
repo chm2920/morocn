@@ -17,7 +17,7 @@ class ProductFeatureUploader < AssetUploader
 
   # Process files as they are uploaded:
   #process :resize_and_pad => [658, 500]
-  process :resize_to_fill => [40, 40]
+  process :resize_to_fit => [72, 72]
   #
   # def scale(width, height)
     # manipulate! do |img|
