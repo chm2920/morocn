@@ -1,0 +1,39 @@
+<div class="location">
+	<a href="/"><%= _t "location.index" %></a><a href="/about"><%= _t "location.about" %></a><span><%= _t "location.news" %></span>
+</div>
+<div class="clear"></div>
+<div class="content_box news">
+	<div class="news-banner"><img src="/assets/news_banner.jpg" /></div>
+	<div class="clearfix">
+		<div class="news-side">
+			<div class="news-side-t"><%= _t 'base.about' %></div>
+			<ul>
+				<li>
+					<a href="/about"><%= _t 'base.intro' %></a>
+				</li>
+				<li>
+					<a href="/culture"><%= _t 'base.culture' %></a>
+				</li>
+				<li>
+					<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+					<a href="/about"><%= _t 'base.intro' %></a>
+					<% else %>
+					<a href="/news_list/1"><%= _t 'base.news' %></a>
+					<% end %>
+				</li>
+			</ul>
+			<div class="news-list-ad">
+				<a href="#"><img src="/assets/news_list_ad1.jpg" /></a>
+				<a href="#"><img src="/assets/news_list_ad2.jpg" /></a>
+			</div>
+		</div>
+		<div class="news-main">
+			<div class="news-list-t"><%= _t "location.news" %></div>
+			<ul>
+				<% @topics.each do |topic| %>
+				<li><span><%= topic.created_at.strftime("%Y-%m-%d %H:%M")%></span><a href="<%= topic.show_url %>"><%= topic.title %></a></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

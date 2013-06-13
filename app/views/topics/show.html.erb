@@ -1,5 +1,5 @@
 <div class="location">
-	<a href="/"><%= _t "location.index" %></a><a href="/about"><%= _t "location.about" %></a><a href="<%= @catalog.show_url %>"><%= @catalog.name %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %>
+	<a href="/"><%= _t "location.index" %></a><a href="/about"><%= _t "location.about" %></a><a href="<%= @catalog.show_url %>"><%= _t "location.news" %></a><% if !@topic.nil? %><span><%= @topic.title %></span><% end %>
 </div>
 <div class="clear"></div>
 <div class="content_box">
@@ -23,7 +23,7 @@
 	<div class="con_right news_right">
 		<!--div class="con_right news_right" 跟随滚动条滚动-->
 		<div class="news_list">
-			<div class="title"><%= _t "base.news" %></div>
+			<div class="title"><%= _t "location.news" %></div>
 			<div id="news_1"><img src="/assets/loading.gif" align="absmiddle" /> 加载中...</div>
 		</div>
 	</div>

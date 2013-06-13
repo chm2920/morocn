@@ -72,8 +72,7 @@
 					</table>
 					<div class="subbox">
 						<div class="item"><a href="/about"><%= _t 'base.intro' %></a></div>
-						<div class="item"><a href="/culture"><%= _t 'base.culture' %></a>	</div>
-						<div class="item"><a href="/credibility"><%= _t 'base.credibility' %></a></div>
+						<div class="item"><a href="/culture"><%= _t 'base.culture' %></a></div>
 						<% if !session[:locale].blank? && session[:locale] != 'zh' %>
 						<div class="item"><a href="/news_list/3">News</a></div>
 						<% else %>
@@ -167,14 +166,13 @@
 					<table>
 						<tr>
 							<td class="nav-l"></td>
-							<td class="nav-m"><a href="/service"><%= _t 'base.service' %></a></td>
+							<td class="nav-m"><a href="/products_intro"><%= _t 'base.service' %></a></td>
 							<td class="nav-r"></td>
 						</tr>
 					</table>
 					<div class="subbox last">
-						<div class="item"><a href="/service"><%= _t 'base.faults' %></a></div>
-						<div class="item"><a href="/faq"><%= _t 'base.faqs' %></a></div>
-						<div class="item"><a href="/download"><%= _t 'base.downloads' %></a></div>
+						<div class="item"><a href="/products_intro"><%= _t 'base.products_intro' %></a></div>
+						<div class="item"><a href="/guestbooks"><%= _t 'base.guestbooks' %></a></div>
 					</div>
 				</td>
 				</tr>

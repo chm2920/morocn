@@ -4,7 +4,6 @@ en:
     about: "About Us"
     intro: "Company Introduction"
     culture: "Enterprice Culture"
-    credibility: "Credibility of Enterprise"
     news: "News"
     
     management: "Management System"
@@ -25,14 +24,13 @@ en:
     investment_process: "Investment Process"
     
     service: "Technical Service"
-    faults: "Fault Repair"
-    faqs: "Common Problem"
-    downloads: "Data Download"
+    products_intro: "Products Intro"
+    guestbooks: "Guestbooks"
+    guestbook_new: "Guestbook New"
     
     contact: "Contact Us"
     careers: "Careers"
-    declaration: "Privacy Statement"    
-    quality_ad: "七星质保"
+    declaration: "Privacy Statement"
     
     date: "Date"
     no_news: "No news yet."
@@ -42,6 +40,7 @@ en:
   location:
     index: "Home"
     about: "About Us"
+    news: "News"
     products: "Products"
     products_list: "List"
     
@@ -51,19 +50,18 @@ en:
     investment: "Investment"
     
     service: "Technical Service"
-    faults: "Fault Repair"
-    faqs: "Common Problem"
-    faults_list: "Common Problems"
-    downloads: "Data Download"
+    products_intro: "Products Intro"
+    guestbooks: "Guestbooks"
+    guestbook_new: "Guestbook New"
     
     contact: "Contact Us"
     careers: "Careers"
     declaration: "Privacy Statement"
   product:
     model: "Model"
-    params: "规格参数"
-    features: "功能特点"
-    data: "说明书下载"
+    params: "Specifications"
+    features: "Features"
+    data: "Datasheets"
     no_pics: "No pictures yet."
     
   will_paginate:

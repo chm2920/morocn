@@ -4,7 +4,6 @@ zh:
     about: "关于梦露"
     intro: "企业简介"
     culture: "企业文化"
-    credibility: "企业信誉"
     news: "企业资讯"
     
     management: "管理体系"
@@ -25,14 +24,13 @@ zh:
     investment_process: "招商流程"
     
     service: "技术服务"
-    faults: "故障报修"
-    faqs: "常见问题"
-    downloads: "资料下载"
+    products_intro: "产品知识介绍"
+    guestbooks: "网络留言"
+    guestbook_new: "新留言"
     
     contact: "联系我们"
     careers: "人才招聘"
-    declaration: "隐私声明"    
-    quality_ad: "七星质保"
+    declaration: "隐私声明"
     
     date: "时间"
     no_news: "还没有内容。"
@@ -42,6 +40,7 @@ zh:
   location:
     index: "首页"
     about: "关于梦露"
+    news: "企业资讯"
     products: "产品展示"
     products_list: "产品列表"
     
@@ -51,10 +50,9 @@ zh:
     investment: "国际招商"
     
     service: "技术服务"
-    faults: "故障报修"
-    faqs: "常见问题"
-    faults_list: "问题列表"
-    downloads: "资料下载"
+    products_intro: "产品知识介绍"
+    guestbooks: "网络留言"
+    guestbook_new: "新留言"
     
     contact: "联系我们"
     careers: "人才招聘"

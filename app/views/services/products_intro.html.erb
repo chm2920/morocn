@@ -1,0 +1,36 @@
+<div class="location">
+	<a href="/"><%= _t "location.index" %></a><a href="/service"><%= _t "location.service" %></a><span><%= _t "location.products_intro" %></span>
+</div>
+<div class="clear"></div>
+<div class="content_box faq">
+	<div class="ser_action">
+		<div class="faq_title">
+			<h1><%= _t "location.products_intro" %></h1>
+		</div>
+		<div class="faq_list">
+			<ul>
+				<% if @faqs.length > 0 %>
+				<% @faqs.each do |faq| %>
+				<li>
+					<a href="javascript:;" title="<%= faq.title %>"><%= faq.title %></a>
+					<div><%= faq.text.to_s.html_safe %></div>
+				</li>
+				<% end %>
+				<% else %>
+				<li>没有任何内容</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.faq_list li a').click(function(){
+		if($(this).parent().find('div').is(":visible")) {
+			$(this).parent().find('div').hide();
+		}else{
+			$(this).parent().find('div').show();
+		}
+	});
+});
+</script>

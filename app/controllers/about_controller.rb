@@ -14,13 +14,6 @@ class AboutController < ApplicationController
     render "about"
   end
   
-  def credibility
-    @intro = Intro.find(3)
-    @cat = "about"
-    @title = _t "base.credibility"
-    render "about"
-  end
-  
   def qualification
     @intro = Intro.find(11)
     @cat = "management"
@@ -74,13 +67,6 @@ class AboutController < ApplicationController
     @intro = Intro.find(9)
     @cat = "contact"
     @title = _t "base.declaration"
-    render "about"
-  end
-  
-  def quality_ad
-    @intro = Intro.find(10)
-    @cat = "contact"
-    @title = _t "base.quality_ad"
     render "about"
   end
   

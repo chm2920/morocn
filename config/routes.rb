@@ -4,7 +4,6 @@ Morocn::Application.routes.draw do
   match "en" => "start#ch", :id => "en"
   match "about" => "about#about"
   match "culture" => "about#culture"
-  match "credibility" => "about#credibility"
   
   match "qualification" => "about#qualification"
   match "quality" => "about#quality"
@@ -17,7 +16,6 @@ Morocn::Application.routes.draw do
   match "contact" => "about#contact"
   match "careers" => "about#careers"
   match "declaration" => "about#declaration"
-  match "quality_ad" => "about#quality_ad"
   
   match "news_list/:id" => "topics#list"
   match "news/:id" => "topics#show"
@@ -29,14 +27,14 @@ Morocn::Application.routes.draw do
   match "order/:title" => "products#order"
   match "order_rst" => "products#order_rst"
   match "clear_cookie/:id" => "products#clear_cookie"
-  
-  match "download/(:id)" => "services#download"
    
   match "sale" => "sales#index"
   match "sale_info/(:id)" => "sales#show"  
   
   match "service" => "services#index"
-  match "faq" => "services#faq"  
+  match "products_intro" => "services#products_intro"
+  match "guestbooks" => "services#guestbooks"
+  match "guestbook_new" => "services#guestbook_new"
   
   match "admin" => "account#login"
   get "account/main"

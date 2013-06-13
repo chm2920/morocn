@@ -4,16 +4,9 @@ class TopicsController < ApplicationController
   
   def list
     @catalog = Catalog.find(params[:id])
-    @topic = @catalog.topics.first
-    if @topic.nil?
-      redirect_to "/"
-      return
-    end
-    @topic.hits = @topic.hits + 1
-    @topic.save
+    @topics = Topic.paginate :page => params[:page], :per_page => 10, :conditions => ["catalog_id = ?", @catalog.id], :order => "id desc"
     
-    @title = @topic.title + ' - ' + @catalog.name
-    render :show
+    @title = _t "location.news"
   end
   
   def show

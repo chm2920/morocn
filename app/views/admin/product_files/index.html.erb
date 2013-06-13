@@ -11,7 +11,6 @@
 	<thead>
 		<tr>
 			<th width="5%">ID</th>
-			<th width="15%">类型</th>
 			<th width="25%">名称</th>
 			<th>地址</th>
 			<th width="20%">管理</th>
@@ -24,14 +23,6 @@
 	%>
 		<tr>
 			<td><%= product_file.id %></td>
-			<td><%=
-				case product_file.data_type
-				when "drawing"
-					"产品图纸"
-				when "doc"
-					"说明书"
-				end
-			%></td>
 			<td><%= product_file.title %></td>
 			<td><%= product_file.data_url %></td>
 			<td>				
@@ -43,7 +34,7 @@
 		else
 	%>
 		<tr>
-			<td colspan="5" style="text-align:left;">&nbsp;还没有内容。</td>
+			<td colspan="4" style="text-align:left;">&nbsp;还没有内容。</td>
 		</tr>
 	<%
 		end
