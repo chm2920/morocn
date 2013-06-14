@@ -34,6 +34,8 @@
 				<li><span><%= topic.created_at.strftime("%Y-%m-%d %H:%M")%></span><a href="<%= topic.show_url %>"><%= topic.title %></a></li>
 				<% end %>
 			</ul>
+			<%= will_paginate @topics, :class => "news-paginate" %>
 		</div>
+		<div style="clear:both;"></div>
 	</div>
 </div>

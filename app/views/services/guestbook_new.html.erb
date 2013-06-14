@@ -5,32 +5,47 @@
 <div class="content_box service">
 	<div class="ser_action">
 		<h2><%= _t "location.guestbook_new" %></h2>
+		<p class="guestbook-action"><a href="/guestbooks">&gt; 留言列表</a></p>
 		<div class="ser_con">
-			<form name="form1" method="post" action="/service" onSubmit="return ckfrm();">
-				<input type="hidden" name="action" value="ok" class="input"/>
+			<%= form_tag "/guestbook_new", :method => "post", :onsubmit => "return checkform()" do %>
 				<ul>
 					<li>
-						<b>选择您的所在地</b>
+						<b>您的大名</b>
 						<br />
-						<div id="city_4">
-							<select class="prov" name="eds_prov"></select>
-							<select class="city" name="eds_city" disabled="disabled"></select>
-							<select class="dist" name="eds_dist" disabled="disabled"></select>
-						</div>
+						<input type="text" name="gb_info[name]" id="gb_name" class="input" />
 					</li>
 					<li>
-						<b>填写故障内容描述<span>“请务必留下您的联系方式”</span></b>
+						<b>电话</b>
 						<br />
-						<textarea name="eds_content" rows="10" style="width:99%;"></textarea>
+						<input type="text" name="gb_info[tel]" id="gb_tel" class="input" />
+					</li>
+					<li>
+						<b>邮箱</b>
+						<br />
+						<input type="text" name="gb_info[email]" id="gb_email" class="input" />
+					</li>
+					<li>
+						<b>留言内容</b>
+						<br />
+						<textarea name="gb_content[text]" id="gb_content" rows="10" style="width:99%;"></textarea>
 					</li>
 					<li>
 						<button type="submit">确认提交</button>
 					</li>
-					<li>
-						<div class="ser_tel">或者拨打全国统一售后电话<br />400-820-0407</div>
-					</li>
 				</ul>
-			</form>
+			<% end %>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+function checkform(){
+	if($('#gb_name').val().trim() == ''){
+		alert('请填写您的称呼。');
+		return false;
+	}
+	if($('#gb_content').val().trim() == ''){
+		alert('请填写内容。');
+		return false;
+	}
+}
+</script>
