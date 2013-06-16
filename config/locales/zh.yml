@@ -63,6 +63,13 @@ zh:
     features: "功能特点"
     data: "说明书下载"
     no_pics: "暂无图片。"
+  sales:
+    china_branch_title: "梦露中国地区办事处"
+    china_branches: "目前已设立的办事处地区有：上海、北京、广州、深圳、沈阳、西安、银川、成都、南昌"
+    tips: "请选择左侧可选省份进行查找"
+    address: "地&nbsp;&nbsp;&nbsp;&nbsp;址"
+    tel: "电&nbsp;&nbsp;&nbsp;&nbsp;话"
+    online: "在线客服"
     
   will_paginate:
     previous_label: "上一页"

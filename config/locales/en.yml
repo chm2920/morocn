@@ -63,6 +63,13 @@ en:
     features: "Features"
     data: "Datasheets"
     no_pics: "No pictures yet."
+  sales:
+    china_branch_title: "Moro China Branches"
+    china_branches: "Established Regional offices: Shanghai, Beijing, Guangzhou, Shenzhen, Shenyang, Xi'an, Yinchuan, Chengdu, Nanchang"
+    tips: "Please select the left to find the optional provinces"
+    address: "Address"
+    tel: "Tel"
+    online: "Online Service"
     
   will_paginate:
     previous_label: "Previous"

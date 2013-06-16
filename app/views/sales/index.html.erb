@@ -6,8 +6,8 @@
 	<div class="con_left sale_left">
 		<div id="sale_con"></div>
 		<div class="map_pic">
-			<h2>梦露中国地区办事处</h2>
-			<p>目前已设立的办事处地区有：上海、北京、广州、深圳、沈阳、西安、银川、成都、南昌</p>
+			<h2><%= _t "sales.china_branch_title" %></h2>
+			<p><%= _t "sales.china_branches" %></p>
 			<img src="/assets/blank.png" usemap="#Map" style=" width:652px; height:480px;display:block; position:absolute; z-index:10;"/>
 			<map name="Map" id="Map">
 				<area shape="rect" coords="549,296,588,312" areaID="2">
@@ -76,7 +76,7 @@
 	</div>
 	<div class="con_right sale_right" id="sale_right">
 		<div style="padding-left:30px;">
-			请选择左侧可选省份进行查找
+			<%= _t "sales.tips" %>
 		</div>
 	</div>
 </div>
@@ -113,21 +113,29 @@ $(function(){
 					var arr = []
 						, prov = result.city
 						, info = (new Function("return " + result.info))();
+						
+					<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+					var name = info.en_name,
+						addr = info.en_addr;
+					<% else %>
+					var name = info.name,
+						addr = info.addr;
+					<% end %>
 					
 					arr.push('<div class="sale-list">');
-					arr.push('	<div class="sale-list-t">' + info.name + '</div>');
+					arr.push('	<div class="sale-list-t">' + name + '</div>');
 					
 					arr.push('		<table>');
 					arr.push('			<tr>');
-					arr.push('				<td class="sale-label">地&nbsp;&nbsp;&nbsp;&nbsp;址：</td>');
-					arr.push('				<td>' + info.addr + '</td>');
+					arr.push('				<td class="sale-label"><%= (_t "sales.address").html_safe %>：</td>');
+					arr.push('				<td>' + addr + '</td>');
 					arr.push('			</tr>');
 					arr.push('			<tr>');
-					arr.push('				<td class="sale-label">电&nbsp;&nbsp;&nbsp;&nbsp;话：</td>');
+					arr.push('				<td class="sale-label"><%= (_t "sales.tel").html_safe %>：</td>');
 					arr.push('				<td>' + info.tel + '</td>');
 					arr.push('			</tr>');
 					arr.push('			<tr>');
-					arr.push('				<td class="sale-label">在线客服：</td>');
+					arr.push('				<td class="sale-label"><%= _t "sales.online" %>：</td>');
 					arr.push('				<td>');
 					if(info.qq){
 						var qqs = info.qq.split('###');
