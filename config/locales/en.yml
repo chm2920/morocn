@@ -9,6 +9,10 @@ en:
     management: "Management System"
     qualification: "Qualification of Enterprise"
     quality: "Quality Control"
+    quality_a: "Intelligent Toilet Cover Flowchart"
+    quality_b: "Intelligent Integration Stool Flowchart"
+    quality_c: "质量控制"
+    quality_d: "质量控制"
     products: "Products"
 
     sale: "Global Market"
@@ -45,6 +49,7 @@ en:
     products_list: "List"
     
     management: "Management System"
+    quality: "Quality Control"
     sale: "Global Market"
     sale_civil: "China Branch"
     investment: "Investment"

@@ -23,8 +23,29 @@ class AboutController < ApplicationController
   
   def quality
     @intro = Intro.find(12)
-    @cat = "management"
-    @title = _t "base.quality"
+    @cat = "quality"
+    @title = _t "base.quality_a"
+    render "about"
+  end
+  
+  def quality_b
+    @intro = Intro.find(13)
+    @cat = "quality"
+    @title = _t "base.quality_b"
+    render "about"
+  end
+  
+  def quality_c
+    @intro = Intro.find(14)
+    @cat = "quality"
+    @title = _t "base.quality_c"
+    render "about"
+  end
+  
+  def quality_d
+    @intro = Intro.find(15)
+    @cat = "quality"
+    @title = _t "base.quality_d"
     render "about"
   end
   

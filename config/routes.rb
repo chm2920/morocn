@@ -7,6 +7,9 @@ Morocn::Application.routes.draw do
   
   match "qualification" => "about#qualification"
   match "quality" => "about#quality"
+  match "quality_b" => "about#quality_b"
+  match "quality_c" => "about#quality_c"
+  match "quality_d" => "about#quality_d"
   
   match "national" => "about#national"
   

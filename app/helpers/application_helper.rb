@@ -8,6 +8,8 @@ module ApplicationHelper
       loc = %Q(<a href="/about" title="#{_t "location.about"}">#{_t "location.about"}</a>)
     when "management"
       loc = %Q(<a href="/qualification">#{_t 'location.management'}</a>)
+    when "quality"
+      loc = %Q(<a href="/qualification">#{_t 'location.management'}</a><a href="/quality">#{_t 'location.quality'}</a>)
     when "sale"
       loc = %Q(<a href="/sale">#{_t 'location.sale'}</a>)
     when "investment"
