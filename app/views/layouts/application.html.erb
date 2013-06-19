@@ -202,7 +202,10 @@
 		<div class="foot_links">
 			<ul class="fl">
 				<li><a href="/contact"><%= _t 'base.contact' %></a></li>
+				<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+				<% else %>
 				<li><a href="/careers"><%= _t 'base.careers' %></a></li>
+				<% end %>
 				<li><a href="/declaration"><%= _t 'base.declaration' %></a></li>
 			</ul>
 			<div class="mail">
