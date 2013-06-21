@@ -5,7 +5,7 @@
 <div class="content_box service">
 	<div class="ser_action">
 		<h2><%= _t "location.guestbooks" %></h2>
-		<p class="guestbook-action"><a href="/guestbook_new">&gt; 我要留言</a></p>
+		<p class="guestbook-action"><a href="/guestbook_new">&gt; <%= _t "guestbook.new" %></a></p>
 		<div class="ser_con guestbooks">
 			<% if @guestbooks.length > 0 %>
 			<ul>
@@ -13,16 +13,16 @@
 				<% info = JSON.parse(gb.area) %>
 				<% content = JSON.parse(gb.text) %>
 				<li>
-					<div class="guestbook-t"><i><%= gb.created_at.strftime("%Y-%m-%d %H:%M") %></i>留言: <%= info["name"] %></div>
+					<div class="guestbook-t"><i><%= gb.created_at.strftime("%Y-%m-%d %H:%M") %></i><%= _t "guestbook.t_name" %>: <%= info["name"] %></div>
 					<div class="guestbook-q"><%= content["text"] %></div>
-					<div class="guestbook-a"><i><%= gb.updated_at.strftime("%Y-%m-%d %H:%M") %></i>网站管理员</div>
+					<div class="guestbook-a"><i><%= gb.updated_at.strftime("%Y-%m-%d %H:%M") %></i><%= _t "guestbook.t_master" %></div>
 					<div class="guestbook-reply"><%= content["reply"].html_safe %></div>
 				</li>
 				<% end %>
 			</ul>
 			<%= will_paginate @guestbooks, :class => "gbs-paginate" %>
 			<% else %>
-			<div class="guestbooks-none">还没有留言。</div>
+			<div class="guestbooks-none"><%= _t "guestbook.none" %></div>
 			<% end %>
 		</div>
 	</div>

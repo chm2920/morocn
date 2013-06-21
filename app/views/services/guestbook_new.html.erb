@@ -5,32 +5,32 @@
 <div class="content_box service">
 	<div class="ser_action">
 		<h2><%= _t "location.guestbook_new" %></h2>
-		<p class="guestbook-action"><a href="/guestbooks">&gt; 留言列表</a></p>
+		<p class="guestbook-action"><a href="/guestbooks">&gt; <%= _t "guestbook.list" %></a></p>
 		<div class="ser_con">
 			<%= form_tag "/guestbook_new", :method => "post", :onsubmit => "return checkform()" do %>
 				<ul>
 					<li>
-						<b>您的大名</b>
+						<b><%= _t "guestbook.name" %></b>
 						<br />
 						<input type="text" name="gb_info[name]" id="gb_name" class="input" />
 					</li>
 					<li>
-						<b>电话</b>
+						<b><%= _t "guestbook.tel" %></b>
 						<br />
 						<input type="text" name="gb_info[tel]" id="gb_tel" class="input" />
 					</li>
 					<li>
-						<b>邮箱</b>
+						<b><%= _t "guestbook.email" %></b>
 						<br />
 						<input type="text" name="gb_info[email]" id="gb_email" class="input" />
 					</li>
 					<li>
-						<b>留言内容</b>
+						<b><%= _t "guestbook.content" %></b>
 						<br />
 						<textarea name="gb_content[text]" id="gb_content" rows="10" style="width:99%;"></textarea>
 					</li>
 					<li>
-						<button type="submit">确认提交</button>
+						<button type="submit"><%= _t "guestbook.submit" %></button>
 					</li>
 				</ul>
 			<% end %>
@@ -40,11 +40,11 @@
 <script type="text/javascript">
 function checkform(){
 	if($('#gb_name').val().trim() == ''){
-		alert('请填写您的称呼。');
+		alert('<%= _t "guestbook.no_name" %>');
 		return false;
 	}
 	if($('#gb_content').val().trim() == ''){
-		alert('请填写内容。');
+		alert('<%= _t "guestbook.no_content" %>');
 		return false;
 	}
 }

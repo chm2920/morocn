@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
       @guestbook.area = params[:gb_info].to_json
       @guestbook.text = params[:gb_content].to_json
       @guestbook.save
-      render :text => "<script>alert('提交成功，请等待管理员审核。');location.href='/guestbooks';</script>"
+      render :text => "<script>alert('" + (_t "guestbook.succ") + "');location.href='/guestbooks';</script>"
     end
     @title = _t "location.guestbook_new"
   end

@@ -94,6 +94,20 @@ en:
     address: "Address"
     tel: "Tel"
     online: "Online Service"
+  guestbook:
+    list: "Messages"
+    new: "Leave a message"
+    none: "No messages yet."
+    no_name: "Please fill in your name。"
+    no_content: "Please fill in content。"
+    succ: "Submitted successfully, please wait for administrator review."
+    name: "Name"
+    tel: "Tel"
+    email: "Email"
+    content: "Content"
+    submit: "Submit"
+    t_name: "UserName"
+    t_master: "Admin"
     
   will_paginate:
     previous_label: "Previous"
