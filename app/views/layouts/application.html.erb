@@ -217,7 +217,13 @@
 			<table class="count">
 				<tr>
 					<td width="312"><%= (_t 'base.copyright').html_safe %></td>
-					<td style="text-align:center;">网站目前已有 <script src="http://count.2881.com/count/count.asp?id=34122&sx=1&ys=47" language="JavaScript" charset="gb2312"></script> 人访问</td>
+					<td style="text-align:center;">
+						<% if !session[:locale].blank? && session[:locale] != 'zh' %>
+						Website at present people have access to <script src="http://count.2881.com/count/count.asp?id=34122&sx=1&ys=47" language="JavaScript" charset="gb2312"></script>
+						<% else %>
+						网站目前已有 <script src="http://count.2881.com/count/count.asp?id=34122&sx=1&ys=47" language="JavaScript" charset="gb2312"></script> 人访问
+						<% end %>
+					</td>
 					<td width="120"><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备12033067号-1</a></td>
 				</tr>
 			</table>
