@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
     @sys_setting = SysSetting.find_by_stype("setting")
     @setting = JSON.parse(@sys_setting.setting)
     
+    @sys_count = SysSetting.find_by_stype("sys_count")
+    @sys_count_v = JSON.parse(@sys_count.setting)
+    if session[:sys_count].nil?
+      @sys_count.setting = "{\"count\":\"" + (@sys_count_v["count"].to_i + 1).to_s + "\"}"
+      @sys_count.save
+      session[:sys_count] = @sys_count_v["count"]
+    end
+    
     @product_catalogs = ProductCatalog.all
     @kfs = Kf.all
   end

@@ -3,6 +3,8 @@ class AccountController < ApplicationController
   
   layout false
   
+  skip_before_filter :set_locale, :find_sys_setting
+  
   def login
   end
   

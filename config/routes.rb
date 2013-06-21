@@ -112,6 +112,9 @@ Morocn::Application.routes.draw do
     get "sys/en_index_ads"
     post "sys/en_index_ads"
     
+    get "sys/sys_count"
+    post "sys/sys_count"
+    
     resources :sales do
       member do
         post :clear

@@ -24,4 +24,9 @@ module ApplicationHelper
     I18n.t(key, *args)
   end
   
+  def sys_count(count)
+    arr = count.to_s.split("")
+    arr.map{|t|"<img src=\"/assets/count/" + t + ".gif\" />"}.join("").html_safe
+  end
+  
 end

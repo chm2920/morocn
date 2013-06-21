@@ -314,6 +314,7 @@ div.ser_tel{background:#dedede url(/assets/tel2.png) no-repeat 10px center; padd
 .foot_links li:first-child{background:none; margin-left:0; padding-left:0;}
 .copyright{border-top:1px solid #D4D4D4;overflow:hidden;clear:both; padding-top:5px; margin-top:5px;}
 .count{width:100%;border:0;border-collapse:collapse;}
+.count td{font-size:12px;}
 .count img{margin:0 0 -5px;}
 .foot_links .weibo{ position:absolute; right:335px; top:4px; height:22px;}
 .foot_links .mail{ position:absolute; right:235px; top:4px; height:22px; background:url(/assets/mail.png) no-repeat left center; text-indent:28px;}
