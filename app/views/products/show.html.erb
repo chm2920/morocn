@@ -76,8 +76,11 @@
 							<ul>
 								<% @product_features.each do |feature| %>
 								<li>
-									<div class="pic"><img src="<%= feature.img_url %>" />
-									</div>
+									<% if !feature.img_url.blank? %>
+									<div class="pic"><img src="<%= feature.img_url %>" /></div>
+									<% else %>
+									<div class="pic" style="width:50px;height:40px;"></div>
+									<% end %>
 									<div>
 										<%= feature.show_title(session[:locale]) %>：<%= feature.show_info(session[:locale]) %>
 									</div>
