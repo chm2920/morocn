@@ -200,9 +200,6 @@
 	<div class="clear"></div>
 	<div class="footer_box">
 		<div class="foot_links">
-			<div style="position:absolute;left:50%;display:block;width:300px;margin-left:-150px;text-align:center;">
-				<script src="http://count.2881.com/count/count.asp?id=34121&sx=1&ys=43" language="JavaScript" charset="gb2312"></script>
-			</div>
 			<ul class="fl">
 				<li><a href="/contact"><%= _t 'base.contact' %></a></li>
 				<% if !session[:locale].blank? && session[:locale] != 'zh' %>
@@ -217,6 +214,9 @@
 			<span class="fr"><em class="tel"></em><%= _t 'base.hotline' %>400-820-0407</span>
 		</div>
 		<div class="copyright">
+			<div class="count">
+				网站目前已有 <script src="http://count.2881.com/count/count.asp?id=34122&sx=1&ys=47" language="JavaScript" charset="gb2312"></script> 人访问
+			</div>
 			<span class="fl"><%= (_t 'base.copyright').html_safe %></span>
 			<span class="fr"><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备12033067号-1</a></span>
 		</div>
