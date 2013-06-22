@@ -219,7 +219,7 @@
 					<td width="312"><%= (_t 'base.copyright').html_safe %></td>
 					<td style="text-align:center;">
 						<% if !session[:locale].blank? && session[:locale] != 'zh' %>
-						Website at present people have access to <%= sys_count(@sys_count_v["count"].to_i) %>
+						Website at present <%= sys_count(@sys_count_v["count"].to_i) %> people have access to
 						<% else %>
 						网站目前已有 <%= sys_count(@sys_count_v["count"].to_i + 1) %> 人访问
 						<% end %>

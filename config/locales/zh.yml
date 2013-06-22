@@ -70,6 +70,10 @@ zh:
     data: "说明书下载"
     no_pics: "暂无图片。"
     
+    order_img: "btn_buy.png"
+    empty: "清空浏览列表"
+    history_list: "您浏览过的产品列表"
+    
     order_title: "感谢您浏览“梦露电气”网站，如果您对我们的产品很满意想订购的话，可以填写以下订货单进行在线订购，谢谢！"
     order_succ: "订购成功，我们会在一周内联系您。"
     order_model: "产品型号"

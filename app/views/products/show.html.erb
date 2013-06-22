@@ -15,7 +15,7 @@
 					<a href="javascript:;"><img src="<%= img.addr %>" /></a>
 					<% end %>
 				</div>
-				<a href="<%= @product.order_url %>" class="product-order"><img src="/assets/btn_buy.png" /></a>
+				<a href="<%= @product.order_url %>" class="product-order"><img src="/assets/<%= _t "product.order_img" %>" /></a>
 			</div>
 			<script type="text/javascript" src="/assets/jquery.soChange.js"></script>
 			<% else %>
@@ -103,7 +103,7 @@
 	</div>
 	<div class="clear"></div>
 	<div class="pro_cookie mt20">
-		<h2><a href="/clear_cookie/<%= @product.id %>" class="fr">清空浏览列表</a>您浏览过的产品列表</h2>
+		<h2><a href="/clear_cookie/<%= @product.id %>" class="fr"><%= _t 'product.empty' %></a><%= _t 'product.history_list' %></h2>
 		<div class="contact">
 			<a href="<%= @product.order_url %>" class="buy"></a>
 			<a href="/contact" class="lx"></a>

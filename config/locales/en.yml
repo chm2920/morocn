@@ -70,6 +70,10 @@ en:
     data: "Datasheets"
     no_pics: "No pictures yet."
     
+    order_img: "btn_buy_en.jpg"
+    empty: "Empty"
+    history_list: "You read the product list"
+    
     order_title: "Thank you for visiting \"MORO\" website. If you are satisfied with our products, you can fill in the order form order online. Thank you!"
     order_succ: "Order succeed. We will contact you soon."
     order_model: "Model"
