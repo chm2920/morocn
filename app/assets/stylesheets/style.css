@@ -331,8 +331,20 @@ div.ser_tel{background:#dedede url(/assets/tel2.png) no-repeat 10px center; padd
 
 .clear{clear:both;height:0}
 
+#kf_dialog{position:fixed;z-index:9999;cursor:default;width:315px;height:145px;background:url(/assets/cslist/invite_bg.png) no-repeat;display:none;}
+#kf_dialog table{}
+#kf_dlg_close{position:absolute;top:9px;right:7px;display:block;width:8px;height:8px;background:url(/assets/cslist/cslist_top_shut.gif) no-repeat 0 0;cursor:pointer;}
+.kf_dlg_title{padding:4px 0 0 15px;height:20px;line-height:20px;font-weight:bold;color:#FFF;}
+.tx_pic{margin-top:17px;width:90px;height:66px;text-align:center;}
+.tx_pic img{width:50px;height:50px;}
+.inconbox{padding-top:13px;vertical-align: top;width:210px;height:60px;line-height:18px;color:#333;}
+.toolbtn{text-align:center;}
+.toolbtn a, .toolbtn span{display:inline-block;margin:0 10px;width:68px;height:23px;line-height:23px;background:url(/assets/cslist/invite_btn.gif) no-repeat;text-align:center;cursor:pointer;color:#333;}
+
+#kf_hid{position:fixed;z-index:999;cursor:pointer;display:none;width:39px;}
 #kf_panel{position:fixed;z-index:999;width:143px;cursor:default;display:none;}
 .kf-p-t{position:relative;height:69px;background:url(/assets/cslist/cslist_top_bg.png) no-repeat 0 top;cursor:default;}
+.kf-p-t-en{background:url(/assets/cslist/cslist_top_bg_en.png) no-repeat 0 top;}
 .kf-p-t span{position:absolute;top:9px;right:7px;display:block;width:8px;height:8px;background:url(/assets/cslist/cslist_top_shut.gif) no-repeat 0 0;cursor:pointer;}
 .kf-p-m{background:url(/assets/cslist/cslist_mid_bg.png) repeat-y 0 0;}
 .kf-p-m ul{padding-top:4px;}

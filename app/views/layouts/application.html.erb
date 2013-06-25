@@ -6,12 +6,39 @@
 	<meta name="keywords" content="<%= @setting["site_keywords"] %>" />
 	<meta name="description" content="<%= @setting["site_desc"] %>" />
 	<%= stylesheet_link_tag    "style", :media => "all" %>
-	<%= javascript_include_tag "jquery-1.4.4.min", "common" %>
+	<%= javascript_include_tag "jquery-1.4.4.min", "jquery.cookie", "common" %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
+<div id="kf_dialog">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:auto;">
+		<tbody>
+			<tr>			
+				<td colspan="2" height="21" style="position:relative;">
+					<span id="kf_dlg_close"></span>
+					<div class="kf_dlg_title">在线客服请求和您会话</div>
+				</td>		
+			</tr>		
+			<tr>			
+				<td width="90" height="80">				
+					<div class="tx_pic"><img src="/assets/cslist/invite_pic.jpg" /></div>			
+				</td>			
+				<td class="inconbox">			
+					<p class="incontent" id="ec_cs_dlg_content">您好,我将竭诚为您提供优质咨询服务!</p>
+				</td>		
+			</tr>		
+			<tr>			
+				<td colspan="2" class="toolbtn">				
+					<span id="kf_dlg_cancle">稍候再说</span>
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=2647180068&site=qq&menu=yes" target="_blank">马上咨询</a>		
+				</td>		
+			</tr>	
+		</tbody>
+	</table>
+</div>
+<div id="kf_hid"><img src="/assets/cslist/<%= _t "base.kf_hid" %>" /></div>
 <div id="kf_panel" style="top:120px;right:10px;">
-	<div class="kf-p-t"><span id="kf_p_cls"></span></div>
+	<div class="kf-p-t<% if !session[:locale].blank? && session[:locale] != 'zh' %> kf-p-t-en<% end %>"><span id="kf_p_cls"></span></div>
 	<div class="kf-p-m">
 		<ul>
 		<% if !session[:locale].blank? && session[:locale] != "zh" %>
