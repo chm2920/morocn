@@ -28,21 +28,22 @@ Morocn::Application.routes.draw do
   get "products/:title" => "products#show"
   get "products" => "products#list"
   get "order/:title" => "products#order"
-  get "order_rst" => "products#order_rst"
+  post "order_rst" => "products#order_rst"
   get "clear_cookie/:id" => "products#clear_cookie"
    
   get "sale" => "sales#index"
-  get "sale_info/(:id)" => "sales#show"  
+  post "sale_info/(:id)" => "sales#show"  
   
   get "service" => "services#index"
   get "products_intro" => "services#products_intro"
   get "guestbooks" => "services#guestbooks"
   get "guestbook_new" => "services#guestbook_new"
+  post "guestbook_new" => "services#guestbook_new"
   
   get "admin" => "account#login"
   get "account/main"
   get "account/desktop"
-  get "admin_login_rst" => "account#login_rst"
+  post "admin_login_rst" => "account#login_rst"
   get "admin_logout" => "account#logout"
   
   namespace :admin do
