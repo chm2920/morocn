@@ -1,49 +1,49 @@
 Morocn::Application.routes.draw do
   
-  match 'zh' => 'start#ch', :id => "zh"
-  match "en" => "start#ch", :id => "en"
-  match "about" => "about#about"
-  match "culture" => "about#culture"
+  get 'zh' => 'start#ch', :id => "zh"
+  get "en" => "start#ch", :id => "en"
+  get "about" => "about#about"
+  get "culture" => "about#culture"
   
-  match "qualification" => "about#qualification"
-  match "quality" => "about#quality"
-  match "quality_b" => "about#quality_b"
-  match "quality_c" => "about#quality_c"
-  match "quality_d" => "about#quality_d"
+  get "qualification" => "about#qualification"
+  get "quality" => "about#quality"
+  get "quality_b" => "about#quality_b"
+  get "quality_c" => "about#quality_c"
+  get "quality_d" => "about#quality_d"
   
-  match "national" => "about#national"
+  get "national" => "about#national"
   
-  match "investment" => "about#investment"
-  match "process" => "about#investment_process"
+  get "investment" => "about#investment"
+  get "process" => "about#investment_process"
   
-  match "contact" => "about#contact"
-  match "careers" => "about#careers"
-  match "declaration" => "about#declaration"
+  get "contact" => "about#contact"
+  get "careers" => "about#careers"
+  get "declaration" => "about#declaration"
   
-  match "news_list/:id" => "topics#list"
-  match "news/:id" => "topics#show"
-  match "ajax_news_list/:id" => "topics#news_list"
+  get "news_list/:id" => "topics#list"
+  get "news/:id" => "topics#show"
+  get "ajax_news_list/:id" => "topics#news_list"
   
-  match "product_catalogs/:id" => "products#list"
-  match "products/:title" => "products#show"
-  match "products" => "products#list"
-  match "order/:title" => "products#order"
-  match "order_rst" => "products#order_rst"
-  match "clear_cookie/:id" => "products#clear_cookie"
+  get "product_catalogs/:id" => "products#list"
+  get "products/:title" => "products#show"
+  get "products" => "products#list"
+  get "order/:title" => "products#order"
+  get "order_rst" => "products#order_rst"
+  get "clear_cookie/:id" => "products#clear_cookie"
    
-  match "sale" => "sales#index"
-  match "sale_info/(:id)" => "sales#show"  
+  get "sale" => "sales#index"
+  get "sale_info/(:id)" => "sales#show"  
   
-  match "service" => "services#index"
-  match "products_intro" => "services#products_intro"
-  match "guestbooks" => "services#guestbooks"
-  match "guestbook_new" => "services#guestbook_new"
+  get "service" => "services#index"
+  get "products_intro" => "services#products_intro"
+  get "guestbooks" => "services#guestbooks"
+  get "guestbook_new" => "services#guestbook_new"
   
-  match "admin" => "account#login"
+  get "admin" => "account#login"
   get "account/main"
   get "account/desktop"
-  match "admin_login_rst" => "account#login_rst"
-  match "admin_logout" => "account#logout"
+  get "admin_login_rst" => "account#login_rst"
+  get "admin_logout" => "account#logout"
   
   namespace :admin do
     resources :intros
@@ -150,11 +150,11 @@ Morocn::Application.routes.draw do
     get  "/filemanager" => "assets#list"
   end
   
-  match "upload_asset" => "assets#create"
-  match "file_manager_json" => "assets#list"
+  get "upload_asset" => "assets#create"
+  get "file_manager_json" => "assets#list"
       
   root :to => 'start#index'
   
-  match "*path" => "application#render_not_found"
+  get "*path" => "application#render_not_found"
   
 end

@@ -1,7 +1,5 @@
 class Topic < ActiveRecord::Base
   
-  attr_accessible :catalog_id, :title, :hits, :keywords, :description, :content, :is_trash
-  
   belongs_to :catalog
   
   def show_url
