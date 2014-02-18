@@ -13,6 +13,7 @@ class Admin::KfsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @kf = Kf.new(params[:kf])
     if @kf.save
       redirect_to [:admin, :kfs]

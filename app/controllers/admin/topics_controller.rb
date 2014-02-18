@@ -41,6 +41,7 @@ class Admin::TopicsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @topic = Topic.new(params[:topic])
     @topic.content = params[:content]
     if !params[:pub_date].nil?

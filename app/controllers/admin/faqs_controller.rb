@@ -13,6 +13,7 @@ class Admin::FaqsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @faq = Faq.new(params[:faq])
     @faq.text = params[:content]
     if @faq.save

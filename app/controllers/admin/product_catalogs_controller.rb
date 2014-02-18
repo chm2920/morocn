@@ -13,6 +13,7 @@ class Admin::ProductCatalogsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @product_catalog = ProductCatalog.new(params[:product_catalog])
     @product_catalog.name = params[:name][:zh] + "$$$" + params[:name][:en]
     if @product_catalog.save

@@ -12,6 +12,7 @@ class Admin::ProductParamsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @product_catalog = ProductCatalog.find(params[:product_catalog_id])
     @product_param = ProductParam.new(params[:product_param])
     @product_param.product_catalog = @product_catalog

@@ -13,6 +13,7 @@ class Admin::IntrosController < Admin::Backend
   end
   
   def create
+    params.permit!
     @intro = Intro.new(params[:intro])
     @intro.content = params[:content]
     @intro.en_content = params[:en_content]

@@ -13,6 +13,7 @@ class Admin::CatalogsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @catalog = Catalog.new(params[:catalog])
     if @catalog.save
       redirect_to [:admin, :catalogs]

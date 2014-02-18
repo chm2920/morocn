@@ -23,6 +23,7 @@ class Admin::ProductsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @product = Product.new(params[:product])
     if @product.save
       redirect_to [:admin, :products]

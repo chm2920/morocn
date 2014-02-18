@@ -16,6 +16,7 @@ class Admin::ProductFeaturesController < Admin::Backend
   end
   
   def create
+    params.permit!
     @product = Product.find(params[:product_id])
     @product_feature = ProductFeature.new(params[:product_feature])
     @product_feature.product = @product

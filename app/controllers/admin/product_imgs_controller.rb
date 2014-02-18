@@ -11,6 +11,7 @@ class Admin::ProductImgsController < Admin::Backend
   end
   
   def create
+    params.permit!
     @product = Product.find(params[:product_id])
     @product_img = ProductImg.new(params[:product_img])
     @product_img.product = @product
