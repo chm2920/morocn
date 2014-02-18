@@ -17,6 +17,7 @@ class Admin::GuestbooksController < Admin::Backend
   end
   
   def update
+    params.permit!
     @guestbook = Guestbook.find(params[:id])
     @guestbook.text = params[:guestbook].to_json
     @guestbook.save

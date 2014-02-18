@@ -12,6 +12,7 @@ class Admin::SalesController < Admin::Backend
   end
   
   def update
+    params.permit!
     @sale = Sale.find(params[:id])
     @sale.info = params[:sale].to_json
     @sale.save

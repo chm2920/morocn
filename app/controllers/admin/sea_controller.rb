@@ -25,6 +25,7 @@ class Admin::SeaController < Admin::Backend
   def auto_result
     case request.method
     when "POST"
+      params.permit!
       if !params[:urls].nil?
         @err_urls = []
         @err_titles = []

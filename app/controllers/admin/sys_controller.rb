@@ -4,6 +4,7 @@ class Admin::SysController < Admin::Backend
     @sys_setting = SysSetting.find_by_stype("setting")
     case request.method
     when "POST"
+      params.permit!
       @sys_setting.setting = params[:sys_setting][:setting].to_json
       @sys_setting.save
       @result = "OK"
@@ -22,6 +23,7 @@ class Admin::SysController < Admin::Backend
     @sys_setting = SysSetting.find_by_stype("flashpics")
     case request.method
     when "POST"
+      params.permit!
       @sys_setting.setting = params[:sys_setting][:setting].to_json
       @sys_setting.save
       @result = "OK"
@@ -37,6 +39,7 @@ class Admin::SysController < Admin::Backend
   end
   
   def index_ads
+    params.permit!
     @sys_setting = SysSetting.find_by_stype("index_ads")
     case request.method
     when "POST"
@@ -55,6 +58,7 @@ class Admin::SysController < Admin::Backend
   end
   
   def en_flashpics
+    params.permit!
     @sys_setting = SysSetting.find_by_stype("en_flashpics")
     case request.method
     when "POST"
@@ -74,6 +78,7 @@ class Admin::SysController < Admin::Backend
   end
   
   def en_index_ads
+    params.permit!
     @sys_setting = SysSetting.find_by_stype("en_index_ads")
     case request.method
     when "POST"
@@ -92,6 +97,7 @@ class Admin::SysController < Admin::Backend
   end
   
   def sys_count
+    params.permit!
     @sys_setting = SysSetting.find_by_stype("sys_count")
     case request.method
     when "POST"

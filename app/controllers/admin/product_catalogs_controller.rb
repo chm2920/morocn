@@ -24,6 +24,7 @@ class Admin::ProductCatalogsController < Admin::Backend
   end
 
   def update
+    params.permit!
     @product_catalog = ProductCatalog.find(params[:id])
     @product_catalog.name = params[:name][:zh] + "$$$" + params[:name][:en]
     @product_catalog.save

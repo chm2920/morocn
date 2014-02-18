@@ -36,6 +36,7 @@ class Admin::FriendlinksController < Admin::Backend
   end
 
   def destroy
+    params.permit!
     @friendlink = Friendlink.find(params[:id])
     @friendlink.destroy
     redirect_to [:admin, :friendlinks]

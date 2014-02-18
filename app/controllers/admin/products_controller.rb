@@ -33,6 +33,7 @@ class Admin::ProductsController < Admin::Backend
   end
 
   def update
+    params.permit!
     @product = Product.find(params[:id])
     @product.update_attributes(params[:product])
     redirect_to [:admin, :products]

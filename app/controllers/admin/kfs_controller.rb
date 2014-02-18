@@ -23,6 +23,7 @@ class Admin::KfsController < Admin::Backend
   end
 
   def update
+    params.permit!
     @kf = Kf.find(params[:id])
     @kf.update_attributes(params[:kf])
     redirect_to [:admin, :kfs]

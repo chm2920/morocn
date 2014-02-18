@@ -25,6 +25,7 @@ class Admin::IntrosController < Admin::Backend
   end
 
   def update
+    params.permit!
     @intro = Intro.find(params[:id])
     @intro.content = params[:content]
     @intro.en_content = params[:en_content]

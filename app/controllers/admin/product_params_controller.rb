@@ -31,6 +31,7 @@ class Admin::ProductParamsController < Admin::Backend
   end
   
   def update
+    params.permit!
     @product_catalog = ProductCatalog.find(params[:product_catalog_id])
     @product_param = ProductParam.find(params[:id])
     @product_param.title = params[:title][:zh] + "$$$" + params[:title][:en]

@@ -28,6 +28,7 @@ class Admin::ProductImgsController < Admin::Backend
   end
   
   def update
+    params.permit!
     @product = Product.find(params[:product_id])
     @product_img = ProductImg.find(params[:id])
     @product_img.update_attributes(params[:product_img])

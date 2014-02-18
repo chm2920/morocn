@@ -24,6 +24,7 @@ class Admin::FaqsController < Admin::Backend
   end
 
   def update
+    params.permit!
     @faq = Faq.find(params[:id])
     @faq.text = params[:content]
     @faq.update_attributes(params[:faq])

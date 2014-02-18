@@ -28,6 +28,7 @@ class Admin::ProductFilesController < Admin::Backend
   end
 
   def update
+    params.permit!
     @product = Product.find(params[:product_id])
     @product_file = ProductFile.find(params[:id])
     @product_file.update_attributes(params[:product_file])

@@ -23,6 +23,7 @@ class Admin::CatalogsController < Admin::Backend
   end
 
   def update
+    params.permit!
     @catalog = Catalog.find(params[:id])
     @catalog.update_attributes(params[:catalog])
     redirect_to [:admin, :catalogs]

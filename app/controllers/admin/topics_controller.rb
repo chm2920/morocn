@@ -60,6 +60,7 @@ class Admin::TopicsController < Admin::Backend
   end
 
   def update
+    params.permit!
     @topic = Topic.find(params[:id])
     @topic.content = params[:content]
     if !params[:pub_date].nil?
@@ -75,6 +76,7 @@ class Admin::TopicsController < Admin::Backend
   end
   
   def del
+    params.permit!
     @topic = Topic.find(params[:id])
     @topic.is_trash = 1
     @topic.save
@@ -82,6 +84,7 @@ class Admin::TopicsController < Admin::Backend
   end
   
   def repost
+    params.permit!
     @topic = Topic.find(params[:id])
     @topic.is_trash = 0
     @topic.save
